@@ -1,0 +1,1 @@
+These obj's are all part of 1 set, meaning they are meant to be imported into a project to make up a small mock stage.

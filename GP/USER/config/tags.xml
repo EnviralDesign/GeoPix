@@ -1,0 +1,7 @@
+basecolor_tags	BaseColor	_diff_							
+normal_tags	Normal	_nor_	_Nor_						
+metallic_tags	Metallic	_metal_							
+roughness_tags	Roughness	_rough_							
+ambientocclusion_tags	AmbientOcclusion	_ao_	_AO_						
+specularlevel_tags	SpecularLevel	_spec_							
+emissive_tags	Emissive								

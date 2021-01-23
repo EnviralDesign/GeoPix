@@ -25,8 +25,12 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
-# automated local python installation
+# automated local installations and dependancies
 .py
+.td
+
+# td auto generated folders for imported assets
+TDImportCache
 
 # Windows shortcuts
 *.lnk

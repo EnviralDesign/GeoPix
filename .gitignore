@@ -25,6 +25,9 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
+# automated local python installation
+.py
+
 # Windows shortcuts
 *.lnk
 

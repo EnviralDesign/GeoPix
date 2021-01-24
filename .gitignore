@@ -28,6 +28,8 @@ $RECYCLE.BIN/
 # automated local installations and dependancies
 .py
 .td
+.tmp
+*_Log.txt
 
 # td auto generated folders for imported assets
 TDImportCache

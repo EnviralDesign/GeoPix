@@ -59,7 +59,7 @@ echo "Succesfully deleted .td and .tmp folders...">>START_log.txt
 @echo on
 echo Succesfully deleted .td and .tmp folders...
 @echo off
-TIMEOUT /T 5
+rem TIMEOUT /T 5
 
 mkdir %fullTmpPath%
 
@@ -71,31 +71,32 @@ rem ### SIMULATLE DOWNLOAD BY COPYING FROM DOWNLOADS DIRECTORY
 rem copy C:\Users\envir\Downloads\TouchDesigner.2020.28110.exe C:\Users\envir\Documents\GitHub\GeoPix\.tmp\TouchDesigner.2020.28110.exe
 
 if not exist %fullTdPath% (
-    start /WAIT %fullTdInstallerPath% /SILENT /LOG="TdInstallation_Log.txt" /DIR=%fullTdPath% /SUPPRESSMSGBOXES /SP
+    start /WAIT %fullTdInstallerPath% /SILENT /LOG="TdInstallation_Log.txt" /DIR=%fullTdPath% /SUPPRESSMSGBOXES
+    SET tdExecutablePath=%fullTdPath%\bin\TouchDesigner.exe
+    
+    echo "TouchDesigner.%tdYear%.%tdVersion% installed locally, proceeding to launch...">>START_log.txt
+    @echo on
+    echo TouchDesigner.%tdYear%.%tdVersion% installed locally, proceeding to launch...
+    @echo off
+
+    if exist %fullTmpPath% (
+        del /S /Q %fullTmpPath% 
+        rmdir /S /Q %fullTmpPath% 
+    )
 )
-echo "Installation will now be separately launched. After completion, please run this batch file again...">>START_log.txt
-@echo on
-echo Installation will now be separately launched. After completion, please run this batch file again...
-@echo off
-goto End
 
 
 :ReadyToLaunch
-echo "TouchDesigner.%tdYear%.%tdVersion% found, no installation needed...">>START_log.txt
+echo "TouchDesigner.%tdYear%.%tdVersion% found, launching...">>START_log.txt
 @echo on
-echo TouchDesigner.%tdYear%.%tdVersion% found, no installation needed...
+echo TouchDesigner.%tdYear%.%tdVersion% found, launching...
 @echo off
-start %fullGpExecutablePath%
-goto exitScript
 
 
+start "%tdExecutablePath%" "%fullGpExecutablePath%"
 
-
-:End
-rem @echo on
-pause
-
-
-
-:exitScript
-
+echo "GeoPix has been launched, closing bootstrapper...">>START_log.txt
+@echo on
+echo GeoPix has been launched, closing bootstrapper...
+@echo off
+TIMEOUT /T 5

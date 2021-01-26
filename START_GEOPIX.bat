@@ -87,13 +87,14 @@ if not exist %fullTdPath% (
 
 
 :ReadyToLaunch
+
 echo "TouchDesigner.%tdYear%.%tdVersion% found, launching...">>START_log.txt
 @echo on
 echo TouchDesigner.%tdYear%.%tdVersion% found, launching...
 @echo off
 
 
-start "%tdExecutablePath%" "%fullGpExecutablePath%"
+start %tdExecutablePath% %fullGpExecutablePath%
 
 echo "GeoPix has been launched, closing bootstrapper...">>START_log.txt
 @echo on

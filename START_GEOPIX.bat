@@ -5,7 +5,7 @@ echo "---Begininng of Log---">START_log.txt
 rem ### Define some TD version specific variables. TODO: pull these from files on disk?
 SET tdYear=2020
 SET tdVersion=28110
-SET GeoPixExec=newGeoPix_Build_2.0.toe
+SET GeoPixExec=GeoPix_2.0.toe
 
 rem ### Define some paths and strings and URLs
 SET rootPath=%~dp0

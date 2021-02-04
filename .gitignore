@@ -33,6 +33,8 @@ $RECYCLE.BIN/
 
 # td auto generated folders for imported assets
 TDImportCache
+Backup
+GeoPix_2.0.*.toe
 
 # Windows shortcuts
 *.lnk

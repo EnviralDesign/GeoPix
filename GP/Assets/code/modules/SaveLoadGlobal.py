@@ -280,14 +280,32 @@ def SaveLoad_get_parameter_data( obj_data, targetOp, pageNames, parAttrs, ignore
 				if getattr( par , 'style' ) == 'Python':
 					
 					# if user wanted to save vals, lets assume they want the Python param equivalent, .expr.
-					if 'val' in parAttrs and 'expr' not in parAttrs:
+					# if 'val' in parAttrs and 'expr' not in parAttrs:
+					if 'expr' not in parAttrs:
 						
 						# generate key and value.
 						key = '.par.%s.%s'%( par.name , 'expr' )
-						value = getattr( par , parAttribute )
+						# value = getattr( par , parAttribute )
+						value = getattr( par , 'expr' )
+
+						# print(key,value,parAttribute)
 
 						# assign to the master dict.
 						obj_data[ key ] = value
+					
+					# if user wanted to save vals, lets assume they want the Python param equivalent, .expr.
+					# if 'val' in parAttrs and 'expr' not in parAttrs:
+					if 'mode' not in parAttrs:
+						
+						# generate key and value.
+						key = '.par.%s.%s'%( par.name , 'mode' )
+						# value = getattr( par , parAttribute )
+						value = getattr( par , 'mode' )
+
+						# print(key,value,parAttribute)
+
+						# assign to the master dict.
+						obj_data[ key ] = str(value)
 
 				# EDGE CASE #2 - parameter modes are not strings, but objects. we need to stringify them to keep json happy 
 				elif parAttribute == 'mode':
@@ -440,7 +458,6 @@ def SaveLoad_set_secondary_operators( rootOp , savedData , translationDict ):
 
 
 
-# def SaveLoad_set_typical_operator_attributes( targetOp , object_ , name_ , value_ ):
 def SaveLoad_set_typical_operator_attributes( full_attribute_path , value_ ):
 	'''
 	When we set attributes, we might be doing it on the targetOp, a child of the targetOp, 
@@ -515,7 +532,7 @@ def SaveLoad_set_typical_operator_attributes( full_attribute_path , value_ ):
 					else:
 						setattr( eval(objectEval_) , attr_ , '' )
 			
-			# CASE #2 - might be setting a parameter's expr...
+			# CASE #2 - might be setting a parameter's val -this is common...
 			elif attr_ == 'val':
 				
 				# but it might also be a non custom parameter named mode.. so lets check if this is a param attr or not.

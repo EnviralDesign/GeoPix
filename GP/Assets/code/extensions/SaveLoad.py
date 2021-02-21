@@ -45,7 +45,7 @@ class SaveLoad:
 		if include_self == True:
 			root_objects.append( root_op )
 
-		# root_objects = self.ownerComp.findChildren( type=geometryCOMP, depth=1 )
+		
 		for obj in root_objects:
 			obj_data = {}
 
@@ -64,12 +64,10 @@ class SaveLoad:
 			pageNames = SaveLoadGlobal.SaveLoad_get_uppercase_custom_parameter_pages( obj )
 			pageNames += extra_page_names # add some others we have in scene objects.
 			pageNames = list(set(pageNames))
-			# print(pageNames)
 
 			parAttrs = SaveLoadGlobal.SaveLoad_get_typical_parameter_attributes_to_save()
 			parAttrs += extra_parameter_attributes
 			parAttrs = list(set(parAttrs))
-			# print(parAttrs)
 
 			# ignoreDefault = False # setting to true, will not save params already set to default value.
 			obj_data = SaveLoadGlobal.SaveLoad_get_parameter_data( 	obj_data, obj, pageNames, parAttrs, ignore_defaults )
@@ -78,46 +76,44 @@ class SaveLoad:
 			save_data[obj.path] = obj_data
 
 			
-			# return
-			for root_object in root_objects:
-				try:
-					secondaryEvalExpr = "op('%s')%s"%( root_object.path,find_children_expression_secondary)
-					secondaryResults = eval(secondaryEvalExpr) if find_children_expression_secondary != '' else []
-				except:
-					debug('could not eval the expression:', find_children_expression_secondary)
-					secondaryResults = []
+		# return
+		for root_object in root_objects:
+			try:
+				secondaryEvalExpr = "op('%s')%s"%( root_object.path,find_children_expression_secondary)
 
-				# print(secondaryResults)
-				# return
+				secondaryResults = eval(secondaryEvalExpr) if find_children_expression_secondary != '' else []
+			except:
+				debug('could not eval the expression:', find_children_expression_secondary)
+				secondaryResults = []
 
-				all_secondary_obj_data = {}
+			all_secondary_obj_data = {}
 
-				for each in secondaryResults:
+			for each in secondaryResults:
+				secondary_obj_data = {}
 
-					secondary_obj_data = {}
+				#### save operator level attributes.
+				secondary_obj_data = SaveLoadGlobal.SaveLoad_get_clone_op_attribute( secondary_obj_data, each )
+				secondary_obj_data = SaveLoadGlobal.SaveLoad_get_general_op_data( secondary_obj_data, each )
 
-					#### save operator level attributes.
-					secondary_obj_data = SaveLoadGlobal.SaveLoad_get_clone_op_attribute( secondary_obj_data, each )
-					secondary_obj_data = SaveLoadGlobal.SaveLoad_get_general_op_data( secondary_obj_data, each )
+				#### save operator and sub operator level node storage.
+				secondary_obj_data = SaveLoadGlobal.SaveLoad_get_op_node_storage( secondary_obj_data, each, sub_operators )
 
-					#### save operator and sub operator level node storage.
-					secondary_obj_data = SaveLoadGlobal.SaveLoad_get_op_node_storage( secondary_obj_data, each, sub_operators )
+				#### save operator hierarchy parent.
+				secondary_obj_data = SaveLoadGlobal.SaveLoad_get_comp_hierearchy_inputs( secondary_obj_data, each )
+				secondary_obj_data = SaveLoadGlobal.SaveLoad_get_comp_node_inputs( secondary_obj_data, each )
 
-					#### save operator hierarchy parent.
-					secondary_obj_data = SaveLoadGlobal.SaveLoad_get_comp_hierearchy_inputs( secondary_obj_data, each )
-					secondary_obj_data = SaveLoadGlobal.SaveLoad_get_comp_node_inputs( secondary_obj_data, each )
+				#### save custom parameters 
+				pageNames = SaveLoadGlobal.SaveLoad_get_uppercase_custom_parameter_pages( each )
+				pageNames += extra_page_names # add some others we have in scene objects.
 
-					#### save custom parameters 
-					pageNames = SaveLoadGlobal.SaveLoad_get_uppercase_custom_parameter_pages( each )
-					pageNames += extra_page_names # add some others we have in scene objects.
+				parAttrs = SaveLoadGlobal.SaveLoad_get_typical_parameter_attributes_to_save()
+				ignoreDefault = False
+				secondary_obj_data = SaveLoadGlobal.SaveLoad_get_parameter_data( secondary_obj_data, each, pageNames, parAttrs, ignoreDefault )
 
-					parAttrs = SaveLoadGlobal.SaveLoad_get_typical_parameter_attributes_to_save()
-					ignoreDefault = False
-					secondary_obj_data = SaveLoadGlobal.SaveLoad_get_parameter_data( secondary_obj_data, each, pageNames, parAttrs, ignoreDefault )
+				all_secondary_obj_data[each.path] = secondary_obj_data
 
-					all_secondary_obj_data[each.path] = secondary_obj_data
-
-				save_data[obj.path]['__secondarylayer__'] = all_secondary_obj_data
+			# print('---',root_object)
+			save_data[root_object]['__secondarylayer__'] = all_secondary_obj_data
 
 
 

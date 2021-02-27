@@ -13,7 +13,16 @@ class SaveLoad:
 		self.ownerComp = ownerComp
 
 
-	def SaveLoad_GET( self , root_op , include_self , find_children_expression , sub_operators , extra_page_names , extra_parameter_attributes , ignore_defaults , find_children_expression_secondary ):
+	def SaveLoad_GET( self , 
+			root_op , 
+			include_self , 
+			find_children_expression , 
+			sub_operators , 
+			extra_page_names , 
+			extra_parameter_attributes , 
+			ignore_defaults , 
+			find_children_expression_secondary ,
+			panel_values ):
 		'''
 		returns a dictionary of save data from the saveable items/parameters.
 		effectively this is the SAVE function.
@@ -38,6 +47,8 @@ class SaveLoad:
 		extra_page_names = [ each for each in extra_page_names.split(',') if each != '' ]
 		extra_parameter_attributes = [ each for each in extra_parameter_attributes.split(',') if each != '' ]
 
+		panel_value_names = panel_values.split(',')	
+
 
 		save_data = {}
 
@@ -52,6 +63,7 @@ class SaveLoad:
 			#### save operator level attributes.
 			obj_data = SaveLoadGlobal.SaveLoad_get_clone_op_attribute( obj_data, obj )
 			obj_data = SaveLoadGlobal.SaveLoad_get_general_op_data( obj_data, obj )
+			obj_data = SaveLoadGlobal.SaveLoad_get_panel_data( obj_data, panel_value_names, obj )
 
 			#### save operator and sub operator level node storage.
 			obj_data = SaveLoadGlobal.SaveLoad_get_op_node_storage( obj_data, obj, sub_operators )
@@ -94,6 +106,7 @@ class SaveLoad:
 				#### save operator level attributes.
 				secondary_obj_data = SaveLoadGlobal.SaveLoad_get_clone_op_attribute( secondary_obj_data, each )
 				secondary_obj_data = SaveLoadGlobal.SaveLoad_get_general_op_data( secondary_obj_data, each )
+				secondary_obj_data = SaveLoadGlobal.SaveLoad_get_panel_data( secondary_obj_data, panel_value_names, each )
 
 				#### save operator and sub operator level node storage.
 				secondary_obj_data = SaveLoadGlobal.SaveLoad_get_op_node_storage( secondary_obj_data, each, sub_operators )

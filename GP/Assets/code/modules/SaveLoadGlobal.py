@@ -176,6 +176,41 @@ def SaveLoad_get_general_op_data( obj_data, targetOp ):
 	return obj_data
 
 
+def SaveLoad_get_panel_data( obj_data, panel_value_names, targetOp ):
+	'''
+	gets some panel attributes if they exist, from the target OP. put them in the obj_data dict.
+	'''
+
+	assert type(panel_value_names) == list,'panel attribute names argument must be a list of strings...'
+
+	# filter out blanks.
+	panel_value_names = [ x for x in panel_value_names if x not in [''] ]
+
+	# if there is at least one panel attribute name,
+	if len(panel_value_names) > 0:
+
+		# if target OP even has a panel member.
+		if hasattr( targetOp , 'panel' ):
+
+			# get a reference to the panel object.
+			opPanelObject = getattr( targetOp , 'panel' )
+			
+			# loop through the panel attribute names provided.
+			for panelAttrName in panel_value_names:
+				# print("<%s>"%(panelAttrName))
+				# if the panel object contains the attribute we're trying to save... proceed.
+				if hasattr( opPanelObject , panelAttrName ):
+					
+					# handle panel state edge cases here IF needed.
+					panelAttrVal = float( getattr( opPanelObject , panelAttrName ) )
+
+					obj_data['.panel.%s'%(panelAttrName)] = panelAttrVal
+				else:
+					print( 'Panel attribute: %s.%s.%s could not be found or is invalid, skipping..'%( targetOp.path , 'panel' , panelAttrName ) )
+	
+	return obj_data
+
+
 def SaveLoad_get_parameter_data( obj_data, targetOp, pageNames, parAttrs, ignoreDefault ):
 	'''
 	gets parameter data of the operator, and returns a dict.
@@ -532,16 +567,30 @@ def SaveLoad_set_typical_operator_attributes( full_attribute_path , value_ ):
 					else:
 						setattr( eval(objectEval_) , attr_ , '' )
 			
-			# CASE #2 - might be setting a parameter's val -this is common...
+			# CASE #3 - might be setting a parameter's val -this is common...
 			elif attr_ == 'val':
 				
 				# but it might also be a non custom parameter named mode.. so lets check if this is a param attr or not.
 				if '.par.' in objectEval_:
 					if getattr( eval(objectEval_) , 'mode' ) not in [ ParMode.EXPRESSION ]:
 						setattr( eval(objectEval_) , attr_ , value_ )
+
+			
+			# CASE #4 - might be a panel state - ie a button COMP.
+			# elif objectEval_.endswith('.panel'):
+				'''
+				# if it's a button COMP type situation where we want to set the panel.state attribute.
+				if attr_ == 'state':
+					# NOTE: thought we needed an edge case handler for this situation but turns out we didn't.
+					# leaving this here anyways incase we need it later.
+					setattr( eval(objectEval_) , attr_ , value_ )
+					# eval(objectEval_.split('.')[0]).click( bool(value_) ) # click it
+				'''
+				# pass
 			
 			# GENERAL CASE:
 			else:
+				# print(objectEval_,attr_,value_)
 				setattr( eval(objectEval_) , attr_ , value_ )
 		except tdError as E:
 			if not str(E).startswith( 'Custom parameter expected. ' ):

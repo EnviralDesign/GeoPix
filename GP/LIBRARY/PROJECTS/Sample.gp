@@ -5930,6 +5930,250 @@
         "__operatorinputs__": {},
         "__secondarylayer__": {}
     },
+    "/software/top/IOV2/IO_ROOT/Macro": {
+        ".activeViewer": false,
+        ".color": [
+            0.0,
+            0.6800000071525574,
+            0.0
+        ],
+        ".display": true,
+        ".name": "Macro",
+        ".nodeHeight": 130,
+        ".nodeWidth": 160,
+        ".nodeX": -4,
+        ".nodeY": 67,
+        ".par.Blocktypeorder.enable": true,
+        ".par.Blocktypeorder.expr": "['PixFrame']",
+        ".par.Blocktypeorder.mode": "ParMode.EXPRESSION",
+        ".par.Blocktypeorder.val": "['PixFrame']",
+        ".par.Cue.enable": true,
+        ".par.Cue.val": 0,
+        ".par.Cuepoint.enable": false,
+        ".par.Cuepoint.val": 0.2,
+        ".par.Cyclemode.enable": false,
+        ".par.Cyclemode.val": "infinite",
+        ".par.Delay.enable": false,
+        ".par.Delay.val": 0.0,
+        ".par.Description.enable": true,
+        ".par.Description.val": "",
+        ".par.Entermacro.enable": true,
+        ".par.Entermacro.val": 0,
+        ".par.Help.enable": true,
+        ".par.Help.val": "https://www.enviral-design.com/wiki/schemes/",
+        ".par.In.enable": true,
+        ".par.In.expr": "[]",
+        ".par.In.mode": "ParMode.EXPRESSION",
+        ".par.In.val": "[]",
+        ".par.Initialize.enable": true,
+        ".par.Initialize.val": 0,
+        ".par.Iodict.enable": true,
+        ".par.Iodict.expr": "None",
+        ".par.Iodict.mode": "ParMode.EXPRESSION",
+        ".par.Iodict.val": "None",
+        ".par.Length.enable": true,
+        ".par.Length.val": 2.0,
+        ".par.Locality.enable": true,
+        ".par.Locality.val": "Allowedinroot",
+        ".par.Macrofade.enable": true,
+        ".par.Macrofade.val": 1.0,
+        ".par.Name.enable": true,
+        ".par.Name.val": "Macro_2",
+        ".par.Numcycles.enable": false,
+        ".par.Numcycles.val": 2,
+        ".par.Objtype.enable": true,
+        ".par.Objtype.val": 10,
+        ".par.Orderid.enable": true,
+        ".par.Orderid.val": 0,
+        ".par.Out.enable": true,
+        ".par.Out.expr": "[{'A': 'Tex_Out1', 'B': '70/Projector1'}]",
+        ".par.Out.mode": "ParMode.EXPRESSION",
+        ".par.Out.val": "[{'A': 'Tex_Out1', 'B': '70/Projector1'}]",
+        ".par.Performdict.enable": true,
+        ".par.Performdict.expr": "{}",
+        ".par.Performdict.mode": "ParMode.EXPRESSION",
+        ".par.Performdict.val": "{}",
+        ".par.Play.enable": true,
+        ".par.Play.val": true,
+        ".par.Repeatmode.enable": true,
+        ".par.Repeatmode.val": "loop",
+        ".par.Resx.enable": true,
+        ".par.Resx.val": 960,
+        ".par.Resy.enable": true,
+        ".par.Resy.val": 540,
+        ".par.Schemedict.enable": true,
+        ".par.Schemedict.expr": "None",
+        ".par.Schemedict.mode": "ParMode.EXPRESSION",
+        ".par.Schemedict.val": "None",
+        ".par.Selected.enable": true,
+        ".par.Selected.val": true,
+        ".par.Sequenceattribnames.enable": true,
+        ".par.Sequenceattribnames.expr": "['BlockType','BlockName','BlockStart','BlockLength','Intensity','FadeIn','FadeOut','BlockOrder','BlockPath','Selected']",
+        ".par.Sequenceattribnames.mode": "ParMode.EXPRESSION",
+        ".par.Sequenceattribnames.val": "['BlockType','BlockName','BlockStart','BlockLength','Intensity','FadeIn','FadeOut','BlockOrder','BlockPath','Selected']",
+        ".par.Sequenceattribvals.enable": true,
+        ".par.Sequenceattribvals.expr": "['PixFrame', 'MyBlock', 0, 60, 1.0, 0, 0, 0, 'MyPath', 1]",
+        ".par.Sequenceattribvals.mode": "ParMode.EXPRESSION",
+        ".par.Sequenceattribvals.val": "['PixFrame', 'MyBlock', 0, 60, 1.0, 0, 0, 0, 'MyPath', 1]",
+        ".par.Sequenceeditorlabel.enable": true,
+        ".par.Sequenceeditorlabel.val": "",
+        ".par.Sequences.enable": true,
+        ".par.Sequences.expr": "[]",
+        ".par.Sequences.mode": "ParMode.EXPRESSION",
+        ".par.Sequences.val": "[]",
+        ".par.Speed.enable": false,
+        ".par.Speed.val": 1.0,
+        ".par.Start.enable": true,
+        ".par.Start.val": 0,
+        ".par.Stop.enable": true,
+        ".par.Stop.val": 0,
+        ".par.Tags.enable": true,
+        ".par.Tags.val": "",
+        ".par.Thumbdata.enable": true,
+        ".par.Thumbdata.val": "",
+        ".par.Thumbnail.enable": true,
+        ".par.Thumbnail.val": "",
+        ".par.Timingmode.enable": false,
+        ".par.Timingmode.val": "Independent",
+        ".par.Tx.enable": true,
+        ".par.Tx.val": 37.5144,
+        ".par.Ty.enable": true,
+        ".par.Ty.val": 66.2381,
+        ".par.Units.enable": true,
+        ".par.Units.val": "seconds",
+        ".par.Viewer.enable": true,
+        ".par.Viewer.val": true,
+        ".par.clone": "/software/top/IOV2/IO_TEMPLATES_V3/SYS/All/Macro",
+        ".pickable": true,
+        ".render": true,
+        ".storage": {},
+        ".viewer": true,
+        "__hierarchyinputs__": {},
+        "__operatorinputs__": {},
+        "__secondarylayer__": {
+            "/software/top/IOV2/IO_ROOT/Macro/GRAPH/Ramp": {
+                ".activeViewer": false,
+                ".color": [
+                    0.0,
+                    0.6800000071525574,
+                    0.0
+                ],
+                ".display": true,
+                ".name": "Ramp",
+                ".nodeHeight": 135,
+                ".nodeWidth": 163,
+                ".nodeX": -75,
+                ".nodeY": -75,
+                ".par.Begin.enable": true,
+                ".par.Begin.val": 0.0,
+                ".par.Description.enable": true,
+                ".par.Description.val": "This is a Ramp",
+                ".par.Editramp.enable": true,
+                ".par.Editramp.val": 0,
+                ".par.Enabletiming.enable": true,
+                ".par.Enabletiming.val": true,
+                ".par.Extendleft.enable": true,
+                ".par.Extendleft.val": "repeat",
+                ".par.Extendright.enable": true,
+                ".par.Extendright.val": "repeat",
+                ".par.Help.enable": true,
+                ".par.Help.val": "",
+                ".par.Interpolation.enable": true,
+                ".par.Interpolation.val": "hermite",
+                ".par.Leftmode.enable": true,
+                ".par.Leftmode.val": "loop",
+                ".par.Length.enable": true,
+                ".par.Length.val": 1.0,
+                ".par.Locality.enable": true,
+                ".par.Locality.val": "Allowedinmacro",
+                ".par.Name.enable": true,
+                ".par.Name.val": "Ramp1",
+                ".par.Objtype.enable": true,
+                ".par.Objtype.val": 11,
+                ".par.Period.enable": true,
+                ".par.Period.val": 1.0,
+                ".par.Phase.enable": false,
+                ".par.Phase.val": 0.0,
+                ".par.Phaseoffset.enable": true,
+                ".par.Phaseoffset.val": 0.0,
+                ".par.Rampdata.enable": true,
+                ".par.Rampdata.expr": "[0, 0, 0, 0, 1], [0.1964736, 0, 0, 0, 1], [0.324937, 0.1503501, 0, 0.291, 1], [0.5138539, 0.03129501, 0.07610371, 0.569, 1], [0.6649874, 0.248, 0.436, 1, 1], [0.8036265, 0.08200002, 0.7093, 1, 1], [0.8262965, 0, 0, 0, 1]",
+                ".par.Rampdata.mode": "ParMode.EXPRESSION",
+                ".par.Rampdata.val": "[0, 0, 0, 0, 1], [0.1964736, 0, 0, 0, 1], [0.324937, 0.1503501, 0, 0.291, 1], [0.5138539, 0.03129501, 0.07610371, 0.569, 1], [0.6649874, 0.248, 0.436, 1, 1], [0.8036265, 0.08200002, 0.7093, 1, 1], [0.8262965, 0, 0, 0, 1]",
+                ".par.Resx.enable": true,
+                ".par.Resx.val": 960,
+                ".par.Resy.enable": true,
+                ".par.Resy.val": 540,
+                ".par.Rightmode.enable": true,
+                ".par.Rightmode.val": "loop",
+                ".par.Selected.enable": true,
+                ".par.Selected.val": true,
+                ".par.Tx.enable": true,
+                ".par.Tx.val": 0.0,
+                ".par.Ty.enable": true,
+                ".par.Ty.val": 0.0,
+                ".par.Type.enable": true,
+                ".par.Type.val": "radial",
+                ".par.Viewer.enable": true,
+                ".par.Viewer.val": true,
+                ".par.clone": "/software/top/IOV2/IO_TEMPLATES_V3/TEX/Generative/Ramp",
+                ".pickable": true,
+                ".render": true,
+                ".storage": {},
+                ".viewer": true,
+                "__hierarchyinputs__": {},
+                "__operatorinputs__": {}
+            },
+            "/software/top/IOV2/IO_ROOT/Macro/GRAPH/TexOut": {
+                ".activeViewer": false,
+                ".color": [
+                    0.0,
+                    0.4533329904079437,
+                    0.6800000071525574
+                ],
+                ".display": true,
+                ".name": "TexOut",
+                ".nodeHeight": 135,
+                ".nodeWidth": 163,
+                ".nodeX": 518,
+                ".nodeY": -75,
+                ".par.Description.enable": true,
+                ".par.Description.val": "",
+                ".par.Help.enable": true,
+                ".par.Help.val": "",
+                ".par.Locality.enable": true,
+                ".par.Locality.val": "Allowedinmacro",
+                ".par.Name.enable": true,
+                ".par.Name.val": "Tex_Out1",
+                ".par.Objtype.enable": true,
+                ".par.Objtype.val": 14,
+                ".par.Resx.enable": true,
+                ".par.Resx.val": 960,
+                ".par.Resy.enable": true,
+                ".par.Resy.val": 540,
+                ".par.Selected.enable": true,
+                ".par.Selected.val": false,
+                ".par.Tx.enable": true,
+                ".par.Tx.val": 300.0,
+                ".par.Ty.enable": true,
+                ".par.Ty.val": 0.0,
+                ".par.Viewer.enable": true,
+                ".par.Viewer.val": true,
+                ".par.clone": "/software/top/IOV2/IO_TEMPLATES_V3/TEX/Utilities/TexOut",
+                ".pickable": true,
+                ".render": true,
+                ".storage": {},
+                ".viewer": true,
+                "__hierarchyinputs__": {},
+                "__operatorinputs__": {
+                    "0": {
+                        "index": 0,
+                        "path": "/software/top/IOV2/IO_ROOT/Macro/GRAPH/Ramp"
+                    }
+                }
+            }
+        }
+    },
     "/software/top/MenuBar/guiMenu/Performance_Engine": {
         ".activeViewer": false,
         ".color": [
@@ -6146,7 +6390,7 @@
         ],
         ".display": false,
         ".name": "Viewport",
-        ".nodeHeight": 749,
+        ".nodeHeight": 1070,
         ".nodeWidth": 1135,
         ".nodeX": -525,
         ".nodeY": -275,
@@ -6297,7 +6541,7 @@
         ".nodeX": -1925,
         ".nodeY": -1775,
         ".par.Camunrformedx.enable": true,
-        ".par.Camunrformedx.val": -40.74333190917969,
+        ".par.Camunrformedx.val": -45.96076202392578,
         ".par.Camunrformedy.enable": true,
         ".par.Camunrformedy.val": 0.0,
         ".par.Camunrformedz.enable": true,
@@ -6305,21 +6549,21 @@
         ".par.Camunxformedx.enable": true,
         ".par.Camunxformedx.val": 0.0,
         ".par.Camunxformedy.enable": true,
-        ".par.Camunxformedy.val": 374.9312438964844,
+        ".par.Camunxformedy.val": 495.5469970703125,
         ".par.Camunxformedz.enable": true,
-        ".par.Camunxformedz.val": 435.2315673828125,
+        ".par.Camunxformedz.val": 479.2004699707031,
         ".par.Camvectorx.enable": true,
-        ".par.Camvectorx.val": 0.34815531969070435,
+        ".par.Camvectorx.val": -0.07473596930503845,
         ".par.Camvectory.enable": true,
-        ".par.Camvectory.val": 0.34815534949302673,
+        ".par.Camvectory.val": 0.39046192169189453,
         ".par.Camvectorz.enable": true,
-        ".par.Camvectorz.val": 0.8703882694244385,
+        ".par.Camvectorz.val": 0.9175805449485779,
         ".par.Camwsx.enable": true,
-        ".par.Camwsx.val": 200.0,
+        ".par.Camwsx.val": -55.11424493789673,
         ".par.Camwsy.enable": true,
-        ".par.Camwsy.val": 200.0,
+        ".par.Camwsy.val": 252.25589179992676,
         ".par.Camwsz.enable": true,
-        ".par.Camwsz.val": 500.0,
+        ".par.Camwsz.val": 655.6390342712402,
         ".par.Dollyenabled.enable": true,
         ".par.Dollyenabled.val": true,
         ".par.Dollywheelenabled.enable": true,
@@ -6327,11 +6571,11 @@
         ".par.Farclip.enable": true,
         ".par.Farclip.val": 20000.0,
         ".par.Focaldist.enable": true,
-        ".par.Focaldist.val": 574.4562377929688,
+        ".par.Focaldist.val": 689.3474731445312,
         ".par.Focprojheight.enable": true,
-        ".par.Focprojheight.val": -310.8358154296875,
+        ".par.Focprojheight.val": -539.608154296875,
         ".par.Focprojwidth.enable": true,
-        ".par.Focprojwidth.val": -475.8950500488281,
+        ".par.Focprojwidth.val": -571.0740356445312,
         ".par.Invertu.enable": true,
         ".par.Invertu.val": false,
         ".par.Invertv.enable": true,
@@ -6347,49 +6591,49 @@
         ".par.Perspectivetoorthographic.enable": true,
         ".par.Perspectivetoorthographic.val": 0.0,
         ".par.Pivotx.enable": true,
-        ".par.Pivotx.val": 0.0,
+        ".par.Pivotx.val": -3.5951931476593018,
         ".par.Pivoty.enable": true,
-        ".par.Pivoty.val": -1.2237260307301767e-05,
+        ".par.Pivoty.val": -16.908048629760742,
         ".par.Pivotz.enable": true,
-        ".par.Pivotz.val": 1.6720588973839767e-05,
+        ".par.Pivotz.val": 23.107223510742188,
         ".par.Quatrotx1.enable": true,
-        ".par.Quatrotx1.val": -0.17686599493026733,
+        ".par.Quatrotx1.val": -0.19922468066215515,
         ".par.Quatrotx2.enable": true,
         ".par.Quatrotx2.val": 0.0,
         ".par.Quatrotx3.enable": true,
         ".par.Quatrotx3.val": 0.0,
         ".par.Quatrotx4.enable": true,
-        ".par.Quatrotx4.val": 0.9842349290847778,
+        ".par.Quatrotx4.val": 0.9799538850784302,
         ".par.Quatroty1.enable": true,
         ".par.Quatroty1.val": 0.0,
         ".par.Quatroty2.enable": true,
-        ".par.Quatroty2.val": 0.1891075223684311,
+        ".par.Quatroty2.val": -0.04062359780073166,
         ".par.Quatroty3.enable": true,
         ".par.Quatroty3.val": 0.0,
         ".par.Quatroty4.enable": true,
-        ".par.Quatroty4.val": 0.981956422328949,
+        ".par.Quatroty4.val": 0.9991745948791504,
         ".par.Rerotatex.enable": true,
-        ".par.Rerotatex.val": 20.36880111694336,
+        ".par.Rerotatex.val": 22.977514266967773,
         ".par.Rerotatey.enable": true,
-        ".par.Rerotatey.val": 21.801408767700195,
+        ".par.Rerotatey.val": -4.656402587890625,
         ".par.Reset.enable": true,
         ".par.Reset.val": 0,
         ".par.Rx.enable": true,
-        ".par.Rx.val": -24.660245895385742,
+        ".par.Rx.val": -41.05778503417969,
         ".par.Ry.enable": true,
-        ".par.Ry.val": 32.23169708251953,
+        ".par.Ry.val": 10.808377265930176,
         ".par.Rz.enable": true,
         ".par.Rz.val": 0.0,
         ".par.Startuvx.enable": true,
-        ".par.Startuvx.val": 0.5523114355231143,
+        ".par.Startuvx.val": 0.687793427230047,
         ".par.Startuvy.enable": true,
-        ".par.Startuvy.val": 0.4583850931677019,
+        ".par.Startuvy.val": 0.6409937888198758,
         ".par.Tx.enable": true,
-        ".par.Tx.val": 278.440185546875,
+        ".par.Tx.val": 93.88041567802429,
         ".par.Ty.enable": true,
-        ".par.Ty.val": 239.684146087935,
+        ".par.Ty.val": 435.86902046203613,
         ".par.Tz.enable": true,
-        ".par.Tz.val": 441.6135726287921,
+        ".par.Tz.val": 533.6866912841797,
         ".par.Zoomdirectionfix.enable": true,
         ".par.Zoomdirectionfix.val": true,
         ".par.clone": null,
@@ -6401,6 +6645,1864 @@
             }
         },
         ".viewer": false,
+        "__hierarchyinputs__": {},
+        "__operatorinputs__": {},
+        "__secondarylayer__": {}
+    },
+    "/software/top/PixelMapEditor/logic/geoHolder/Fixture1": {
+        ".activeViewer": false,
+        ".color": [
+            0.6800000071525574,
+            0.22666700184345245,
+            0.0
+        ],
+        ".display": true,
+        ".name": "Fixture1",
+        ".nodeHeight": 91,
+        ".nodeWidth": 116,
+        ".nodeX": 175,
+        ".nodeY": -100,
+        ".par.Absuniversee.enable": false,
+        ".par.Absuniversee.val": 1,
+        ".par.Arraycount1.enable": true,
+        ".par.Arraycount1.val": 1,
+        ".par.Arraycount2.enable": true,
+        ".par.Arraycount2.val": 1,
+        ".par.Arraycount3.enable": true,
+        ".par.Arraycount3.val": 1,
+        ".par.Attenuationdistance.enable": true,
+        ".par.Attenuationdistance.val": 200.0,
+        ".par.Attenuationfalloff.enable": true,
+        ".par.Attenuationfalloff.val": 2.0,
+        ".par.Brightnessmultiplier.enable": true,
+        ".par.Brightnessmultiplier.val": 1.0,
+        ".par.Channel.enable": true,
+        ".par.Channel.val": 1,
+        ".par.Chanorder.enable": true,
+        ".par.Chanorder.val": "r,g,b",
+        ".par.Clusterimmune.enable": true,
+        ".par.Clusterimmune.val": false,
+        ".par.Emitterconeangle.enable": true,
+        ".par.Emitterconeangle.val": 5.0,
+        ".par.Emitterconedelta.enable": true,
+        ".par.Emitterconedelta.val": 15.0,
+        ".par.Emitterconefalloff.enable": true,
+        ".par.Emitterconefalloff.val": 1.0,
+        ".par.Emitterdirectionx.enable": true,
+        ".par.Emitterdirectionx.val": 0.0,
+        ".par.Emitterdirectiony.enable": true,
+        ".par.Emitterdirectiony.val": 0.0,
+        ".par.Emitterdirectionz.enable": true,
+        ".par.Emitterdirectionz.val": 1.0,
+        ".par.Fdeviceid.enable": true,
+        ".par.Fdeviceid.val": 1,
+        ".par.Fixtureactive.enable": true,
+        ".par.Fixtureactive.val": true,
+        ".par.Genblock.enable": true,
+        ".par.Genblock.val": false,
+        ".par.Help.enable": true,
+        ".par.Help.val": "https://www.enviral-design.com/wiki/fixture/",
+        ".par.Hullbuffer.enable": true,
+        ".par.Hullbuffer.expr": "{}",
+        ".par.Hullbuffer.mode": "ParMode.EXPRESSION",
+        ".par.Hullbuffer.val": "{}",
+        ".par.Hullsnapping.enable": true,
+        ".par.Hullsnapping.val": true,
+        ".par.Iconindex.enable": true,
+        ".par.Iconindex.val": 40,
+        ".par.Illuminationmode.enable": true,
+        ".par.Illuminationmode.val": "point",
+        ".par.Name.enable": true,
+        ".par.Name.val": "Fixture1",
+        ".par.Nett.enable": false,
+        ".par.Nett.val": 1,
+        ".par.Objtype.enable": true,
+        ".par.Objtype.val": 2,
+        ".par.Originrotatex.enable": true,
+        ".par.Originrotatex.val": 0.0,
+        ".par.Originrotatey.enable": true,
+        ".par.Originrotatey.val": 0.0,
+        ".par.Originrotatez.enable": true,
+        ".par.Originrotatez.val": 0.0,
+        ".par.Originscalex.enable": true,
+        ".par.Originscalex.val": 1.0,
+        ".par.Originscaley.enable": true,
+        ".par.Originscaley.val": 1.0,
+        ".par.Originscalez.enable": true,
+        ".par.Originscalez.val": 1.0,
+        ".par.Origintranslatex.enable": true,
+        ".par.Origintranslatex.val": 0.0,
+        ".par.Origintranslatey.enable": true,
+        ".par.Origintranslatey.val": 0.0,
+        ".par.Origintranslatez.enable": true,
+        ".par.Origintranslatez.val": 0.0,
+        ".par.Outlinercollapsed.enable": true,
+        ".par.Outlinercollapsed.val": false,
+        ".par.Pikcontribute.enable": true,
+        ".par.Pikcontribute.val": true,
+        ".par.Pivotsnapping.enable": true,
+        ".par.Pivotsnapping.val": true,
+        ".par.Pixbuffer.enable": true,
+        ".par.Pixbuffer.expr": "{}",
+        ".par.Pixbuffer.mode": "ParMode.EXPRESSION",
+        ".par.Pixbuffer.val": "{}",
+        ".par.Pixfill.enable": true,
+        ".par.Pixfill.val": false,
+        ".par.Pixfillamount.enable": false,
+        ".par.Pixfillamount.val": 512,
+        ".par.Pixframeeditor.enable": false,
+        ".par.Pixframeeditor.val": true,
+        ".par.Pixscale.enable": true,
+        ".par.Pixscale.val": 3.0,
+        ".par.Pixsnapping.enable": true,
+        ".par.Pixsnapping.val": true,
+        ".par.Pixsplit.enable": true,
+        ".par.Pixsplit.val": false,
+        ".par.Posttranslate1x.enable": true,
+        ".par.Posttranslate1x.val": 0.0,
+        ".par.Posttranslate1y.enable": true,
+        ".par.Posttranslate1y.val": 0.0,
+        ".par.Posttranslate1z.enable": true,
+        ".par.Posttranslate1z.val": 0.0,
+        ".par.Posttranslate2x.enable": true,
+        ".par.Posttranslate2x.val": 0.0,
+        ".par.Posttranslate2y.enable": true,
+        ".par.Posttranslate2y.val": 0.0,
+        ".par.Posttranslate2z.enable": true,
+        ".par.Posttranslate2z.val": 0.0,
+        ".par.Posttranslate3x.enable": true,
+        ".par.Posttranslate3x.val": 0.0,
+        ".par.Posttranslate3y.enable": true,
+        ".par.Posttranslate3y.val": 0.0,
+        ".par.Posttranslate3z.enable": true,
+        ".par.Posttranslate3z.val": 0.0,
+        ".par.Randomrotatex.enable": true,
+        ".par.Randomrotatex.val": 0.0,
+        ".par.Randomrotatey.enable": true,
+        ".par.Randomrotatey.val": 0.0,
+        ".par.Randomrotatez.enable": true,
+        ".par.Randomrotatez.val": 0.0,
+        ".par.Randomscalex.enable": true,
+        ".par.Randomscalex.val": 0.0,
+        ".par.Randomscaley.enable": true,
+        ".par.Randomscaley.val": 0.0,
+        ".par.Randomscalez.enable": true,
+        ".par.Randomscalez.val": 0.0,
+        ".par.Randomtranslatex.enable": true,
+        ".par.Randomtranslatex.val": 0.0,
+        ".par.Randomtranslatey.enable": true,
+        ".par.Randomtranslatey.val": 0.0,
+        ".par.Randomtranslatez.enable": true,
+        ".par.Randomtranslatez.val": 0.0,
+        ".par.Relativepivot1x.enable": true,
+        ".par.Relativepivot1x.val": 0.0,
+        ".par.Relativepivot1y.enable": true,
+        ".par.Relativepivot1y.val": 0.0,
+        ".par.Relativepivot1z.enable": true,
+        ".par.Relativepivot1z.val": 0.0,
+        ".par.Relativepivot2x.enable": true,
+        ".par.Relativepivot2x.val": 0.0,
+        ".par.Relativepivot2y.enable": true,
+        ".par.Relativepivot2y.val": 0.0,
+        ".par.Relativepivot2z.enable": true,
+        ".par.Relativepivot2z.val": 0.0,
+        ".par.Relativepivot3x.enable": true,
+        ".par.Relativepivot3x.val": 0.0,
+        ".par.Relativepivot3y.enable": true,
+        ".par.Relativepivot3y.val": 0.0,
+        ".par.Relativepivot3z.enable": true,
+        ".par.Relativepivot3z.val": 0.0,
+        ".par.Relativerotate1x.enable": true,
+        ".par.Relativerotate1x.val": 0.0,
+        ".par.Relativerotate1y.enable": true,
+        ".par.Relativerotate1y.val": 0.0,
+        ".par.Relativerotate1z.enable": true,
+        ".par.Relativerotate1z.val": 0.0,
+        ".par.Relativerotate2x.enable": true,
+        ".par.Relativerotate2x.val": 0.0,
+        ".par.Relativerotate2y.enable": true,
+        ".par.Relativerotate2y.val": 0.0,
+        ".par.Relativerotate2z.enable": true,
+        ".par.Relativerotate2z.val": 0.0,
+        ".par.Relativerotate3x.enable": true,
+        ".par.Relativerotate3x.val": 0.0,
+        ".par.Relativerotate3y.enable": true,
+        ".par.Relativerotate3y.val": 0.0,
+        ".par.Relativerotate3z.enable": true,
+        ".par.Relativerotate3z.val": 0.0,
+        ".par.Relativescale1x.enable": true,
+        ".par.Relativescale1x.val": 1.0,
+        ".par.Relativescale1y.enable": true,
+        ".par.Relativescale1y.val": 1.0,
+        ".par.Relativescale1z.enable": true,
+        ".par.Relativescale1z.val": 1.0,
+        ".par.Relativescale2x.enable": true,
+        ".par.Relativescale2x.val": 1.0,
+        ".par.Relativescale2y.enable": true,
+        ".par.Relativescale2y.val": 1.0,
+        ".par.Relativescale2z.enable": true,
+        ".par.Relativescale2z.val": 1.0,
+        ".par.Relativescale3x.enable": true,
+        ".par.Relativescale3x.val": 1.0,
+        ".par.Relativescale3y.enable": true,
+        ".par.Relativescale3y.val": 1.0,
+        ".par.Relativescale3z.enable": true,
+        ".par.Relativescale3z.val": 1.0,
+        ".par.Relativetranslate1x.enable": true,
+        ".par.Relativetranslate1x.val": 0.0,
+        ".par.Relativetranslate1y.enable": true,
+        ".par.Relativetranslate1y.val": 0.0,
+        ".par.Relativetranslate1z.enable": true,
+        ".par.Relativetranslate1z.val": 0.0,
+        ".par.Relativetranslate2x.enable": true,
+        ".par.Relativetranslate2x.val": 0.0,
+        ".par.Relativetranslate2y.enable": true,
+        ".par.Relativetranslate2y.val": 0.0,
+        ".par.Relativetranslate2z.enable": true,
+        ".par.Relativetranslate2z.val": 0.0,
+        ".par.Relativetranslate3x.enable": true,
+        ".par.Relativetranslate3x.val": 0.0,
+        ".par.Relativetranslate3y.enable": true,
+        ".par.Relativetranslate3y.val": 0.0,
+        ".par.Relativetranslate3z.enable": true,
+        ".par.Relativetranslate3z.val": 0.0,
+        ".par.Resetinstancing.enable": true,
+        ".par.Resetinstancing.val": 0,
+        ".par.Rx.enable": true,
+        ".par.Rx.val": 0.0,
+        ".par.Ry.enable": true,
+        ".par.Ry.val": 0.0,
+        ".par.Rz.enable": true,
+        ".par.Rz.val": 0.0,
+        ".par.Selected.enable": true,
+        ".par.Selected.val": false,
+        ".par.Showhullcurves.enable": true,
+        ".par.Showhullcurves.val": true,
+        ".par.Showicon.enable": true,
+        ".par.Showicon.val": true,
+        ".par.Showpixcurves.enable": true,
+        ".par.Showpixcurves.val": true,
+        ".par.Subnett.enable": false,
+        ".par.Subnett.val": 1,
+        ".par.Sx.enable": true,
+        ".par.Sx.val": 1.0,
+        ".par.Sy.enable": true,
+        ".par.Sy.val": 1.0,
+        ".par.Sz.enable": true,
+        ".par.Sz.val": 1.0,
+        ".par.Tx.enable": true,
+        ".par.Tx.val": 0.0,
+        ".par.Ty.enable": true,
+        ".par.Ty.val": 0.0,
+        ".par.Tz.enable": true,
+        ".par.Tz.val": 0.0,
+        ".par.Uniformscale.enable": true,
+        ".par.Uniformscale.val": 1.0,
+        ".par.Universe.enable": true,
+        ".par.Universe.val": 1,
+        ".par.Uvfixture.enable": false,
+        ".par.Uvfixture.val": "",
+        ".par.Vertexsnapping.enable": false,
+        ".par.Vertexsnapping.val": true,
+        ".par.Visible.enable": true,
+        ".par.Visible.val": true,
+        ".par.clone": "/software/top/PixelMapEditor/logic/objectTypes/Fixture_template",
+        ".pickable": true,
+        ".render": true,
+        ".storage": {},
+        ".viewer": true,
+        "/PIXFRAME.storage": {
+            "extStored": {
+                "PixFrame": {}
+            }
+        },
+        "/hull.storage": {
+            "HullStored": {
+                "coordList": {
+                    "0": {
+                        "selected": 1,
+                        "u": 0,
+                        "v": 0,
+                        "x": -2.2028770446777344,
+                        "y": 70.67636108398438,
+                        "z": 50.0
+                    },
+                    "1": {
+                        "selected": 1,
+                        "u": 0,
+                        "v": 0,
+                        "x": 2.2028770446777344,
+                        "y": -70.67636108398438,
+                        "z": 180.47369384765625
+                    }
+                }
+            }
+        },
+        "/pix.storage": {
+            "GeneratorStored": {
+                "StoredProperty": null
+            },
+            "PixStored": {
+                "coordList": {
+                    "0": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": -2.2028770446777344
+                            },
+                            "y": {
+                                "val": 70.67636108398438
+                            },
+                            "z": {
+                                "val": 50.0
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "1": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": -2.112963695915378
+                            },
+                            "y": {
+                                "val": 67.79161165198501
+                            },
+                            "z": {
+                                "val": 52.662728445870535
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "2": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": -2.0230503471530215
+                            },
+                            "y": {
+                                "val": 64.90686221998565
+                            },
+                            "z": {
+                                "val": 55.32545689174107
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "3": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": -1.933136998390665
+                            },
+                            "y": {
+                                "val": 62.02211278798629
+                            },
+                            "z": {
+                                "val": 57.988185337611604
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "4": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": -1.8432236496283083
+                            },
+                            "y": {
+                                "val": 59.13736335598693
+                            },
+                            "z": {
+                                "val": 60.65091378348214
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "5": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": -1.7533103008659519
+                            },
+                            "y": {
+                                "val": 56.25261392398757
+                            },
+                            "z": {
+                                "val": 63.31364222935268
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "6": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": -1.6633969521035954
+                            },
+                            "y": {
+                                "val": 53.3678644919882
+                            },
+                            "z": {
+                                "val": 65.97637067522321
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "7": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": -1.573483603341239
+                            },
+                            "y": {
+                                "val": 50.48311505998884
+                            },
+                            "z": {
+                                "val": 68.63909912109375
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "8": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": -1.4835702545788823
+                            },
+                            "y": {
+                                "val": 47.59836562798948
+                            },
+                            "z": {
+                                "val": 71.30182756696428
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "9": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": -1.3936569058165258
+                            },
+                            "y": {
+                                "val": 44.71361619599011
+                            },
+                            "z": {
+                                "val": 73.96455601283482
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "10": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": -1.3037435570541693
+                            },
+                            "y": {
+                                "val": 41.82886676399075
+                            },
+                            "z": {
+                                "val": 76.62728445870536
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "11": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": -1.2138302082918129
+                            },
+                            "y": {
+                                "val": 38.94411733199139
+                            },
+                            "z": {
+                                "val": 79.29001290457589
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "12": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": -1.1239168595294564
+                            },
+                            "y": {
+                                "val": 36.05936789999203
+                            },
+                            "z": {
+                                "val": 81.95274135044643
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "13": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": -1.0340035107671
+                            },
+                            "y": {
+                                "val": 33.17461846799267
+                            },
+                            "z": {
+                                "val": 84.61546979631697
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "14": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": -0.9440901620047435
+                            },
+                            "y": {
+                                "val": 30.289869035993306
+                            },
+                            "z": {
+                                "val": 87.2781982421875
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "15": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": -0.8541768132423868
+                            },
+                            "y": {
+                                "val": 27.405119603993946
+                            },
+                            "z": {
+                                "val": 89.94092668805803
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "16": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": -0.7642634644800304
+                            },
+                            "y": {
+                                "val": 24.520370171994585
+                            },
+                            "z": {
+                                "val": 92.60365513392857
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "17": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": -0.6743501157176741
+                            },
+                            "y": {
+                                "val": 21.635620739995225
+                            },
+                            "z": {
+                                "val": 95.26638357979911
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "18": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": -0.5844367669553174
+                            },
+                            "y": {
+                                "val": 18.750871307995858
+                            },
+                            "z": {
+                                "val": 97.92911202566964
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "19": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": -0.494523418192961
+                            },
+                            "y": {
+                                "val": 15.866121875996498
+                            },
+                            "z": {
+                                "val": 100.59184047154017
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "20": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": -0.4046100694306043
+                            },
+                            "y": {
+                                "val": 12.981372443997131
+                            },
+                            "z": {
+                                "val": 103.25456891741072
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "21": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": -0.31469672066824783
+                            },
+                            "y": {
+                                "val": 10.096623011997778
+                            },
+                            "z": {
+                                "val": 105.91729736328125
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "22": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": -0.22478337190589115
+                            },
+                            "y": {
+                                "val": 7.211873579998411
+                            },
+                            "z": {
+                                "val": 108.58002580915179
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "23": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": -0.1348700231435349
+                            },
+                            "y": {
+                                "val": 4.327124147999044
+                            },
+                            "z": {
+                                "val": 111.24275425502232
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "24": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": -0.04495667438117845
+                            },
+                            "y": {
+                                "val": 1.4423747159996907
+                            },
+                            "z": {
+                                "val": 113.90548270089286
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "25": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": 0.04495667438117801
+                            },
+                            "y": {
+                                "val": -1.4423747159996765
+                            },
+                            "z": {
+                                "val": 116.56821114676339
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "26": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": 0.13487002314353447
+                            },
+                            "y": {
+                                "val": -4.3271241479990294
+                            },
+                            "z": {
+                                "val": 119.23093959263393
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "27": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": 0.22478337190589137
+                            },
+                            "y": {
+                                "val": -7.211873579998397
+                            },
+                            "z": {
+                                "val": 121.89366803850447
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "28": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": 0.3146967206682474
+                            },
+                            "y": {
+                                "val": -10.096623011997764
+                            },
+                            "z": {
+                                "val": 124.556396484375
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "29": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": 0.4046100694306043
+                            },
+                            "y": {
+                                "val": -12.981372443997131
+                            },
+                            "z": {
+                                "val": 127.21912493024554
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "30": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": 0.49452341819296075
+                            },
+                            "y": {
+                                "val": -15.866121875996484
+                            },
+                            "z": {
+                                "val": 129.88185337611606
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "31": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": 0.5844367669553172
+                            },
+                            "y": {
+                                "val": -18.75087130799585
+                            },
+                            "z": {
+                                "val": 132.5445818219866
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "32": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": 0.6743501157176737
+                            },
+                            "y": {
+                                "val": -21.635620739995204
+                            },
+                            "z": {
+                                "val": 135.20731026785714
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "33": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": 0.7642634644800301
+                            },
+                            "y": {
+                                "val": -24.52037017199457
+                            },
+                            "z": {
+                                "val": 137.8700387137277
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "34": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": 0.8541768132423861
+                            },
+                            "y": {
+                                "val": -27.405119603993924
+                            },
+                            "z": {
+                                "val": 140.53276715959822
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "35": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": 0.9440901620047435
+                            },
+                            "y": {
+                                "val": -30.289869035993306
+                            },
+                            "z": {
+                                "val": 143.19549560546875
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "36": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": 1.0340035107670995
+                            },
+                            "y": {
+                                "val": -33.17461846799266
+                            },
+                            "z": {
+                                "val": 145.85822405133928
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "37": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": 1.123916859529456
+                            },
+                            "y": {
+                                "val": -36.05936789999201
+                            },
+                            "z": {
+                                "val": 148.5209524972098
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "38": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": 1.2138302082918124
+                            },
+                            "y": {
+                                "val": -38.94411733199138
+                            },
+                            "z": {
+                                "val": 151.18368094308033
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "39": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": 1.3037435570541693
+                            },
+                            "y": {
+                                "val": -41.828866763990746
+                            },
+                            "z": {
+                                "val": 153.84640938895092
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "40": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": 1.3936569058165258
+                            },
+                            "y": {
+                                "val": -44.71361619599011
+                            },
+                            "z": {
+                                "val": 156.50913783482144
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "41": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": 1.4835702545788823
+                            },
+                            "y": {
+                                "val": -47.598365627989466
+                            },
+                            "z": {
+                                "val": 159.17186628069197
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "42": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": 1.5734836033412387
+                            },
+                            "y": {
+                                "val": -50.48311505998882
+                            },
+                            "z": {
+                                "val": 161.8345947265625
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "43": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": 1.6633969521035947
+                            },
+                            "y": {
+                                "val": -53.367864491988186
+                            },
+                            "z": {
+                                "val": 164.49732317243303
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "44": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": 1.753310300865952
+                            },
+                            "y": {
+                                "val": -56.25261392398755
+                            },
+                            "z": {
+                                "val": 167.16005161830358
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "45": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": 1.8432236496283085
+                            },
+                            "y": {
+                                "val": -59.137363355986906
+                            },
+                            "z": {
+                                "val": 169.8227800641741
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "46": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": 1.9331369983906646
+                            },
+                            "y": {
+                                "val": -62.02211278798629
+                            },
+                            "z": {
+                                "val": 172.48550851004464
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "47": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": 2.0230503471530206
+                            },
+                            "y": {
+                                "val": -64.90686221998564
+                            },
+                            "z": {
+                                "val": 175.1482369559152
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "48": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": 2.1129636959153775
+                            },
+                            "y": {
+                                "val": -67.791611651985
+                            },
+                            "z": {
+                                "val": 177.81096540178572
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    },
+                    "49": {
+                        "chans": {
+                            "b": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "g": {
+                                "max": 255,
+                                "min": 0
+                            },
+                            "r": {
+                                "max": 255,
+                                "min": 0
+                            }
+                        },
+                        "coords": {
+                            "x": {
+                                "val": 2.2028770446777344
+                            },
+                            "y": {
+                                "val": -70.67636108398438
+                            },
+                            "z": {
+                                "val": 180.47369384765625
+                            }
+                        },
+                        "masks": {},
+                        "selected": 0
+                    }
+                }
+            }
+        },
+        "__hierarchyinputs__": {},
+        "__operatorinputs__": {},
+        "__secondarylayer__": {}
+    },
+    "/software/top/PixelMapEditor/logic/geoHolder/Generator1": {
+        ".activeViewer": false,
+        ".color": [
+            0.6800000071525574,
+            0.0,
+            0.0
+        ],
+        ".display": true,
+        ".name": "Generator1",
+        ".nodeHeight": 91,
+        ".nodeWidth": 116,
+        ".nodeX": 175,
+        ".nodeY": -259,
+        ".par.Cutoff.enable": true,
+        ".par.Cutoff.val": 512,
+        ".par.Diam1.enable": false,
+        ".par.Diam1.val": 100.0,
+        ".par.Diam2.enable": false,
+        ".par.Diam2.val": 100.0,
+        ".par.Gchans.enable": true,
+        ".par.Gchans.val": "r,g,b",
+        ".par.Generatoractive.enable": true,
+        ".par.Generatoractive.val": true,
+        ".par.Genfixturemask.enable": true,
+        ".par.Genfixturemask.val": true,
+        ".par.Genfmaskname.enable": true,
+        ".par.Genfmaskname.val": "",
+        ".par.Genmode.enable": true,
+        ".par.Genmode.val": "Count",
+        ".par.Gentype.enable": true,
+        ".par.Gentype.val": "Strip",
+        ".par.Help.enable": true,
+        ".par.Help.val": "https://www.enviral-design.com/wiki/editor-generator/",
+        ".par.Hullcoords.enable": true,
+        ".par.Hullcoords.val": "*",
+        ".par.Hullsnapping.enable": false,
+        ".par.Hullsnapping.val": true,
+        ".par.Iconindex.enable": true,
+        ".par.Iconindex.val": 41,
+        ".par.Name.enable": true,
+        ".par.Name.val": "Generator1",
+        ".par.Objtype.enable": true,
+        ".par.Objtype.val": 7,
+        ".par.Outlinercollapsed.enable": true,
+        ".par.Outlinercollapsed.val": false,
+        ".par.Pikcontribute.enable": true,
+        ".par.Pikcontribute.val": true,
+        ".par.Pivotsnapping.enable": true,
+        ".par.Pivotsnapping.val": true,
+        ".par.Pixsnapping.enable": false,
+        ".par.Pixsnapping.val": true,
+        ".par.Regen.enable": true,
+        ".par.Regen.val": 0,
+        ".par.Revolutions.enable": false,
+        ".par.Revolutions.val": 2.0,
+        ".par.Rotateids.enable": true,
+        ".par.Rotateids.val": 0,
+        ".par.Rx.enable": true,
+        ".par.Rx.val": 0.0,
+        ".par.Ry.enable": true,
+        ".par.Ry.val": 0.0,
+        ".par.Rz.enable": true,
+        ".par.Rz.val": 0.0,
+        ".par.Selected.enable": true,
+        ".par.Selected.val": false,
+        ".par.Showicon.enable": true,
+        ".par.Showicon.val": true,
+        ".par.Sx.enable": true,
+        ".par.Sx.val": 1.0,
+        ".par.Sy.enable": true,
+        ".par.Sy.val": 1.0,
+        ".par.Sz.enable": true,
+        ".par.Sz.val": 1.0,
+        ".par.Tx.enable": true,
+        ".par.Tx.val": 0.0,
+        ".par.Ty.enable": true,
+        ".par.Ty.val": 0.0,
+        ".par.Tz.enable": true,
+        ".par.Tz.val": 115.237,
+        ".par.Vertexsnapping.enable": false,
+        ".par.Vertexsnapping.val": true,
+        ".par.Visible.enable": true,
+        ".par.Visible.val": true,
+        ".par.Xcount.enable": true,
+        ".par.Xcount.val": 50,
+        ".par.Xlimit.enable": false,
+        ".par.Xlimit.val": 100,
+        ".par.Xpitch.enable": false,
+        ".par.Xpitch.val": 3.333,
+        ".par.Ycount.enable": false,
+        ".par.Ycount.val": 10,
+        ".par.Ylimit.enable": false,
+        ".par.Ylimit.val": 100,
+        ".par.Ypitch.enable": false,
+        ".par.Ypitch.val": 3.333,
+        ".par.Zigzag.enable": false,
+        ".par.Zigzag.val": false,
+        ".par.clone": "/software/top/PixelMapEditor/logic/objectTypes/Generator_template",
+        ".pickable": true,
+        ".render": true,
+        ".storage": {},
+        ".viewer": true,
         "__hierarchyinputs__": {},
         "__operatorinputs__": {},
         "__secondarylayer__": {}
@@ -6627,7 +8729,7 @@
         ".par.Ry.enable": true,
         ".par.Ry.val": 0.0,
         ".par.Rz.enable": true,
-        ".par.Rz.val": 0.0,
+        ".par.Rz.val": -43.2148,
         ".par.Scaleu.enable": true,
         ".par.Scaleu.val": 1.0,
         ".par.Scalev.enable": true,
@@ -6635,7 +8737,7 @@
         ".par.Scalew.enable": true,
         ".par.Scalew.val": 1.0,
         ".par.Selected.enable": true,
-        ".par.Selected.val": true,
+        ".par.Selected.val": false,
         ".par.Showicon.enable": true,
         ".par.Showicon.val": true,
         ".par.Showselectionhighlight.enable": true,
@@ -6665,6 +8767,144 @@
         ".par.Visible.enable": true,
         ".par.Visible.val": true,
         ".par.clone": "/software/top/PixelMapEditor/logic/objectTypes/Primitive_template",
+        ".pickable": true,
+        ".render": true,
+        ".storage": {},
+        ".viewer": true,
+        "__hierarchyinputs__": {},
+        "__operatorinputs__": {},
+        "__secondarylayer__": {}
+    },
+    "/software/top/PixelMapEditor/logic/geoHolder/Projector1": {
+        ".activeViewer": false,
+        ".color": [
+            0.6800000071525574,
+            0.6800000071525574,
+            0.0
+        ],
+        ".display": true,
+        ".name": "Projector1",
+        ".nodeHeight": 91,
+        ".nodeWidth": 116,
+        ".nodeX": 175,
+        ".nodeY": -600,
+        ".par.Coloroverride.enable": false,
+        ".par.Coloroverride.val": true,
+        ".par.Fitaspectx.enable": true,
+        ".par.Fitaspectx.val": 0,
+        ".par.Fitaspecty.enable": true,
+        ".par.Fitaspecty.val": 0,
+        ".par.Fitscene.enable": true,
+        ".par.Fitscene.val": 0,
+        ".par.Fitselection.enable": true,
+        ".par.Fitselection.val": 0,
+        ".par.Gain.enable": true,
+        ".par.Gain.val": 1.0,
+        ".par.Gamma.enable": true,
+        ".par.Gamma.val": 1.0,
+        ".par.Getres.enable": false,
+        ".par.Getres.val": 0,
+        ".par.Help.enable": true,
+        ".par.Help.val": "https://www.enviral-design.com/wiki/projector/",
+        ".par.Hullsnapping.enable": false,
+        ".par.Hullsnapping.val": true,
+        ".par.Iconindex.enable": true,
+        ".par.Iconindex.val": 43,
+        ".par.Inputpreview.enable": false,
+        ".par.Inputpreview.val": "DefaultRamp",
+        ".par.Maska.enable": true,
+        ".par.Maska.val": "",
+        ".par.Maskb.enable": true,
+        ".par.Maskb.val": "",
+        ".par.Maskg.enable": true,
+        ".par.Maskg.val": "",
+        ".par.Maskr.enable": true,
+        ".par.Maskr.val": "",
+        ".par.Name.enable": true,
+        ".par.Name.val": "Projector1",
+        ".par.Objtype.enable": true,
+        ".par.Objtype.val": 9,
+        ".par.Outlinercollapsed.enable": true,
+        ".par.Outlinercollapsed.val": false,
+        ".par.Pextend.enable": true,
+        ".par.Pextend.val": "Errcolor",
+        ".par.Pikcontribute.enable": true,
+        ".par.Pikcontribute.val": true,
+        ".par.Pivotsnapping.enable": true,
+        ".par.Pivotsnapping.val": true,
+        ".par.Pixsnapping.enable": false,
+        ".par.Pixsnapping.val": true,
+        ".par.Previewopacity.enable": true,
+        ".par.Previewopacity.val": 0.2,
+        ".par.Projectoractive.enable": true,
+        ".par.Projectoractive.val": true,
+        ".par.Projectorblendmode.enable": true,
+        ".par.Projectorblendmode.val": "Add",
+        ".par.Projectorlayer.enable": true,
+        ".par.Projectorlayer.val": 1,
+        ".par.Pscale.enable": true,
+        ".par.Pscale.val": 100.0,
+        ".par.Pstyle.enable": true,
+        ".par.Pstyle.val": "Ortho",
+        ".par.Res1.enable": false,
+        ".par.Res1.val": 960,
+        ".par.Res2.enable": false,
+        ".par.Res2.val": 540,
+        ".par.Routinga.enable": true,
+        ".par.Routinga.val": "",
+        ".par.Routingb.enable": true,
+        ".par.Routingb.val": "b",
+        ".par.Routingg.enable": true,
+        ".par.Routingg.val": "g",
+        ".par.Routingr.enable": true,
+        ".par.Routingr.val": "r",
+        ".par.Rx.enable": true,
+        ".par.Rx.val": 0.0,
+        ".par.Ry.enable": true,
+        ".par.Ry.val": 0.0,
+        ".par.Rz.enable": true,
+        ".par.Rz.val": 0.0,
+        ".par.Selected.enable": true,
+        ".par.Selected.val": false,
+        ".par.Setcolora.enable": true,
+        ".par.Setcolora.val": 0.0,
+        ".par.Setcolorb.enable": true,
+        ".par.Setcolorb.val": 0.0,
+        ".par.Setcolorg.enable": true,
+        ".par.Setcolorg.val": 0.0,
+        ".par.Setcolorr.enable": true,
+        ".par.Setcolorr.val": 0.0,
+        ".par.Showicon.enable": true,
+        ".par.Showicon.val": true,
+        ".par.Showpreview.enable": true,
+        ".par.Showpreview.val": true,
+        ".par.Showselectionhighlight.enable": false,
+        ".par.Showselectionhighlight.val": true,
+        ".par.Showwireframe.enable": true,
+        ".par.Showwireframe.val": true,
+        ".par.Sx.enable": true,
+        ".par.Sx.val": 1.0,
+        ".par.Sy.enable": true,
+        ".par.Sy.val": 1.43353,
+        ".par.Sz.enable": true,
+        ".par.Sz.val": 1.32474,
+        ".par.Tx.enable": true,
+        ".par.Tx.val": 0.0,
+        ".par.Ty.enable": true,
+        ".par.Ty.val": 0.0,
+        ".par.Tz.enable": true,
+        ".par.Tz.val": 182.474,
+        ".par.Uniformscale.enable": true,
+        ".par.Uniformscale.val": 1.0,
+        ".par.Uvfxorigin.enable": true,
+        ".par.Uvfxorigin.val": 0.0,
+        ".par.Uvfxshuffle.enable": true,
+        ".par.Uvfxshuffle.val": 0.0,
+        ".par.Vertexsnapping.enable": false,
+        ".par.Vertexsnapping.val": true,
+        ".par.Visible.enable": true,
+        ".par.Visible.val": true,
+        ".par.clone": "/software/top/PixelMapEditor/logic/objectTypes/Projector_template",
         ".pickable": true,
         ".render": true,
         ".storage": {},

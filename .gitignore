@@ -31,6 +31,8 @@ $RECYCLE.BIN/
 .tmp
 *_Log.txt
 GP/LIBRARY/PROJECTS/GeoPixProjectConfig.txt
+*.gp
+!GP/LIBRARY/PROJECTS/Sample.gp
 
 # td auto generated folders for imported assets
 TDImportCache

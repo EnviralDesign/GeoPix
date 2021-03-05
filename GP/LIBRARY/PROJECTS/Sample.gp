@@ -1,4 +1,36 @@
 {
+    "/FULL_WIDTH": {
+        ".activeViewer": false,
+        ".color": [
+            0.5450000166893005,
+            0.5450000166893005,
+            0.5450000166893005
+        ],
+        ".display": false,
+        ".name": "FULL_WIDTH",
+        ".nodeHeight": 306,
+        ".nodeWidth": 511,
+        ".nodeX": -275,
+        ".nodeY": 175,
+        ".par.B.enable": true,
+        ".par.B.val": 201,
+        ".par.L.enable": true,
+        ".par.L.val": 760,
+        ".par.Monitorinfo.enable": true,
+        ".par.Monitorinfo.val": "[{\"name\": \"\\\\\\\\.\\\\DISPLAY7\", \"index\": 1, \"monitorHandle\": 207425583, \"primary\": 0, \"monitorArea_left\": 997, \"monitorArea_right\": 2916, \"monitorArea_bottom\": 0, \"monitorArea_top\": -1080, \"monitorArea_width\": 1920, \"monitorArea_height\": 1080, \"workArea_left\": 997, \"workArea_right\": 2916, \"workArea_bottom\": 0, \"workArea_top\": -1080, \"workArea_width\": 1920, \"workArea_height\": 1080}, {\"name\": \"\\\\\\\\.\\\\DISPLAY8\", \"index\": 2, \"monitorHandle\": 1333341793, \"primary\": 0, \"monitorArea_left\": 3440, \"monitorArea_right\": 5359, \"monitorArea_bottom\": 1240, \"monitorArea_top\": 160, \"monitorArea_width\": 1920, \"monitorArea_height\": 1080, \"workArea_left\": 3440, \"workArea_right\": 5359, \"workArea_bottom\": 1240, \"workArea_top\": 160, \"workArea_width\": 1920, \"workArea_height\": 1080}, {\"name\": \"\\\\\\\\.\\\\DISPLAY6\", \"index\": 0, \"monitorHandle\": 2664972469, \"primary\": 1, \"monitorArea_left\": 0, \"monitorArea_right\": 3439, \"monitorArea_bottom\": 1440, \"monitorArea_top\": 0, \"monitorArea_width\": 3440, \"monitorArea_height\": 1440, \"workArea_left\": 0, \"workArea_right\": 3439, \"workArea_bottom\": 1400, \"workArea_top\": 0, \"workArea_width\": 3440, \"workArea_height\": 1400}]",
+        ".par.R.enable": true,
+        ".par.R.val": 2680,
+        ".par.T.enable": true,
+        ".par.T.val": 1280,
+        ".par.clone": null,
+        ".pickable": false,
+        ".render": false,
+        ".storage": {},
+        ".viewer": false,
+        "__hierarchyinputs__": {},
+        "__operatorinputs__": {},
+        "__secondarylayer__": {}
+    },
     "/FULL_WIDTH/DISPLAY_1": {
         ".activeViewer": false,
         ".color": [
@@ -8,7 +40,7 @@
         ],
         ".display": false,
         ".name": "DISPLAY_1",
-        ".nodeHeight": 245,
+        ".nodeHeight": 347,
         ".nodeWidth": 438,
         ".nodeX": -500,
         ".nodeY": 50,
@@ -40,8 +72,12 @@
         ".par.Offset1.val": 0,
         ".par.Offset2.enable": true,
         ".par.Offset2.val": 0,
+        ".par.Panegfx.enable": true,
+        ".par.Panegfx.val": "Assets/misc/OUTPUT.png",
+        ".par.Panename.enable": true,
+        ".par.Panename.val": "VIDEO TARGET 1",
         ".par.Showborder.enable": true,
-        ".par.Showborder.val": true,
+        ".par.Showborder.val": false,
         ".par.Showcalibration.enable": true,
         ".par.Showcalibration.val": false,
         ".par.Spoutout.enable": true,
@@ -60,7 +96,7 @@
         ".pickable": false,
         ".render": false,
         ".storage": {},
-        ".viewer": true,
+        ".viewer": false,
         "__hierarchyinputs__": {},
         "__operatorinputs__": {},
         "__secondarylayer__": {}
@@ -74,7 +110,7 @@
         ],
         ".display": false,
         ".name": "DISPLAY_2",
-        ".nodeHeight": 245,
+        ".nodeHeight": 347,
         ".nodeWidth": 438,
         ".nodeX": -500,
         ".nodeY": -325,
@@ -106,8 +142,12 @@
         ".par.Offset1.val": 0,
         ".par.Offset2.enable": true,
         ".par.Offset2.val": 0,
+        ".par.Panegfx.enable": true,
+        ".par.Panegfx.val": "Assets/misc/OUTPUT.png",
+        ".par.Panename.enable": true,
+        ".par.Panename.val": "VIDEO TARGET 2",
         ".par.Showborder.enable": true,
-        ".par.Showborder.val": true,
+        ".par.Showborder.val": false,
         ".par.Showcalibration.enable": true,
         ".par.Showcalibration.val": false,
         ".par.Spoutout.enable": true,
@@ -126,7 +166,7 @@
         ".pickable": false,
         ".render": false,
         ".storage": {},
-        ".viewer": true,
+        ".viewer": false,
         "__hierarchyinputs__": {},
         "__operatorinputs__": {},
         "__secondarylayer__": {}
@@ -2130,6 +2170,36 @@
         "__operatorinputs__": {},
         "__secondarylayer__": {}
     },
+    "/UberGui/DisplayManager": {
+        ".activeViewer": false,
+        ".color": [
+            0.5450000166893005,
+            0.5450000166893005,
+            0.5450000166893005
+        ],
+        ".display": false,
+        ".name": "DisplayManager",
+        ".nodeHeight": 190,
+        ".nodeWidth": 335,
+        ".nodeX": 850,
+        ".nodeY": 2250,
+        ".par.Config.enable": true,
+        ".par.Config.expr": "{0: 'software'}",
+        ".par.Config.mode": "ParMode.EXPRESSION",
+        ".par.Config.val": "{0: 'software'}",
+        ".par.Dragsource.enable": true,
+        ".par.Dragsource.val": "DISPLAY_1",
+        ".par.Dragtarget.enable": true,
+        ".par.Dragtarget.val": "-1",
+        ".par.clone": null,
+        ".pickable": false,
+        ".render": false,
+        ".storage": {},
+        ".viewer": true,
+        "__hierarchyinputs__": {},
+        "__operatorinputs__": {},
+        "__secondarylayer__": {}
+    },
     "/UberGui/ErrorsAndDiagnostics": {
         ".activeViewer": false,
         ".color": [
@@ -2230,9 +2300,9 @@
         ".nodeX": 1650,
         ".nodeY": 2000,
         ".par.Drivers.enable": true,
-        ".par.Drivers.expr": "[{'DriverName': 'object/Projector1/Ty', 'TargetType': 'object', 'TargetName': 'Projector1', 'TargetParameter': 'Ty', 'DriverCondition': '', 'FeedbackLow': 0, 'FeedbackHigh': 1, 'DriverExpression': 'device1_osc_1_fader1', 'Selected': 0}, {'DriverName': 'object/Projector1/Ry', 'TargetType': 'object', 'TargetName': 'Projector1', 'TargetParameter': 'Ry', 'DriverCondition': '', 'FeedbackLow': 0, 'FeedbackHigh': 1, 'DriverExpression': 'device1_osc_1_fader1*90/4', 'Selected': 1}]",
+        ".par.Drivers.expr": "[]",
         ".par.Drivers.mode": "ParMode.EXPRESSION",
-        ".par.Drivers.val": "[{'DriverName': 'object/Projector1/Ty', 'TargetType': 'object', 'TargetName': 'Projector1', 'TargetParameter': 'Ty', 'DriverCondition': '', 'FeedbackLow': 0, 'FeedbackHigh': 1, 'DriverExpression': 'device1_osc_1_fader1', 'Selected': 0}, {'DriverName': 'object/Projector1/Ry', 'TargetType': 'object', 'TargetName': 'Projector1', 'TargetParameter': 'Ry', 'DriverCondition': '', 'FeedbackLow': 0, 'FeedbackHigh': 1, 'DriverExpression': 'device1_osc_1_fader1*90/4', 'Selected': 1}]",
+        ".par.Drivers.val": "[]",
         ".par.clone": null,
         ".pickable": false,
         ".render": false,
@@ -5941,8 +6011,8 @@
         ".name": "Macro",
         ".nodeHeight": 130,
         ".nodeWidth": 160,
-        ".nodeX": -4,
-        ".nodeY": 67,
+        ".nodeX": -94,
+        ".nodeY": -73,
         ".par.Blocktypeorder.enable": true,
         ".par.Blocktypeorder.expr": "['PixFrame']",
         ".par.Blocktypeorder.mode": "ParMode.EXPRESSION",
@@ -6036,9 +6106,9 @@
         ".par.Timingmode.enable": false,
         ".par.Timingmode.val": "Independent",
         ".par.Tx.enable": true,
-        ".par.Tx.val": 37.5144,
+        ".par.Tx.val": -7.33408,
         ".par.Ty.enable": true,
-        ".par.Ty.val": 66.2381,
+        ".par.Ty.val": -4.48358,
         ".par.Units.enable": true,
         ".par.Units.val": "seconds",
         ".par.Viewer.enable": true,
@@ -6107,13 +6177,13 @@
                 ".par.Rightmode.enable": true,
                 ".par.Rightmode.val": "loop",
                 ".par.Selected.enable": true,
-                ".par.Selected.val": true,
+                ".par.Selected.val": false,
                 ".par.Tx.enable": true,
                 ".par.Tx.val": 0.0,
                 ".par.Ty.enable": true,
                 ".par.Ty.val": 0.0,
                 ".par.Type.enable": true,
-                ".par.Type.val": "radial",
+                ".par.Type.val": "circular",
                 ".par.Viewer.enable": true,
                 ".par.Viewer.val": true,
                 ".par.clone": "/software/top/IOV2/IO_TEMPLATES_V3/TEX/Generative/Ramp",
@@ -6303,7 +6373,7 @@
         ],
         ".display": false,
         ".name": "Canvas0",
-        ".nodeHeight": 106,
+        ".nodeHeight": 102,
         ".nodeWidth": 160,
         ".nodeX": -75,
         ".nodeY": -50,
@@ -6390,7 +6460,7 @@
         ],
         ".display": false,
         ".name": "Viewport",
-        ".nodeHeight": 1070,
+        ".nodeHeight": 709,
         ".nodeWidth": 1135,
         ".nodeX": -525,
         ".nodeY": -275,
@@ -6541,7 +6611,7 @@
         ".nodeX": -1925,
         ".nodeY": -1775,
         ".par.Camunrformedx.enable": true,
-        ".par.Camunrformedx.val": -45.96076202392578,
+        ".par.Camunrformedx.val": -64.5769271850586,
         ".par.Camunrformedy.enable": true,
         ".par.Camunrformedy.val": 0.0,
         ".par.Camunrformedz.enable": true,
@@ -6549,33 +6619,33 @@
         ".par.Camunxformedx.enable": true,
         ".par.Camunxformedx.val": 0.0,
         ".par.Camunxformedy.enable": true,
-        ".par.Camunxformedy.val": 495.5469970703125,
+        ".par.Camunxformedy.val": 561.417236328125,
         ".par.Camunxformedz.enable": true,
-        ".par.Camunxformedz.val": 479.2004699707031,
+        ".par.Camunxformedz.val": 266.8575744628906,
         ".par.Camvectorx.enable": true,
-        ".par.Camvectorx.val": -0.07473596930503845,
+        ".par.Camvectorx.val": 0.295740008354187,
         ".par.Camvectory.enable": true,
-        ".par.Camvectory.val": 0.39046192169189453,
+        ".par.Camvectory.val": 0.5342243909835815,
         ".par.Camvectorz.enable": true,
-        ".par.Camvectorz.val": 0.9175805449485779,
+        ".par.Camvectorz.val": 0.7919230461120605,
         ".par.Camwsx.enable": true,
-        ".par.Camwsx.val": -55.11424493789673,
+        ".par.Camwsx.val": 183.83580569910555,
         ".par.Camwsy.enable": true,
-        ".par.Camwsy.val": 252.25589179992676,
+        ".par.Camwsy.val": 332.08043798434664,
         ".par.Camwsz.enable": true,
-        ".par.Camwsz.val": 655.6390342712402,
+        ".par.Camwsz.val": 492.2696893152315,
         ".par.Dollyenabled.enable": true,
-        ".par.Dollyenabled.val": true,
+        ".par.Dollyenabled.val": false,
         ".par.Dollywheelenabled.enable": true,
         ".par.Dollywheelenabled.val": true,
         ".par.Farclip.enable": true,
         ".par.Farclip.val": 20000.0,
         ".par.Focaldist.enable": true,
-        ".par.Focaldist.val": 689.3474731445312,
+        ".par.Focaldist.val": 621.6126708984375,
         ".par.Focprojheight.enable": true,
-        ".par.Focprojheight.val": -539.608154296875,
+        ".par.Focprojheight.val": -333.23492431640625,
         ".par.Focprojwidth.enable": true,
-        ".par.Focprojwidth.val": -571.0740356445312,
+        ".par.Focprojwidth.val": -514.9612426757812,
         ".par.Invertu.enable": true,
         ".par.Invertu.val": false,
         ".par.Invertv.enable": true,
@@ -6583,57 +6653,57 @@
         ".par.Nearclip.enable": true,
         ".par.Nearclip.val": 10.0,
         ".par.Orbitenabled.enable": true,
-        ".par.Orbitenabled.val": true,
+        ".par.Orbitenabled.val": false,
         ".par.Panenabled.enable": true,
-        ".par.Panenabled.val": true,
+        ".par.Panenabled.val": false,
         ".par.Perspectivefov.enable": true,
         ".par.Perspectivefov.val": 45.0,
         ".par.Perspectivetoorthographic.enable": true,
         ".par.Perspectivetoorthographic.val": 0.0,
         ".par.Pivotx.enable": true,
-        ".par.Pivotx.val": -3.5951931476593018,
+        ".par.Pivotx.val": 5.81536914978642e-05,
         ".par.Pivoty.enable": true,
-        ".par.Pivoty.val": -16.908048629760742,
+        ".par.Pivoty.val": -0.00020620245777536184,
         ".par.Pivotz.enable": true,
-        ".par.Pivotz.val": 23.107223510742188,
+        ".par.Pivotz.val": 0.00029034639010205865,
         ".par.Quatrotx1.enable": true,
-        ".par.Quatrotx1.val": -0.19922468066215515,
+        ".par.Quatrotx1.val": -0.2780803143978119,
         ".par.Quatrotx2.enable": true,
         ".par.Quatrotx2.val": 0.0,
         ".par.Quatrotx3.enable": true,
         ".par.Quatrotx3.val": 0.0,
         ".par.Quatrotx4.enable": true,
-        ".par.Quatrotx4.val": 0.9799538850784302,
+        ".par.Quatrotx4.val": 0.9605578780174255,
         ".par.Quatroty1.enable": true,
         ".par.Quatroty1.val": 0.0,
         ".par.Quatroty2.enable": true,
-        ".par.Quatroty2.val": -0.04062359780073166,
+        ".par.Quatroty2.val": 0.17775388062000275,
         ".par.Quatroty3.enable": true,
         ".par.Quatroty3.val": 0.0,
         ".par.Quatroty4.enable": true,
-        ".par.Quatroty4.val": 0.9991745948791504,
+        ".par.Quatroty4.val": 0.9840750694274902,
         ".par.Rerotatex.enable": true,
-        ".par.Rerotatex.val": 22.977514266967773,
+        ".par.Rerotatex.val": 32.28560256958008,
         ".par.Rerotatey.enable": true,
-        ".par.Rerotatey.val": -4.656402587890625,
+        ".par.Rerotatey.val": 20.477914810180664,
         ".par.Reset.enable": true,
         ".par.Reset.val": 0,
         ".par.Rx.enable": true,
-        ".par.Rx.val": -41.05778503417969,
+        ".par.Rx.val": -32.29132843017578,
         ".par.Ry.enable": true,
-        ".par.Ry.val": 10.808377265930176,
+        ".par.Ry.val": 20.477914810180664,
         ".par.Rz.enable": true,
         ".par.Rz.val": 0.0,
         ".par.Startuvx.enable": true,
-        ".par.Startuvx.val": 0.687793427230047,
+        ".par.Startuvx.val": 0.7903752039151712,
         ".par.Startuvy.enable": true,
-        ".par.Startuvy.val": 0.6409937888198758,
+        ".par.Startuvy.val": 0.42370744010088274,
         ".par.Tx.enable": true,
-        ".par.Tx.val": 93.88041567802429,
+        ".par.Tx.val": 183.83580569910555,
         ".par.Ty.enable": true,
-        ".par.Ty.val": 435.86902046203613,
+        ".par.Ty.val": 332.08043798434664,
         ".par.Tz.enable": true,
-        ".par.Tz.val": 533.6866912841797,
+        ".par.Tz.val": 492.2696893152315,
         ".par.Zoomdirectionfix.enable": true,
         ".par.Zoomdirectionfix.val": true,
         ".par.clone": null,
@@ -6647,6 +6717,41 @@
         ".viewer": false,
         "__hierarchyinputs__": {},
         "__operatorinputs__": {},
+        "__secondarylayer__": {}
+    },
+    "/software/top/PixelMapEditor/logic/SamplerV2/DmxOverride": {
+        ".activeViewer": false,
+        ".color": [
+            0.0,
+            0.6800000071525574,
+            0.0
+        ],
+        ".display": false,
+        ".name": "DmxOverride",
+        ".nodeHeight": 108,
+        ".nodeWidth": 183,
+        ".nodeX": 1250,
+        ".nodeY": 175,
+        ".par.Compositemode.enable": true,
+        ".par.Compositemode.val": "replace",
+        ".par.Enable.enable": true,
+        ".par.Enable.val": false,
+        ".par.Protocol.enable": true,
+        ".par.Protocol.val": "artnet",
+        ".par.Sacnmulticast.enable": false,
+        ".par.Sacnmulticast.val": false,
+        ".par.clone": null,
+        ".pickable": false,
+        ".render": false,
+        ".storage": {},
+        ".viewer": true,
+        "__hierarchyinputs__": {},
+        "__operatorinputs__": {
+            "0": {
+                "index": 0,
+                "path": "/software/top/PixelMapEditor/logic/SamplerV2/Macro_Pixel_Sampler_0"
+            }
+        },
         "__secondarylayer__": {}
     },
     "/software/top/PixelMapEditor/logic/geoHolder/Fixture1": {
@@ -6893,7 +6998,7 @@
         ".par.Tx.enable": true,
         ".par.Tx.val": 0.0,
         ".par.Ty.enable": true,
-        ".par.Ty.val": 0.0,
+        ".par.Ty.val": 8.10266,
         ".par.Tz.enable": true,
         ".par.Tz.val": 0.0,
         ".par.Uniformscale.enable": true,
@@ -6923,17 +7028,33 @@
                         "selected": 1,
                         "u": 0,
                         "v": 0,
-                        "x": -2.2028770446777344,
-                        "y": 70.67636108398438,
-                        "z": 50.0
+                        "x": -50.0,
+                        "y": 50.0,
+                        "z": -50.0
                     },
                     "1": {
                         "selected": 1,
                         "u": 0,
                         "v": 0,
-                        "x": 2.2028770446777344,
-                        "y": -70.67636108398438,
-                        "z": 180.47369384765625
+                        "x": -49.999996185302734,
+                        "y": 49.999996185302734,
+                        "z": 49.999996185302734
+                    },
+                    "2": {
+                        "selected": 1,
+                        "u": 0,
+                        "v": 0,
+                        "x": 49.999996185302734,
+                        "y": 49.999996185302734,
+                        "z": 49.999996185302734
+                    },
+                    "3": {
+                        "selected": 1,
+                        "u": 0,
+                        "v": 0,
+                        "x": 50.0,
+                        "y": 50.0,
+                        "z": -50.0
                     }
                 }
             }
@@ -6961,13 +7082,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": -2.2028770446777344
+                                "val": -50.0
                             },
                             "y": {
-                                "val": 70.67636108398438
+                                "val": 50.0
                             },
                             "z": {
-                                "val": 50.0
+                                "val": -50.0
                             }
                         },
                         "masks": {},
@@ -6990,13 +7111,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": -2.112963695915378
+                                "val": -49.99999976644711
                             },
                             "y": {
-                                "val": 67.79161165198501
+                                "val": 49.99999976644711
                             },
                             "z": {
-                                "val": 52.662728445870535
+                                "val": -43.87755133181202
                             }
                         },
                         "masks": {},
@@ -7019,13 +7140,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": -2.0230503471530215
+                                "val": -49.999999532894215
                             },
                             "y": {
-                                "val": 64.90686221998565
+                                "val": 49.999999532894215
                             },
                             "z": {
-                                "val": 55.32545689174107
+                                "val": -37.75510266362405
                             }
                         },
                         "masks": {},
@@ -7048,13 +7169,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": -1.933136998390665
+                                "val": -49.999999299341326
                             },
                             "y": {
-                                "val": 62.02211278798629
+                                "val": 49.999999299341326
                             },
                             "z": {
-                                "val": 57.988185337611604
+                                "val": -31.632653995436073
                             }
                         },
                         "masks": {},
@@ -7077,13 +7198,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": -1.8432236496283083
+                                "val": -49.99999906578844
                             },
                             "y": {
-                                "val": 59.13736335598693
+                                "val": 49.99999906578844
                             },
                             "z": {
-                                "val": 60.65091378348214
+                                "val": -25.510205327248098
                             }
                         },
                         "masks": {},
@@ -7106,13 +7227,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": -1.7533103008659519
+                                "val": -49.99999883223555
                             },
                             "y": {
-                                "val": 56.25261392398757
+                                "val": 49.99999883223555
                             },
                             "z": {
-                                "val": 63.31364222935268
+                                "val": -19.38775665906012
                             }
                         },
                         "masks": {},
@@ -7135,13 +7256,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": -1.6633969521035954
+                                "val": -49.99999859868265
                             },
                             "y": {
-                                "val": 53.3678644919882
+                                "val": 49.99999859868265
                             },
                             "z": {
-                                "val": 65.97637067522321
+                                "val": -13.265307990872145
                             }
                         },
                         "masks": {},
@@ -7164,13 +7285,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": -1.573483603341239
+                                "val": -49.99999836512976
                             },
                             "y": {
-                                "val": 50.48311505998884
+                                "val": 49.99999836512976
                             },
                             "z": {
-                                "val": 68.63909912109375
+                                "val": -7.142859322684174
                             }
                         },
                         "masks": {},
@@ -7193,13 +7314,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": -1.4835702545788823
+                                "val": -49.999998131576874
                             },
                             "y": {
-                                "val": 47.59836562798948
+                                "val": 49.999998131576874
                             },
                             "z": {
-                                "val": 71.30182756696428
+                                "val": -1.020410654496196
                             }
                         },
                         "masks": {},
@@ -7222,13 +7343,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": -1.3936569058165258
+                                "val": -49.999997898023985
                             },
                             "y": {
-                                "val": 44.71361619599011
+                                "val": 49.999997898023985
                             },
                             "z": {
-                                "val": 73.96455601283482
+                                "val": 5.102038013691782
                             }
                         },
                         "masks": {},
@@ -7251,13 +7372,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": -1.3037435570541693
+                                "val": -49.99999766447109
                             },
                             "y": {
-                                "val": 41.82886676399075
+                                "val": 49.99999766447109
                             },
                             "z": {
-                                "val": 76.62728445870536
+                                "val": 11.22448668187976
                             }
                         },
                         "masks": {},
@@ -7280,13 +7401,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": -1.2138302082918129
+                                "val": -49.9999974309182
                             },
                             "y": {
-                                "val": 38.94411733199139
+                                "val": 49.9999974309182
                             },
                             "z": {
-                                "val": 79.29001290457589
+                                "val": 17.346935350067724
                             }
                         },
                         "masks": {},
@@ -7309,13 +7430,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": -1.1239168595294564
+                                "val": -49.99999719736531
                             },
                             "y": {
-                                "val": 36.05936789999203
+                                "val": 49.99999719736531
                             },
                             "z": {
-                                "val": 81.95274135044643
+                                "val": 23.46938401825571
                             }
                         },
                         "masks": {},
@@ -7338,13 +7459,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": -1.0340035107671
+                                "val": -49.99999696381242
                             },
                             "y": {
-                                "val": 33.17461846799267
+                                "val": 49.99999696381242
                             },
                             "z": {
-                                "val": 84.61546979631697
+                                "val": 29.59183268644368
                             }
                         },
                         "masks": {},
@@ -7367,13 +7488,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": -0.9440901620047435
+                                "val": -49.999996730259525
                             },
                             "y": {
-                                "val": 30.289869035993306
+                                "val": 49.999996730259525
                             },
                             "z": {
-                                "val": 87.2781982421875
+                                "val": 35.71428135463165
                             }
                         },
                         "masks": {},
@@ -7396,13 +7517,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": -0.8541768132423868
+                                "val": -49.999996496706636
                             },
                             "y": {
-                                "val": 27.405119603993946
+                                "val": 49.999996496706636
                             },
                             "z": {
-                                "val": 89.94092668805803
+                                "val": 41.83673002281964
                             }
                         },
                         "masks": {},
@@ -7425,13 +7546,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": -0.7642634644800304
+                                "val": -49.99999626315375
                             },
                             "y": {
-                                "val": 24.520370171994585
+                                "val": 49.99999626315375
                             },
                             "z": {
-                                "val": 92.60365513392857
+                                "val": 47.95917869100761
                             }
                         },
                         "masks": {},
@@ -7454,13 +7575,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": -0.6743501157176741
+                                "val": -45.918365011409875
                             },
                             "y": {
-                                "val": 21.635620739995225
+                                "val": 49.999996185302734
                             },
                             "z": {
-                                "val": 95.26638357979911
+                                "val": 49.999996185302734
                             }
                         },
                         "masks": {},
@@ -7483,13 +7604,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": -0.5844367669553174
+                                "val": -39.79591634322189
                             },
                             "y": {
-                                "val": 18.750871307995858
+                                "val": 49.999996185302734
                             },
                             "z": {
-                                "val": 97.92911202566964
+                                "val": 49.999996185302734
                             }
                         },
                         "masks": {},
@@ -7512,13 +7633,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": -0.494523418192961
+                                "val": -33.673467675033905
                             },
                             "y": {
-                                "val": 15.866121875996498
+                                "val": 49.999996185302734
                             },
                             "z": {
-                                "val": 100.59184047154017
+                                "val": 49.999996185302734
                             }
                         },
                         "masks": {},
@@ -7541,13 +7662,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": -0.4046100694306043
+                                "val": -27.55101900684592
                             },
                             "y": {
-                                "val": 12.981372443997131
+                                "val": 49.999996185302734
                             },
                             "z": {
-                                "val": 103.25456891741072
+                                "val": 49.999996185302734
                             }
                         },
                         "masks": {},
@@ -7570,13 +7691,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": -0.31469672066824783
+                                "val": -21.42857033865795
                             },
                             "y": {
-                                "val": 10.096623011997778
+                                "val": 49.999996185302734
                             },
                             "z": {
-                                "val": 105.91729736328125
+                                "val": 49.999996185302734
                             }
                         },
                         "masks": {},
@@ -7599,13 +7720,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": -0.22478337190589115
+                                "val": -15.306121670469963
                             },
                             "y": {
-                                "val": 7.211873579998411
+                                "val": 49.999996185302734
                             },
                             "z": {
-                                "val": 108.58002580915179
+                                "val": 49.999996185302734
                             }
                         },
                         "masks": {},
@@ -7628,13 +7749,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": -0.1348700231435349
+                                "val": -9.183673002281978
                             },
                             "y": {
-                                "val": 4.327124147999044
+                                "val": 49.999996185302734
                             },
                             "z": {
-                                "val": 111.24275425502232
+                                "val": 49.999996185302734
                             }
                         },
                         "masks": {},
@@ -7657,13 +7778,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": -0.04495667438117845
+                                "val": -3.0612243340939926
                             },
                             "y": {
-                                "val": 1.4423747159996907
+                                "val": 49.999996185302734
                             },
                             "z": {
-                                "val": 113.90548270089286
+                                "val": 49.999996185302734
                             }
                         },
                         "masks": {},
@@ -7686,13 +7807,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": 0.04495667438117801
+                                "val": 3.0612243340939926
                             },
                             "y": {
-                                "val": -1.4423747159996765
+                                "val": 49.999996185302734
                             },
                             "z": {
-                                "val": 116.56821114676339
+                                "val": 49.999996185302734
                             }
                         },
                         "masks": {},
@@ -7715,13 +7836,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": 0.13487002314353447
+                                "val": 9.183673002281978
                             },
                             "y": {
-                                "val": -4.3271241479990294
+                                "val": 49.999996185302734
                             },
                             "z": {
-                                "val": 119.23093959263393
+                                "val": 49.999996185302734
                             }
                         },
                         "masks": {},
@@ -7744,13 +7865,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": 0.22478337190589137
+                                "val": 15.306121670469963
                             },
                             "y": {
-                                "val": -7.211873579998397
+                                "val": 49.999996185302734
                             },
                             "z": {
-                                "val": 121.89366803850447
+                                "val": 49.999996185302734
                             }
                         },
                         "masks": {},
@@ -7773,13 +7894,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": 0.3146967206682474
+                                "val": 21.42857033865795
                             },
                             "y": {
-                                "val": -10.096623011997764
+                                "val": 49.999996185302734
                             },
                             "z": {
-                                "val": 124.556396484375
+                                "val": 49.999996185302734
                             }
                         },
                         "masks": {},
@@ -7802,13 +7923,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": 0.4046100694306043
+                                "val": 27.551019006845934
                             },
                             "y": {
-                                "val": -12.981372443997131
+                                "val": 49.999996185302734
                             },
                             "z": {
-                                "val": 127.21912493024554
+                                "val": 49.999996185302734
                             }
                         },
                         "masks": {},
@@ -7831,13 +7952,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": 0.49452341819296075
+                                "val": 33.67346767503392
                             },
                             "y": {
-                                "val": -15.866121875996484
+                                "val": 49.999996185302734
                             },
                             "z": {
-                                "val": 129.88185337611606
+                                "val": 49.999996185302734
                             }
                         },
                         "masks": {},
@@ -7860,13 +7981,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": 0.5844367669553172
+                                "val": 39.795916343221904
                             },
                             "y": {
-                                "val": -18.75087130799585
+                                "val": 49.999996185302734
                             },
                             "z": {
-                                "val": 132.5445818219866
+                                "val": 49.999996185302734
                             }
                         },
                         "masks": {},
@@ -7889,13 +8010,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": 0.6743501157176737
+                                "val": 45.91836501140989
                             },
                             "y": {
-                                "val": -21.635620739995204
+                                "val": 49.999996185302734
                             },
                             "z": {
-                                "val": 135.20731026785714
+                                "val": 49.999996185302734
                             }
                         },
                         "masks": {},
@@ -7918,13 +8039,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": 0.7642634644800301
+                                "val": 49.99999626315375
                             },
                             "y": {
-                                "val": -24.52037017199457
+                                "val": 49.99999626315375
                             },
                             "z": {
-                                "val": 137.8700387137277
+                                "val": 47.959178691007594
                             }
                         },
                         "masks": {},
@@ -7947,13 +8068,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": 0.8541768132423861
+                                "val": 49.999996496706636
                             },
                             "y": {
-                                "val": -27.405119603993924
+                                "val": 49.999996496706636
                             },
                             "z": {
-                                "val": 140.53276715959822
+                                "val": 41.83673002281962
                             }
                         },
                         "masks": {},
@@ -7976,13 +8097,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": 0.9440901620047435
+                                "val": 49.999996730259525
                             },
                             "y": {
-                                "val": -30.289869035993306
+                                "val": 49.999996730259525
                             },
                             "z": {
-                                "val": 143.19549560546875
+                                "val": 35.714281354631645
                             }
                         },
                         "masks": {},
@@ -8005,13 +8126,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": 1.0340035107670995
+                                "val": 49.99999696381242
                             },
                             "y": {
-                                "val": -33.17461846799266
+                                "val": 49.99999696381242
                             },
                             "z": {
-                                "val": 145.85822405133928
+                                "val": 29.591832686443666
                             }
                         },
                         "masks": {},
@@ -8034,13 +8155,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": 1.123916859529456
+                                "val": 49.99999719736531
                             },
                             "y": {
-                                "val": -36.05936789999201
+                                "val": 49.99999719736531
                             },
                             "z": {
-                                "val": 148.5209524972098
+                                "val": 23.469384018255692
                             }
                         },
                         "masks": {},
@@ -8063,13 +8184,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": 1.2138302082918124
+                                "val": 49.9999974309182
                             },
                             "y": {
-                                "val": -38.94411733199138
+                                "val": 49.9999974309182
                             },
                             "z": {
-                                "val": 151.18368094308033
+                                "val": 17.346935350067717
                             }
                         },
                         "masks": {},
@@ -8092,13 +8213,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": 1.3037435570541693
+                                "val": 49.99999766447109
                             },
                             "y": {
-                                "val": -41.828866763990746
+                                "val": 49.99999766447109
                             },
                             "z": {
-                                "val": 153.84640938895092
+                                "val": 11.224486681879739
                             }
                         },
                         "masks": {},
@@ -8121,13 +8242,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": 1.3936569058165258
+                                "val": 49.999997898023985
                             },
                             "y": {
-                                "val": -44.71361619599011
+                                "val": 49.999997898023985
                             },
                             "z": {
-                                "val": 156.50913783482144
+                                "val": 5.102038013691761
                             }
                         },
                         "masks": {},
@@ -8150,13 +8271,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": 1.4835702545788823
+                                "val": 49.999998131576874
                             },
                             "y": {
-                                "val": -47.598365627989466
+                                "val": 49.999998131576874
                             },
                             "z": {
-                                "val": 159.17186628069197
+                                "val": -1.0204106544962173
                             }
                         },
                         "masks": {},
@@ -8179,13 +8300,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": 1.5734836033412387
+                                "val": 49.99999836512976
                             },
                             "y": {
-                                "val": -50.48311505998882
+                                "val": 49.99999836512976
                             },
                             "z": {
-                                "val": 161.8345947265625
+                                "val": -7.14285932268416
                             }
                         },
                         "masks": {},
@@ -8208,13 +8329,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": 1.6633969521035947
+                                "val": 49.99999859868265
                             },
                             "y": {
-                                "val": -53.367864491988186
+                                "val": 49.99999859868265
                             },
                             "z": {
-                                "val": 164.49732317243303
+                                "val": -13.265307990872138
                             }
                         },
                         "masks": {},
@@ -8237,13 +8358,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": 1.753310300865952
+                                "val": 49.99999883223555
                             },
                             "y": {
-                                "val": -56.25261392398755
+                                "val": 49.99999883223555
                             },
                             "z": {
-                                "val": 167.16005161830358
+                                "val": -19.387756659060116
                             }
                         },
                         "masks": {},
@@ -8266,13 +8387,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": 1.8432236496283085
+                                "val": 49.99999906578844
                             },
                             "y": {
-                                "val": -59.137363355986906
+                                "val": 49.99999906578844
                             },
                             "z": {
-                                "val": 169.8227800641741
+                                "val": -25.510205327248087
                             }
                         },
                         "masks": {},
@@ -8295,13 +8416,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": 1.9331369983906646
+                                "val": 49.999999299341326
                             },
                             "y": {
-                                "val": -62.02211278798629
+                                "val": 49.999999299341326
                             },
                             "z": {
-                                "val": 172.48550851004464
+                                "val": -31.632653995436073
                             }
                         },
                         "masks": {},
@@ -8324,13 +8445,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": 2.0230503471530206
+                                "val": 49.999999532894215
                             },
                             "y": {
-                                "val": -64.90686221998564
+                                "val": 49.999999532894215
                             },
                             "z": {
-                                "val": 175.1482369559152
+                                "val": -37.755102663624044
                             }
                         },
                         "masks": {},
@@ -8353,13 +8474,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": 2.1129636959153775
+                                "val": 49.99999976644711
                             },
                             "y": {
-                                "val": -67.791611651985
+                                "val": 49.99999976644711
                             },
                             "z": {
-                                "val": 177.81096540178572
+                                "val": -43.877551331812015
                             }
                         },
                         "masks": {},
@@ -8382,13 +8503,13 @@
                         },
                         "coords": {
                             "x": {
-                                "val": 2.2028770446777344
+                                "val": 50.0
                             },
                             "y": {
-                                "val": -70.67636108398438
+                                "val": 50.0
                             },
                             "z": {
-                                "val": 180.47369384765625
+                                "val": -50.0
                             }
                         },
                         "masks": {},
@@ -8477,9 +8598,9 @@
         ".par.Tx.enable": true,
         ".par.Tx.val": 0.0,
         ".par.Ty.enable": true,
-        ".par.Ty.val": 0.0,
+        ".par.Ty.val": 50.0,
         ".par.Tz.enable": true,
-        ".par.Tz.val": 115.237,
+        ".par.Tz.val": 0.0,
         ".par.Vertexsnapping.enable": false,
         ".par.Vertexsnapping.val": true,
         ".par.Visible.enable": true,
@@ -8503,7 +8624,12 @@
         ".render": true,
         ".storage": {},
         ".viewer": true,
-        "__hierarchyinputs__": {},
+        "__hierarchyinputs__": {
+            "0": {
+                "index": 0,
+                "path": "/software/top/PixelMapEditor/logic/geoHolder/Fixture1"
+            }
+        },
         "__operatorinputs__": {},
         "__secondarylayer__": {}
     },
@@ -8729,7 +8855,7 @@
         ".par.Ry.enable": true,
         ".par.Ry.val": 0.0,
         ".par.Rz.enable": true,
-        ".par.Rz.val": -43.2148,
+        ".par.Rz.val": 0.0,
         ".par.Scaleu.enable": true,
         ".par.Scaleu.val": 1.0,
         ".par.Scalev.enable": true,
@@ -8859,7 +8985,7 @@
         ".par.Routingr.enable": true,
         ".par.Routingr.val": "r",
         ".par.Rx.enable": true,
-        ".par.Rx.val": 0.0,
+        ".par.Rx.val": -90.0,
         ".par.Ry.enable": true,
         ".par.Ry.val": 0.0,
         ".par.Rz.enable": true,
@@ -8883,17 +9009,17 @@
         ".par.Showwireframe.enable": true,
         ".par.Showwireframe.val": true,
         ".par.Sx.enable": true,
-        ".par.Sx.val": 1.0,
+        ".par.Sx.val": 1.02,
         ".par.Sy.enable": true,
-        ".par.Sy.val": 1.43353,
+        ".par.Sy.val": 1.02,
         ".par.Sz.enable": true,
-        ".par.Sz.val": 1.32474,
+        ".par.Sz.val": 0.02,
         ".par.Tx.enable": true,
         ".par.Tx.val": 0.0,
         ".par.Ty.enable": true,
-        ".par.Ty.val": 0.0,
+        ".par.Ty.val": 119.005,
         ".par.Tz.enable": true,
-        ".par.Tz.val": 182.474,
+        ".par.Tz.val": 0.0,
         ".par.Uniformscale.enable": true,
         ".par.Uniformscale.val": 1.0,
         ".par.Uvfxorigin.enable": true,

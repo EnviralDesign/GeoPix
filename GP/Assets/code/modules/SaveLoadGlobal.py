@@ -1,3 +1,5 @@
+
+
 ################### SAVE FUNCTIONS #######################
 
 def SaveLoad_get_typical_parameter_attributes_to_save( ):
@@ -369,6 +371,7 @@ def SaveLoad_record_translation_link( translationDict , intendedPath , actualPat
 	it needs to be come more complex later.
 	'''
 	translationDict[intendedPath] = actualPath
+	# print('logged:', intendedPath,'=',actualPath)
 
 	return translationDict
 
@@ -399,14 +402,15 @@ def SaveLoad_init_operator_from_save_data( targetOp , savedData , translationDic
 		if k.startswith('.'):
 			
 			newlySetOrCreatedOp = SaveLoad_set_typical_operator_attributes( full_attribute_path , v )
-			translationDict = SaveLoad_record_translation_link( translationDict , targetOp.path , newlySetOrCreatedOp.path )
+			# translationDict = SaveLoad_record_translation_link( translationDict , targetOp.path , newlySetOrCreatedOp.path )
 
 		
 		### CASE #2 - starts with a forward slash (/), means it's a sub operator's attributes or par.attributes.
 		elif k.startswith('/'):
 
 			newlySetOrCreatedOp = SaveLoad_set_typical_operator_attributes( full_attribute_path , v )
-			translationDict = SaveLoad_record_translation_link( translationDict , targetOp.path , newlySetOrCreatedOp.path )
+			originPathForTranslation = full_attribute_path.split('.')[0]
+			# translationDict = SaveLoad_record_translation_link( translationDict , originPathForTranslation , newlySetOrCreatedOp.path )
 			pass
 
 		else:
@@ -416,6 +420,23 @@ def SaveLoad_init_operator_from_save_data( targetOp , savedData , translationDic
 	SaveLoad_set_secondary_operators( targetOp , savedData , translationDict )
 
 	return translationDict
+
+
+def SaveLoad_uniquify_names_on_operators( translationDict ):
+	'''
+	this function is used when the user performs an import function. most things they save and load are not user created objects,
+	thus the name param if it even exists should not change from it's original, however there are 3 main edge cases..
+	Editor objects, IO objects, and Perform objects which the user can create any number and any variety.
+	'''
+	for k,v in translationDict.items():
+		possiblyTranslatedObject = op(v)
+		if possiblyTranslatedObject != None:
+			if 'NameMustBeUnique' in possiblyTranslatedObject.tags:
+				print(k,v)
+
+
+
+	return
 
 
 
@@ -431,6 +452,7 @@ def SaveLoad_set_secondary_operators( rootOp , savedData , translationDict ):
 	if '__secondarylayer__' in savedData.keys():
 		if len(savedData['__secondarylayer__'].keys()):
 			firstOne = list(savedData['__secondarylayer__'].keys())[0]
+			# print('-------------', '/'.join( firstOne.split('/')[0:-1] ))
 			tmpRoot = op( '/'.join( firstOne.split('/')[0:-1] ) )
 			f = tmpRoot.findChildren(type=geometryCOMP, depth=1)
 			for each in f:
@@ -458,7 +480,6 @@ def SaveLoad_set_secondary_operators( rootOp , savedData , translationDict ):
 
 			# newly copied template.
 			targetOp = rootOp2.copy( cloneTemplate )
-			# translationDict = SaveLoad_record_translation_link( translationDict , targetOpPath , targetOp.path )
 
 			# iterate through all the attributes of the operator.
 			for attrPath,attrVal in targetOpSaveData.items():
@@ -472,8 +493,10 @@ def SaveLoad_set_secondary_operators( rootOp , savedData , translationDict ):
 
 					# print( 'full_attribute_path',full_attribute_path )
 
-					if attrPath == '.name':
-						value_ = targetOp.name
+					# if attrPath == '.name':
+					# 	value_ = targetOp.name
+					# 	if 'Fixture' in targetOp.name:
+					# 		print(targetOp)
 					
 					newlySetOrCreatedOp = SaveLoad_set_typical_operator_attributes( full_attribute_path , value_ )
 					translationDict = SaveLoad_record_translation_link( translationDict , targetOpPath , newlySetOrCreatedOp.path )
@@ -547,6 +570,30 @@ def SaveLoad_set_typical_operator_attributes( full_attribute_path , value_ ):
 		elif hasattr( targetOp , 'Write' ):
 			targetOp.Write()
 
+	### CASE #3 - if we're setting the name param,we want to make sure it's unique.
+	elif attr_ == 'name':
+
+		# edge 1 = editor object
+		# if targetOp.path.startswith( op.geoHolder.path ):
+		if targetOp.parent() == op.geoHolder:
+			existingNames = [ x.name for x in op.geoHolder.children if x != targetOp ]
+			value_ = mod.globalFuncs.uniquifyString( value_ , existingNames )
+			setattr( targetOp , attr_ , value_ )
+
+		# edge 2 = io object (top level only, so macros.)
+		if targetOp.parent() == op.IO_scene:
+			existingNames = [ x.name for x in op.IO_scene.children if x != targetOp ]
+			value_ = mod.globalFuncs.uniquifyString( value_ , existingNames )
+			setattr( targetOp , attr_ , value_ )
+
+		# edge 3 = perform objects.
+		# elif targetOp.path.startswith( op.PerformV2.path ):
+		elif targetOp.parent().name not in tdu.expand('Canvas[0-99]'):
+			existingNames = [ x.name for x in targetOp.parent().children if x != targetOp ]
+			value_ = mod.globalFuncs.uniquifyString( value_ , existingNames )
+			setattr( targetOp , attr_ , value_ )
+
+
 	### GENERAL attribute case. Most things can be set simply this way.
 	else:
 		try:
@@ -572,7 +619,34 @@ def SaveLoad_set_typical_operator_attributes( full_attribute_path , value_ ):
 				
 				# but it might also be a non custom parameter named mode.. so lets check if this is a param attr or not.
 				if '.par.' in objectEval_:
+					# print('=========',objectEval_)
 					if getattr( eval(objectEval_) , 'mode' ) not in [ ParMode.EXPRESSION ]:
+						
+						# if it's a Name parameter, do some uniquifying first, so we can ensure the name is unique among it's siblings.
+						if objectEval_.endswith( '.par.Name' ):
+							targetOp = eval(objectEval_.split('.')[0])
+							
+							# edge 1 = editor object
+							if targetOp.parent() == op.geoHolder:
+								existingNames = [ x.par.Name.eval() for x in op.geoHolder.children if x != targetOp and x.OPType == 'geometryCOMP' ]
+								# print('existing EDITOR names',existingNames)
+								value_ = mod.globalFuncs.uniquifyString( value_ , existingNames )
+
+							# edge 2 = io object (top level only, so macros.)
+							if targetOp.parent() == op.IO_scene:
+								# print(targetOp,'is in IO')
+								existingNames = [ x.par.Name.eval() for x in op.IO_scene.children if x != targetOp and x.OPType == 'geometryCOMP' ]
+								# print('existing IO names',existingNames)
+								value_ = mod.globalFuncs.uniquifyString( value_ , existingNames )
+
+							# edge 3 = perform objects.
+							elif targetOp.parent().name in tdu.expand('Canvas[0-99]'):
+								# print(targetOp,'is in PERFORM')
+								existingNames = [ x.par.Name.eval() for x in targetOp.parent().children if x != targetOp and x.OPType == 'containerCOMP' ]
+								# print('existing PERFORM names',existingNames)
+								value_ = mod.globalFuncs.uniquifyString( value_ , existingNames )
+							# print('---')
+
 						setattr( eval(objectEval_) , attr_ , value_ )
 
 			
@@ -652,7 +726,7 @@ def SaveLoad_set_input( targetOp , inputConnections , translationDict ):
 
 
 
-def SaveLoad_create_or_set_operators( rootPath , loadDict ):
+def SaveLoad_create_or_set_operators( rootPath , loadDict , isImport=False ):
 	'''
 	wrapper function that takes care of the branching between setting/creating objects.
 	'''
@@ -668,6 +742,10 @@ def SaveLoad_create_or_set_operators( rootPath , loadDict ):
 		rootOp = op(rootPath)
 		targetOp = op(savedOp)
 		cloneTemplateOp = op(savedData['.par.clone'])
+		# if this function is being run as an import action, we can trick the function into creating a new object
+		# even if one by it's name already exists, thus never overwriting what's already there.
+		if isImport == True:
+			targetOp = None
 
 		# print( '+++', rootOp , targetOp , cloneTemplateOp )
 
@@ -677,7 +755,10 @@ def SaveLoad_create_or_set_operators( rootPath , loadDict ):
 		if targetOp != None:
 
 			# do the standard initialization of an operator.
-			translationDict = SaveLoad_init_operator_from_save_data( targetOp , savedData , translationDict )
+			# translationDict = SaveLoad_init_operator_from_save_data( targetOp , savedData , translationDict )
+			SaveLoad_init_operator_from_save_data( targetOp , savedData , translationDict )
+
+			translationDict = SaveLoad_record_translation_link( translationDict , savedOp , targetOp.path )
 
 		### CASE 2 - operator does not exist, next assume a clone template of it exists.
 		# this scenario will apply to objects users create/delete.
@@ -687,14 +768,22 @@ def SaveLoad_create_or_set_operators( rootPath , loadDict ):
 			targetOp = rootOp.copy( cloneTemplateOp )
 
 			# do the standard initialization of an operator.
-			translationDict = SaveLoad_init_operator_from_save_data( targetOp , savedData , translationDict )
+			# translationDict = SaveLoad_init_operator_from_save_data( targetOp , savedData , translationDict )
+			SaveLoad_init_operator_from_save_data( targetOp , savedData , translationDict )
+
+			translationDict = SaveLoad_record_translation_link( translationDict , savedOp , targetOp.path )
+
+
+		if hasattr( targetOp , 'SET_WINDOW' ):
+			targetOp.SET_WINDOW()
 
 
 		# CASE 3 - operator does not exist, nor does a clone template exist.
 		# placeholder logic branch, but in GeoPix we should not have anything
 		# that fits this criteria.
 		else:
-			debug('creating from scratch...')
+			# debug('creating from scratch...')
+			debug('No valid Target or Clone, Skipping! (this is probably fine)')
 
 
 	return translationDict

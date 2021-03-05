@@ -135,7 +135,7 @@ class SaveLoad:
 
 
 
-	def SaveLoad_SET(self, loadDict, exact_match):
+	def SaveLoad_SET(self, loadDict, exact_match, isImport):
 		'''
 		attempts to recreate or set the operators up.. 
 		effectively this is the LOAD function.
@@ -153,7 +153,10 @@ class SaveLoad:
 			loadDict = { k:v for k,v in loadDict.items() if k == rootPath }
 
 		# create or set the initial operaetors up, returning a translation dict for any name conflicts.
-		translationDict = SaveLoadGlobal.SaveLoad_create_or_set_operators( rootPath , loadDict )
+		translationDict = SaveLoadGlobal.SaveLoad_create_or_set_operators( rootPath , loadDict , isImport=isImport )
+
+		# if isImport == True:
+		# 	SaveLoadGlobal.SaveLoad_uniquify_names_on_operators( translationDict )
 
 		# parent objects to their intended parents.
 		SaveLoadGlobal.SaveLoad_set_parent_operators( rootPath , loadDict , translationDict )

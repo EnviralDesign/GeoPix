@@ -30,6 +30,9 @@ $RECYCLE.BIN/
 .td
 .tmp
 *_Log.txt
+GP/LIBRARY/PROJECTS/GeoPixProjectConfig.txt
+*.gp
+!GP/LIBRARY/PROJECTS/Sample.gp
 
 # td auto generated folders for imported assets
 TDImportCache
@@ -40,3 +43,5 @@ GeoPix_2.0.[0-9]*.toe
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/windows
+
+

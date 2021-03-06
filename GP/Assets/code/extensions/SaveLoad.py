@@ -103,6 +103,8 @@ class SaveLoad:
 			for each in secondaryResults:
 				secondary_obj_data = {}
 
+				# print(each)
+
 				#### save operator level attributes.
 				secondary_obj_data = SaveLoadGlobal.SaveLoad_get_clone_op_attribute( secondary_obj_data, each )
 				secondary_obj_data = SaveLoadGlobal.SaveLoad_get_general_op_data( secondary_obj_data, each )

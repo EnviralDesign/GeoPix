@@ -173,6 +173,11 @@ def SaveLoad_get_general_op_data( obj_data, targetOp ):
 	if hasattr(targetOp,'render'):
 		obj_data['.render'] = targetOp.render
 
+	# the following attributes are custom attributes defined with getters in extensions, hence the starting with uppercase.
+	# add other custom python properties here as well.
+	if hasattr(targetOp,'State'):
+		obj_data['.State'] = targetOp.State
+
 	
 	
 	return obj_data
@@ -199,7 +204,6 @@ def SaveLoad_get_panel_data( obj_data, panel_value_names, targetOp ):
 			
 			# loop through the panel attribute names provided.
 			for panelAttrName in panel_value_names:
-				# print("<%s>"%(panelAttrName))
 				# if the panel object contains the attribute we're trying to save... proceed.
 				if hasattr( opPanelObject , panelAttrName ):
 					
@@ -209,6 +213,7 @@ def SaveLoad_get_panel_data( obj_data, panel_value_names, targetOp ):
 					obj_data['.panel.%s'%(panelAttrName)] = panelAttrVal
 				else:
 					print( 'Panel attribute: %s.%s.%s could not be found or is invalid, skipping..'%( targetOp.path , 'panel' , panelAttrName ) )
+					# print('-')
 	
 	return obj_data
 
@@ -397,10 +402,10 @@ def SaveLoad_init_operator_from_save_data( targetOp , savedData , translationDic
 	for k,v in savedData.items():
 
 		full_attribute_path = targetOp.path + k
+		# print(full_attribute_path)
 		
 		### CASE #1 - starts with a period, means it's an attribute, or par.attribute of the top level operator.
 		if k.startswith('.'):
-			
 			newlySetOrCreatedOp = SaveLoad_set_typical_operator_attributes( full_attribute_path , v )
 			# translationDict = SaveLoad_record_translation_link( translationDict , targetOp.path , newlySetOrCreatedOp.path )
 
@@ -487,16 +492,8 @@ def SaveLoad_set_secondary_operators( rootOp , savedData , translationDict ):
 				### CASE #1 - starts with a period, means it's an attribute, or par.attribute of the top level operator.
 				if attrPath.startswith('.'):
 					
-					# targetOp = k.replace( rootOp.path , translatedRootOp.path )
 					full_attribute_path = targetOp.path + attrPath
 					value_ = attrVal
-
-					# print( 'full_attribute_path',full_attribute_path )
-
-					# if attrPath == '.name':
-					# 	value_ = targetOp.name
-					# 	if 'Fixture' in targetOp.name:
-					# 		print(targetOp)
 					
 					newlySetOrCreatedOp = SaveLoad_set_typical_operator_attributes( full_attribute_path , value_ )
 					translationDict = SaveLoad_record_translation_link( translationDict , targetOpPath , newlySetOrCreatedOp.path )
@@ -505,6 +502,10 @@ def SaveLoad_set_secondary_operators( rootOp , savedData , translationDict ):
 				# we know there will be nothing in our network qualifying this.
 				elif attrPath.startswith( '/' ):
 					pass
+
+			# special edge case for sub objects who have a .State setter.
+			if hasattr( targetOp , 'State' ):
+				targetOp.State = targetOpSaveData['.State']
 
 		else:
 			debug('cloneTemplate was None, this should not happen.')
@@ -664,7 +665,6 @@ def SaveLoad_set_typical_operator_attributes( full_attribute_path , value_ ):
 			
 			# GENERAL CASE:
 			else:
-				# print(objectEval_,attr_,value_)
 				setattr( eval(objectEval_) , attr_ , value_ )
 		except tdError as E:
 			if not str(E).startswith( 'Custom parameter expected. ' ):
@@ -774,16 +774,18 @@ def SaveLoad_create_or_set_operators( rootPath , loadDict , isImport=False ):
 			translationDict = SaveLoad_record_translation_link( translationDict , savedOp , targetOp.path )
 
 
-		if hasattr( targetOp , 'SET_WINDOW' ):
-			targetOp.SET_WINDOW()
-
-
 		# CASE 3 - operator does not exist, nor does a clone template exist.
 		# placeholder logic branch, but in GeoPix we should not have anything
 		# that fits this criteria.
 		else:
 			# debug('creating from scratch...')
 			debug('No valid Target or Clone, Skipping! (this is probably fine)')
+
+
+
+		if hasattr( targetOp , 'SET_WINDOW' ):
+			targetOp.SET_WINDOW()
+
 
 
 	return translationDict

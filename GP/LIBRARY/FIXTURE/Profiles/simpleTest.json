@@ -148,7 +148,7 @@
 					"ActiveMin": 0,
 					"ActiveMax": 255,
 					"OutputMin":0,
-					"OutputMax":15,
+					"OutputMax":20,
 					"BlendMode":"Set",
 					"AnimationMode":"Constant",
 					"Priority":0
@@ -454,7 +454,7 @@
 			"EmitG":0.0,
 			"EmitB":0.0,
 			"BeamPower": 8.0,
-			"AttenFar": 500.0,
+			"AttenFar": 2000.0,
 			"AttenRolloff": 7,
 			"ConeAngle": 1,
 			"ConeDelta": 10,

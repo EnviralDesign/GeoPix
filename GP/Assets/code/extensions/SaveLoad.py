@@ -142,6 +142,8 @@ class SaveLoad:
 		attempts to recreate or set the operators up.. 
 		effectively this is the LOAD function.
 		'''
+
+		# print( list(loadDict.keys()) )
 		
 		# get the root path. we'll use this to filter out save data from other parts of the network.
 		rootPath = self.ownerComp.path
@@ -153,6 +155,10 @@ class SaveLoad:
 		elif exact_match == True:
 			# filter out save data from other parts of the network, stricter
 			loadDict = { k:v for k,v in loadDict.items() if k == rootPath }
+
+		elif exact_match == None:
+			# if the exact match cell is None, we do no filtering at all good sir.
+			pass
 
 		# create or set the initial operaetors up, returning a translation dict for any name conflicts.
 		translationDict = SaveLoadGlobal.SaveLoad_create_or_set_operators( rootPath , loadDict , isImport=isImport )

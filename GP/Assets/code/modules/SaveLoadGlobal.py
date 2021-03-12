@@ -85,6 +85,7 @@ def SaveLoad_get_op_node_storage( obj_data, targetOp, subOperatorNames=[] ):
 		subOp = targetOp.op(subOpName)
 		if subOp != None:
 			subOpStorage = SaveLoad_Strip_Depend_From_Dict(subOp.storage)
+			# print( subOpStorage )
 			obj_data['/%s.storage'%(subOpName)] = subOpStorage
 	
 	return obj_data
@@ -615,7 +616,18 @@ def SaveLoad_set_typical_operator_attributes( full_attribute_path , value_ ):
 					else:
 						setattr( eval(objectEval_) , attr_ , '' )
 			
-			# CASE #3 - might be setting a parameter's val -this is common...
+			# CASE #3 - might be setting a parameter's enable attr...
+			elif attr_ == 'enable':
+				
+				# but it might also be a non custom parameter named mode.. so lets check if this is a param attr or not.
+				if '.par.' in objectEval_:
+					if getattr( eval(objectEval_) , 'enableExpr' ) == None:
+						setattr( eval(objectEval_) , attr_ , value_ )
+					else:
+						# if we are dealing with a param that has an enableExpr we don't want to override that dynamic link on load.
+						pass
+			
+			# CASE #4 - might be setting a parameter's val -this is common...
 			elif attr_ == 'val':
 				
 				# but it might also be a non custom parameter named mode.. so lets check if this is a param attr or not.

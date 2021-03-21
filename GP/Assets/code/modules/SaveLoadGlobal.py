@@ -563,7 +563,7 @@ def SaveLoad_set_typical_operator_attributes( full_attribute_path , value_ ):
 			# json always requires keys be strings, so when we save our data out it gets stringified. must convert back.
 			for k,v in targetOp.storage.items():
 				if k in ['HullStored','PixStored']:
-					targetOp.storage[k]['coordList'] = { int(k2):v2 for k2,v2 in targetOp.storage[k]['coordList'].items() }
+					targetOp.storage[k]['coordList'] = { int(pixKey):{ pixAttrKey:{ int(k4):v4 for k4,v4 in pixAttrVal.items() } if pixAttrKey == 'coords' else pixAttrVal for pixAttrKey,pixAttrVal in pixVal.items() } for pixKey,pixVal in targetOp.storage[k]['coordList'].items() }
 			
 			# call the WriteCoordsToTable function to push the storage data out to TouchDesigner nodes.
 			targetOp.WriteCoordsToTable()

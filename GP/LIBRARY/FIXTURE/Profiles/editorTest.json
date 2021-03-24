@@ -10,24 +10,6 @@
 					"Type": "_Transforms_",
 					"Priority": 1,
 					"Targets": [
-						"T_BaseGeo"
-					],
-					"Parameters": [
-						"Ry"
-					],
-					"ActiveMin": 0,
-					"ActiveMax": 255,
-					"InputMin": 0,
-					"InputMax": 255,
-					"OutputMin": 0.0,
-					"OutputMax": 360.0,
-					"AnimationMode": "Constant",
-					"BlendMode": "Set"
-				},
-				{
-					"Type": "_Transforms_",
-					"Priority": 1,
-					"Targets": [
 						"T_MyEmitter"
 					],
 					"Parameters": [
@@ -41,6 +23,24 @@
 					"OutputMax": 360.0,
 					"AnimationMode": "Constant",
 					"BlendMode": "Add"
+				},
+				{
+					"Type": "_Transforms_",
+					"Priority": 1,
+					"Targets": [
+						"T_BaseGeo"
+					],
+					"Parameters": [
+						"Ry"
+					],
+					"ActiveMin": 0,
+					"ActiveMax": 255,
+					"InputMin": 0,
+					"InputMax": 255,
+					"OutputMin": 0.0,
+					"OutputMax": 360.0,
+					"AnimationMode": "Constant",
+					"BlendMode": "Set"
 				}
 			]
 		},
@@ -95,6 +95,17 @@
 			"Sz": 1.0,
 			"Parent": "T_Root"
 		},
+		"T_None": {
+			"Tx": 0.0,
+			"Ty": 0.0,
+			"Tz": 0.0,
+			"Rx": 0.0,
+			"Ry": 0.0,
+			"Rz": 0.0,
+			"Sx": 1.0,
+			"Sy": 1.0,
+			"Sz": 1.0
+		},
 		"T_MyEmitter": {
 			"Tx": 0.0,
 			"Ty": 0.0,
@@ -122,6 +133,20 @@
 			"Roughness": 0.2,
 			"Specular": 1.0,
 			"Parent": "T_BaseGeo"
+		},
+		"G_None": {
+			"GeometryFunction": "cube",
+			"FilePath": "",
+			"DiffuseR": 0.8,
+			"DiffuseG": 0.8,
+			"DiffuseB": 0.8,
+			"EmitR": 0.0,
+			"EmitG": 0.0,
+			"EmitB": 0.0,
+			"Metallic": 0.0,
+			"Roughness": 0.2,
+			"Specular": 1.0,
+			"Parent": "T_None"
 		}
 	},
 	"_Emitters_": {

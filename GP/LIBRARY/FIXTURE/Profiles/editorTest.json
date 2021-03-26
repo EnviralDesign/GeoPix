@@ -1,76 +1,4 @@
 {
-	"_Channels_": {
-		"Pan": {
-			"Index": 0,
-			"InputMin": 0,
-			"InputMax": 255,
-			"SlopeClamp": 0.0,
-			"Map": [
-				{
-					"Type": "_Transforms_",
-					"Priority": 1,
-					"Targets": [
-						"T_MyEmitter"
-					],
-					"Parameters": [
-						"Ry"
-					],
-					"ActiveMin": 0,
-					"ActiveMax": 255,
-					"InputMin": 0,
-					"InputMax": 255,
-					"OutputMin": 0.0,
-					"OutputMax": 360.0,
-					"AnimationMode": "Constant",
-					"BlendMode": "Add"
-				},
-				{
-					"Type": "_Transforms_",
-					"Priority": 1,
-					"Targets": [
-						"T_BaseGeo"
-					],
-					"Parameters": [
-						"Ry"
-					],
-					"ActiveMin": 0,
-					"ActiveMax": 255,
-					"InputMin": 0,
-					"InputMax": 255,
-					"OutputMin": 0.0,
-					"OutputMax": 360.0,
-					"AnimationMode": "Constant",
-					"BlendMode": "Set"
-				}
-			]
-		},
-		"r": {
-			"Index": 1,
-			"InputMin": 0,
-			"InputMax": 255,
-			"SlopeClamp": 0.0,
-			"Map": [
-				{
-					"Type": "_Emitters_",
-					"Priority": 1,
-					"Targets": [
-						"E_MyEmitter"
-					],
-					"Parameters": [
-						"EmitR"
-					],
-					"ActiveMin": 0,
-					"ActiveMax": 255,
-					"InputMin": 0,
-					"InputMax": 255,
-					"OutputMin": 0.0,
-					"OutputMax": 1.0,
-					"AnimationMode": "Constant",
-					"BlendMode": "Set"
-				}
-			]
-		}
-	},
 	"_Transforms_": {
 		"T_Root": {
 			"Tx": 0.0,
@@ -83,30 +11,7 @@
 			"Sy": 1.0,
 			"Sz": 1.0
 		},
-		"T_BaseGeo": {
-			"Tx": 0.0,
-			"Ty": 0.0,
-			"Tz": 0.0,
-			"Rx": 0.0,
-			"Ry": 0.0,
-			"Rz": 0.0,
-			"Sx": 1.0,
-			"Sy": 0.1,
-			"Sz": 1.0,
-			"Parent": "T_Root"
-		},
-		"T_None": {
-			"Tx": 0.0,
-			"Ty": 0.0,
-			"Tz": 0.0,
-			"Rx": 0.0,
-			"Ry": 0.0,
-			"Rz": 0.0,
-			"Sx": 1.0,
-			"Sy": 1.0,
-			"Sz": 1.0
-		},
-		"T_MyEmitter": {
+		"T_Transform0": {
 			"Tx": 0.0,
 			"Ty": 0.0,
 			"Tz": 0.0,
@@ -117,10 +22,34 @@
 			"Sy": 1.0,
 			"Sz": 1.0,
 			"Parent": "T_Root"
+		},
+		"T_Geometry0": {
+			"Tx": 0.0,
+			"Ty": 52.0,
+			"Tz": 0.0,
+			"Rx": 0.0,
+			"Ry": 0.0,
+			"Rz": 0.0,
+			"Sx": 1.0,
+			"Sy": 1.0,
+			"Sz": 1.0,
+			"Parent": "T_Transform0"
+		},
+		"T_Emitter0": {
+			"Tx": 0.0,
+			"Ty": 0.0,
+			"Tz": 0.0,
+			"Rx": 0.0,
+			"Ry": 0.0,
+			"Rz": 0.0,
+			"Sx": 1.0,
+			"Sy": 1.0,
+			"Sz": 1.0,
+			"Parent": "T_Transform0"
 		}
 	},
 	"_Geometry_": {
-		"G_BaseGeo": {
+		"G_Geometry0": {
 			"GeometryFunction": "cube",
 			"FilePath": "",
 			"DiffuseR": 0.8,
@@ -132,42 +61,28 @@
 			"Metallic": 0.0,
 			"Roughness": 0.2,
 			"Specular": 1.0,
-			"Parent": "T_BaseGeo"
-		},
-		"G_None": {
-			"GeometryFunction": "cube",
-			"FilePath": "",
-			"DiffuseR": 0.8,
-			"DiffuseG": 0.8,
-			"DiffuseB": 0.8,
-			"EmitR": 0.0,
-			"EmitG": 0.0,
-			"EmitB": 0.0,
-			"Metallic": 0.0,
-			"Roughness": 0.2,
-			"Specular": 1.0,
-			"Parent": "T_None"
+			"Parent": "T_Geometry0"
 		}
 	},
 	"_Emitters_": {
-		"E_MyEmitter": {
-			"LightFunction": "Cone",
+		"E_Emitter0": {
+			"LightFunction": "Point",
 			"EmitR": 0.0,
 			"EmitG": 0.0,
 			"EmitB": 0.0,
-			"BeamPower": 5.0,
+			"BeamPower": 1.0,
 			"AttenNear": 0.0001,
 			"AttenFar": 300.0,
 			"AttenRolloff": 2.2,
 			"ShadowsEnabled": false,
 			"ProjectionsEnabled": false,
-			"ConeAngle": 3.0,
-			"ConeDelta": 5.0,
+			"ConeAngle": 5.0,
+			"ConeDelta": 10.0,
 			"ConeFalloff": 2.2,
 			"GoboId": -1,
 			"GoboRotate": 0.0,
 			"GoboBlur": 0.0,
-			"Parent": "T_MyEmitter"
+			"Parent": "T_Emitter0"
 		}
 	}
 }

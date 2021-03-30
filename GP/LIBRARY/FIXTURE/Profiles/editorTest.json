@@ -1,4 +1,49 @@
 {
+	"_Channels_": {
+		"Channel": {
+			"Index": 0,
+			"InputMin": 0,
+			"InputMax": 255,
+			"SlopeClamp": 0.0,
+			"Map": [
+				{
+					"Type": "_Emitters_",
+					"Priority": 1,
+					"Targets": [
+						"E_Emitter",
+						"E_Emitter",
+						"E_Emitter"
+					],
+					"Parameters": [
+						"EmitR",
+						"EmitG",
+						"EmitB"
+					],
+					"ActiveMin": 20,
+					"ActiveMax": 255,
+					"InputMin": 0,
+					"InputMax": 128,
+					"OutputMin": 0.0,
+					"OutputMax": 1.0,
+					"OutputCustom": "",
+					"AnimationMode": "Constant",
+					"BlendMode": "Duty",
+					"DutyRange": [
+						1.0,
+						0.15
+					],
+					"DutyBias": 0.25
+				}
+			]
+		},
+		"Channel_1": {
+			"Index": 1,
+			"InputMin": 0,
+			"InputMax": 255,
+			"SlopeClamp": 0.0,
+			"Map": []
+		}
+	},
 	"_Transforms_": {
 		"T_Root": {
 			"Tx": 0.0,
@@ -11,7 +56,19 @@
 			"Sy": 1.0,
 			"Sz": 1.0
 		},
-		"T_Transform0": {
+		"T_Geometry": {
+			"Tx": 0.0,
+			"Ty": 0.0,
+			"Tz": 0.0,
+			"Rx": 0.0,
+			"Ry": 0.0,
+			"Rz": 0.0,
+			"Sx": 0.1,
+			"Sy": 0.1,
+			"Sz": 0.1,
+			"Parent": "T_Root"
+		},
+		"T_Emitter": {
 			"Tx": 0.0,
 			"Ty": 0.0,
 			"Tz": 0.0,
@@ -22,55 +79,31 @@
 			"Sy": 1.0,
 			"Sz": 1.0,
 			"Parent": "T_Root"
-		},
-		"T_Geometry0": {
-			"Tx": 0.0,
-			"Ty": 52.0,
-			"Tz": 0.0,
-			"Rx": 0.0,
-			"Ry": 0.0,
-			"Rz": 0.0,
-			"Sx": 1.0,
-			"Sy": 1.0,
-			"Sz": 1.0,
-			"Parent": "T_Transform0"
-		},
-		"T_Emitter0": {
-			"Tx": 0.0,
-			"Ty": 0.0,
-			"Tz": 0.0,
-			"Rx": 0.0,
-			"Ry": 0.0,
-			"Rz": 0.0,
-			"Sx": 1.0,
-			"Sy": 1.0,
-			"Sz": 1.0,
-			"Parent": "T_Transform0"
 		}
 	},
 	"_Geometry_": {
-		"G_Geometry0": {
+		"G_Geometry": {
 			"GeometryFunction": "cube",
 			"FilePath": "",
-			"DiffuseR": 0.8,
-			"DiffuseG": 0.8,
-			"DiffuseB": 0.8,
+			"DiffuseR": 0.5,
+			"DiffuseG": 0.5,
+			"DiffuseB": 0.5,
 			"EmitR": 0.0,
 			"EmitG": 0.0,
 			"EmitB": 0.0,
 			"Metallic": 0.0,
 			"Roughness": 0.2,
 			"Specular": 1.0,
-			"Parent": "T_Geometry0"
+			"Parent": "T_Geometry"
 		}
 	},
 	"_Emitters_": {
-		"E_Emitter0": {
-			"LightFunction": "Point",
-			"EmitR": 0.0,
+		"E_Emitter": {
+			"LightFunction": "Cone",
+			"EmitR": 1.0,
 			"EmitG": 0.0,
 			"EmitB": 0.0,
-			"BeamPower": 1.0,
+			"BeamPower": 5.0,
 			"AttenNear": 0.0001,
 			"AttenFar": 300.0,
 			"AttenRolloff": 2.2,
@@ -79,10 +112,10 @@
 			"ConeAngle": 5.0,
 			"ConeDelta": 10.0,
 			"ConeFalloff": 2.2,
-			"GoboId": -1,
+			"GoboId": "",
 			"GoboRotate": 0.0,
 			"GoboBlur": 0.0,
-			"Parent": "T_Emitter0"
+			"Parent": "T_Emitter"
 		}
 	}
 }

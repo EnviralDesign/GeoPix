@@ -1,0 +1,112 @@
+
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+.git.bfg-report
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# photoshop files
+*.afphoto
+*.psd
+
+
+# automated local installations and dependancies
+.py
+.td
+.tmp
+*_Log.txt
+GP/LIBRARY/PROJECTS/GeoPixProjectConfig.txt
+GP/Assets/patreon/getPatrons.py
+# *.gp
+
+# Library items downloaded by the asset downloader
+
+# fixture profiles json
+GP/LIBRARY/**/*.json
+
+# scene projects json
+GP/LIBRARY/PROJECTS/**/*.gp
+
+# 3d
+GP/LIBRARY/**/*.obj
+GP/LIBRARY/**/*.fbx
+GP/LIBRARY/**/*.3DS
+GP/LIBRARY/**/*.mb
+GP/LIBRARY/**/*.blend
+GP/LIBRARY/**/*.blend1
+
+# audio
+GP/LIBRARY/**/*.wav
+GP/LIBRARY/**/*.mp3
+GP/LIBRARY/**/*.ogg
+GP/LIBRARY/**/*.aif
+GP/LIBRARY/**/*.aiff
+GP/LIBRARY/**/*.flac
+GP/LIBRARY/**/*.m4a
+
+# image
+GP/LIBRARY/**/*.bmp
+GP/LIBRARY/**/*.dds
+GP/LIBRARY/**/*.dpx
+GP/LIBRARY/**/*.exr
+GP/LIBRARY/**/*.ffs
+GP/LIBRARY/**/*.fit
+GP/LIBRARY/**/*.fits
+GP/LIBRARY/**/*.gif
+GP/LIBRARY/**/*.hdr
+GP/LIBRARY/**/*.jpeg
+GP/LIBRARY/**/*.jpg
+GP/LIBRARY/**/*.pic
+GP/LIBRARY/**/*.png
+GP/LIBRARY/**/*.swf
+GP/LIBRARY/**/*.tga
+GP/LIBRARY/**/*.tif
+GP/LIBRARY/**/*.tiff
+
+# movie
+GP/LIBRARY/**/*.3gp
+GP/LIBRARY/**/*.avi
+GP/LIBRARY/**/*.flv
+GP/LIBRARY/**/*.m2ts
+GP/LIBRARY/**/*.m4v
+GP/LIBRARY/**/*.mkv
+GP/LIBRARY/**/*.mov
+GP/LIBRARY/**/*.mp4
+GP/LIBRARY/**/*.mpeg
+GP/LIBRARY/**/*.mpg
+GP/LIBRARY/**/*.mts
+GP/LIBRARY/**/*.mxf
+GP/LIBRARY/**/*.r3d
+GP/LIBRARY/**/*.ts
+GP/LIBRARY/**/*.webm
+GP/LIBRARY/**/*.wmv
+
+# td auto generated folders for imported assets
+TDImportCache
+Backup
+GeoPix_2.0.[0-9]*.toe
+
+# Windows shortcuts
+*.lnk
+
+# End of https://www.toptal.com/developers/gitignore/api/windows
+
+

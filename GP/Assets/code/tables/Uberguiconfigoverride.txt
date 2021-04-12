@@ -1,0 +1,266 @@
+tuplename	tooltip	style	forceUnderscore	
+				
+Name	The Name of the object. Needs to be Unique. Any spaces will be converted to underscores.	tduLegal		
+				
+Tx	X Position of the object.			
+Ty	Y Position of the object.			
+Tz	Z Position of the object.			
+				
+Rx	X Rotation of the object.			
+Ry	Y Rotation of the object.			
+Rz	Z Rotation of the object.			
+				
+Sx	X Scale of the object.			
+Sy	Y Scale of the object.			
+Sz	Z Scale of the object.			
+Uniformscale	Adjust the overall scale of the object uniformly by adjusting this attribute.			
+				
+Showicon	Enable or disable the rendering of this object's icon in the viewport.			
+Showselectionhighlight	Enable or disable the rendering of this object's selection highlighting in the viewport.			
+				
+Pivotsnapping	Enable this to snap translate to and from the objects pivot point.			
+Hullsnapping	Enable this to snap to and from the Fixture's Hull points.			
+Pixsnapping	Enable this to snap to and from the Fixture's Pix points.			
+Vertexsnapping	Enable this to snap to and from the object's geometry verticies.			
+				
+Fixtureprofile	Choose a json formatted Custom Fixture profile. You can create these profiles in GeoPix Tools -> Custom Fixture Editor.			
+				
+Reloadobj	Force reloads the obj from disk.			
+Recalculatenormals	Recalculate the normals of the geometry.			
+				
+Resetmaterials	Reset the material attributes to default.			
+Basecolorstrength	Base diffuse color of the object.			
+Basecolortexture	Load a diffuse texture from disk. 8 or 16 bit is fine.			
+Basecolorissrgb	Enable this for diffuse textures that are encoded as sRGB when saved. If you're not sure, assume it is and leave this on.			
+Normalmapstrength	Strength multiplier of the Normal Map texture.			
+Normaltexture	Load a normal map file from disk. Use 16 bit where possible, will look much better.			
+Normalformat	Choose the normal format of the loaded normal texture. This is important to get right, as the normals will just look strange if this is wrong. GeoPix assumes OpenGL style, but if the textures were saved for DirectX (Unreal for example) then change to that here.			
+Roughnessstrength	Roughness strength attribute of the pbr material.			
+Roughnesstexture	Load a roughness texture from disk.			
+Aostrength	Ambient occlusion strength parameter.			
+Aotexture	Load an ambient occlusion texture from disk.			
+Emitcolortexture	Load an emission texture from disk.			
+Emitcolorstrength	Set the emission color strength.			
+Specularlevelstrength	Set the specular level strength.			
+Specularleveltexture	Load a specular level texture from disk.			
+				
+Uniformtexturescale	Set a uniform scale value for the uvs. Larger numbers make the texture smaller.			
+Rotateuvs	Rotate the texture around the origin.			
+Scale	Scale the texture on different axis. Larger numbers make the texture smaller.			
+Offset	Offset the texture on different axis.			
+				
+Surfaceactive	Toggle this off if you want to totally disable the Surface object, effectively making it's contribution 0.			
+Redchannel	Specify the GeoPix channel name that should be routed to the Red channel of this surface object.			
+Greenchannel	Specify the GeoPix channel name that should be routed to the Green channel of this surface object.			
+Bluechannel	Specify the GeoPix channel name that should be routed to the Blue channel of this surface object.			
+				
+Illuminationsubdivisions	Specify the number of subdivision iterations to apply to the verticies of this mesh, to use as light emission points. Be careful turning this up too high.			
+				
+Hulltx	X position of the selected Hull(s).			
+Hullty	Y position of the selected Hull(s).			
+Hulltz	Z position of the selected Hull(s).			
+Hullu	U coordinate of the selected Hull(s). Note, this is only utilized in Surface objects, Fixtures do not utilize this.			
+Hullv	V coordinate of the selected Hull(s). Note, this is only utilized in Surface objects, Fixtures do not utilize this.			
+Addhull	Click to add another hull at the location and coordinates above. Useful if you do not have any geometry or snap points to draw on.			
+				
+Pixtx	X position of the selected Pix(s).			
+Pixty	Y position of the selected Pix(s).			
+Pixtz	Z position of the selected Pix(s).			
+				
+Visible	Toggle the Visibility of the object. You can also toggle this by clicking the eye icon in the outliner.			
+Live	Toggling this off will prevent snapping points from this object from appearing during a snap move.			
+				
+Primtype	Choose a primitive type from the dropdown.			
+Loadobj	Choose an obj file to load from disk.			
+				
+Generatoractive	Disabling this will cause the Generator to not contribute any generation to the parent fixture. Useful for debugging generations containg multiple Generators.			
+Coordinateset	Specify which of the 4 coordinate sets this Generator should write it's generated info to. The default set of 1 usually works just fine, but in some cases you may need to deal with different mapping styles for the same fixture. To enable Coordinate Sets, to go Preferences -> Editor Settings -> Enable Coordinate Sets.			
+				
+Matcolor	Choose a color for this object's shader.			
+Matshaded	When this is Enabled, scene lighting will affect shading. When it is off, the object will be flat shaded - useful for schematics or technical image planes.			
+Mattexture	Specify an IO node name here manually, or choose one from the IO Textures tab in the top right of the viewport.			
+				
+Lighttype	Choose Spotlight, Area light, or Directional light.			
+Lightcolor	Choose a static base color for the light. If linking to pix, best to leave at default.			
+Lightatten	Specify an attenuation distance for the light. This is like falloff for distance.			
+Lightdimmer	Dim the light, or make it brighter by specifying a brightness level. If linking to pix, best to leave at default.			
+Lightangle	Specify the angle of the light cone in degrees.			
+Lightdelta	Specify the falloff distance of the cone. Higher numbers will make the edge of the cone softer.			
+Lightshadows	Enabling this will turn on Shadow maps for this light. WARNING: very expensive!			
+Lightwireframe	Disabling this will turn off the grey wireframe of the light object, making for a less cluttered look in the editor viewport.			
+				
+Lightfixturelink	Specify the name of a fixture object that you wish to link this light to. Using the syntax ".." will cause the light to reference the parent fixture no matter what the name is. This is reccomended.			
+Lightpixlink	Specify the ID of the pix you wish to link this light to in the fixture above.			
+Lightrchanlink	Specify the channel from the fixture, that you want to drive the red channel of the light with.			
+Lightgchanlink	Specify the channel from the fixture, that you want to drive the green channel of the light with.			
+Lightbchanlink	Specify the channel from the fixture, that you want to drive the blue channel of the light with.			
+Lightpchanlink	Specify the channel from the fixture, that you want to drive the pan channel of the light with.			
+Lighttchanlink	Specify the channel from the fixture, that you want to drive the tilt channel of the light with.			
+				
+Lightpminmax	Specify the start and end Pan values that you wish the digital light to move in relation to the source channel specified above.			
+Lighttminmax	Specify the start and end Tilt values that you wish the digital light to move in relation to the source channel specified above.			
+Lightplag	Specify the amount of pan lag you wish to introduce to the light for realistic movement.			
+Lighttlag	Specify the amount of tilt lag you wish to introduce to the light for realistic movement.			
+Lightpslope	Specify the max pan slope you wish to introduce to the light for realistic movement.			
+Lighttslope	Specify the max of tilt slope you wish to introduce to the light for realistic movement.			
+				
+Pixscale	You can make this number larger, to increase the visual size of the Pix circles in the viewport. Purely aesthetic.			
+Showhullcurves	Toggle on/off the rendering of the Hull curves of this fixture. Hull curves are the orange line connecting the orange Hull dots.			
+Showpixcurves	Toggle on/off the rendering of the Pix curves of this fixture. Pix curves are the animated blue line connecting the blue Pix dots.			
+Chanorder	IMPORTANT: the order or and number of channels here is crucial to match the real world order and number of channels in this fixture type. Generally, you will not need to set this manually, as all the other tools that generate or manipulate Pix will do this for you.			
+Fdeviceid	Specify the device ID you wish to link this fixture to.			
+Fixtureactive	Toggle on/off the effect of this Fixture. Setting this to off will effectively make that fixture's data 0.			
+Pixframeeditor	Toggle the availability of this fixture in the PixFrame editor on or off. Usually for hybrid projects containing dmx lights and leds, you may not want led fixtures in the pixframe editor.			
+Uvfixture	Specify the name of another fixture here to utilize that fixture as sampling coordinates. Useful if you are building a physical structure, but want to map your content to a flat 2d uv map.			
+Pixsplit	Some pixel controllers like the Pixlite series does not allow pixels to be split across universes. Some controllers do. Toggling this on will allow Pix of any length to split across universes. For better understsanding check the channel monitor while toggling this.			
+Pixfill	Toggle this on to force this Fixture to maintain a fixed amount of Pix no matter what the generators attached are creating. You can set the fill value once this is enabled in the field below.			
+Pixfillamount	Set the amount of total Pix, you want this fixture to maintain here. Generators that create Pix past this amount will have their generated data clipped.			
+				
+Channel	Specify the starting Channel offset of this fixture.			
+Universe	Specify the starting Universe offset of this fixture.			
+Subnet	Specify the starting Subnet offset of this fixture.			
+Net	Specify the starting Net offset of this fixture.			
+Absuniverse	Moving this slider will select an absolute universe, and it will be translated into universe, subnet, and net. To go past Net1, double click and enter values manually.			
+				
+Regen	Force Regenerate the Pix this generator is setup to create. WARNING: Will overrite any user data you have.			
+Gentype	Choose a Generator type. Different types require different numbers of Hulls. 			
+Genmode	Choose by count or by pitch. This option lets you control how you populate your hull.			
+Hullcoords	Specify the indicies as comma separated whole numbers of the hulls you are generating from.			
+Gchans	Specify the channels you wish to automatically create when the generator updates. For Leds, usually this would just be r,g,b			
+Rotateids	Click this to rotate the ids clockwise or counterclockwise if you are not starting with the correct ID but have them selected in the right order otherwise.			
+Xcount	Specify the number of Pix on the first axis.			
+Ycount	Specify the number of Pix on the second axis.			
+Xpitch	Specify the spacing of the Pix on the first axis.			
+Ypitch	Specify the spacing of the Pix on the second axis.			
+Xlimit	When this generator hits this number of Pix, no more will be generated after. Useful to specify as a cutoff when you know how many pix your fixture contains already.			
+Ylimit	When this generator hits this number of Pix, no more will be generated after. Useful to specify as a cutoff when you know how many pix your fixture contains already.			
+Zigzag	Toggle this on or off to change from serpintine to zigzag for grid generators.			
+Diam1	Specify the first diameter of the of generators that use this attribute (like Helix)			
+Diam2	Specify the second diameter of the of generators that use this attribute (like Helix)			
+Revolutions	Specify the number of turns the Helix generator will take.			
+Cutoff	Whatever number you have specified here will be the max number of Pix that can be generated for the parent Fixture. Generally this is best left high, but if you know the exact number of pixels in a strip for example, setting this can be useful.			
+				
+				
+Deviceid	Specify the ID of this device object. This attribute determines which DMX output profile will transmit this fixtures data. See Preferences -> DMX Out.			
+Protocol	Choose the protocol you wish to use for this device and it's associated fixtures.			
+				
+Active	Turn this device's output on or off. You can also click the signal and block buttons at the top bar next to the fps counter to toggle all devices on or off at the same time.			
+Unicast	Enable or disable Unicast for this device.			
+Ip	Specify a target IP for this device.			
+Port	Specify a port for this device to communicate on.			
+Leds	Specify the number of channels this device will have on it's outputs. IE. If you're output is 100 r/g/b leds this would be 300.			
+Numoutputs	Specify the number of pysical and logical outputs this device has.			
+Chunksize	Specify the transmission chunk size in channels. This is only available for the wireless PxlNode protocol.			
+				
+Projectoractive	Toggling this on or off will toggle the projectors contribution to the final lighting and content calculations. Use this to quickly disable projectors with out deleting them. Disabled projectors will appear grey.			
+Pstyle	Specify the Projector's style. [Orthographic, Perspective, Chasers]			
+Pextend	Choose an extend mode for the texture being mapped through this projector.			
+Pscale	Scale the projector. For perspective, this changes field of view. For Orthographic, this changes orthowidth, for Chasers, this changes the number of affected Pix.			
+Fitaspectx	Fit the projector's X aspect to match the scene's pix min/max 			
+Fitaspecty	Fit the projector's Y aspect to match the scene's pix min/max 			
+Fitscene	Fit the projector to the bounds of the scene's Pix/Surfaces			
+Res	Set the final resolution of the projectors content. This will override the content from the IO tab regardless of what it was.			
+Fitselection	Fit the projector to the bounds of the selected fixture's Pix/Surfaces in the scene.			
+Previewopacity	Adjust the opacity of the preview texture on the projector gizmo. Aesthetic Only.			
+Inputpreview	Specify an IO texture either manually, or through the IO Textures bin in the top right of the viewport.			
+Routingr	Specify what GeoPix channel you wish to map the assigned texture's red channel to. If blank, nothing will be routed from here.			
+Routingg	Specify what GeoPix channel you wish to map the assigned texture's green channel to. If blank, nothing will be routed from here.			
+Routingb	Specify what GeoPix channel you wish to map the assigned texture's blue channel to. If blank, nothing will be routed from here.			
+Routinga	Specify what GeoPix channel you wish to map the assigned texture's alpha channel to. If blank, nothing will be routed from here. NOTE: When the projector's blend mode is set to Over, this will also be used as a regular texture alpha channel in addition to it's normal routing functions.			
+				
+Maskr	Specify comma separated masks to constrain the Red Projector channel by. You may use at maximum of 10 masks at present.			
+Maskg	Specify comma separated masks to constrain th Green Projector channel by. You may use at maximum of 10 masks at present.			
+Maskb	Specify comma separated masks to constrain th Blue Projector channel by. You may use at maximum of 10 masks at present.			
+Maska	Specify comma separated masks to constrain th Alpha Projector channel by. You may use at maximum of 10 masks at present.			
+				
+Getres	Get's the resolution from the IO texture being sourced and places it in the resolution parameters above.			
+Gamma	Set the gamma for this projector's texture.			
+Gain	Set the gain for this projectors texture. Gain is simply a multiplier.			
+Projectorblendmode	Set the blend mode for this projector. Add is usually sufficient in most cases where masking is used, but advanced blending effects can be achieved using these. NOTE: Over mode will use the alpha channel as an alpha, where as the other modes treat it only as a 4th data channel.			
+Projectorlayer	Set the layer for this projector. Layer default of 1 is usually fine for order independant blend modes like add, multiply etc. If you are using Over mode for example, order does matter. Higher numbers will be applied later in the chain.			
+Uvfxorigin	Set the origin UV FX from 0-1. A value of 1 will cause the entire fixture as if all Pix share the same sampling coordinate. The Fixture's origin is used as the sampling "center" for this FX.			
+Uvfxshuffle	Set the shuffle UV FX from 0-1. A value of 1 will have fully shuffled the coordinates randomly. This means that within any given fixture, all Pix will be mapped to some other Pix's location within that fixture.			
+				
+				
+Masking	Comma separated fixture mask names go here. this allows you to specify which Pix your content shows up on, and which it doesn't.			
+Maskmode	Min will combine the mask's using a min function (A AND B) and Max will combine the masks using a max function (A OR B)			
+Showwireframe	Toggle the visibility of the projectors wireframe on or off. Aesthetic only.			
+				
+Priority	Specify the Streaming ACN priorty of the data coming out of GeoPix. If you have more than one stream of data with different priorities, the higher will take precendance over the lower.			
+				
+Coloroverride	If you turn this on, you will be able to specify 0-255 integer values for each channel of the projector. This will produce the same result as routing a constant TOP texture from the IO graph.			
+Setcolor	Set a baseline constant color for any of the 4 projector color channels. This is a good way to quickly test a channel, or set a constant value for something that will never change, with out plugging something into the Projector.	Rgba255		
+				
+Targetadapter	If you have more than one network adapter enabled on a computer (ethernet + wireless for example) you may need to enter the router's IP address here to route to the right gateway.			
+				
+Uvmode	Choose a method for how to auto generate your UVs. Fill and Fit Best are local aware only, meaning they do not have any notion of where other surfaces are in uv space, and may overlap. For more precise uv calcuations choose the "From Projector" option.			
+Axis	Choose an orthographic axis to auto generate UVs from.			
+Dim	Specify the size in pixels, of the content plane you wish to generate in UV space. The default of 960x540 for example on a target of 1920x1080 will produce a uv patch half the size of the target output (see settings).			
+Pos	Specify an offset in pixels from the bottom left corner of the target output. This will cause the uvs to be offset by that much in normalized 0-1 space.			
+Projector	Specify a projector by name. This projector will be used to auto generate the UVs. Once generated , the uvs can be edited manually in the hulls mode, and the projector can be deleted or used for something else.			
+Masks	Specify a list of comma separated masks to assign to this object. You can enter names in manually, but the best way is to use the Mask tool under Tools in the top bar.			
+Generate	When you click this, the above UV settings will be taken into account, and the uvs for this Surface will be generated anew.			
+Outputdisplay	Specify the index of the display this surface will be routed to.			
+				
+Metallic	Customize the PBR metallic element of the geometry shader.			
+Roughness	Customize the PBR roughness element of the geometry shader.			
+				
+Wireradius	Set the visual radius of the wire object.			
+Wdeviceid	Set the ID of the device to associate this wire object with. This affects how wire objects are organized in the TECH view, under Windows.			
+Voltage	Set the voltage of this wire object. This serves no functional purpose but shows up in the TECH view, giving you some summaries of wire attributes across your project.			
+Cabletype	Choose a cable type for this wire object. This serves no functional purpose but shows up in the TECH view, giving you some summaries of wire attributes across your project.			
+				
+Selectset	Click this to select the objects assigned to this Selection Set. You can also double click on a selection set in the Viewport, and also in the outliner to select the contents of the set.			
+				
+Volumeintensity	Set the intensity of the volume cone from 0-1. Setting this to 0 disables it.			
+Lightwireframe	Set the intensity of the green wireframe of the cone from 0-1. Setting this to 0 disables it.			
+Pixlinkactive	Toggle the effect of the Pix link on or off. Setting this to 0 will cause the light to stop animating, and revert to it's current base settings.			
+				
+Sourcefixture	Specify the name of a Fixture or Instance object, OR alternatively use the default value of "./" to reference the first immediate child.			
+Arraycount	Set the number of copies that will be generated within this instances array.			
+Relativetranslate	Set the amount each copy will be translated by each time.			
+Relativerotate	Set the amount each copy will be rotated by each time. NOTE, changing the pivot below will change the rotations pivot as well making it possible to achieve circular layouts.			
+Relativescale	Set the amount each copy will be scaled by eac time.			
+Relativepivot	Set the pivot point for the transformations. Most useful when utilizing array rotations.			
+				
+				
+Clusterimmune	Toggling this on will make this fixture immune to the affects of the clustering optimization. Use this if you wish to maintain per Pix emitter fidelity here, while sacrificing it elsewhere.			
+Illuminationmode	Set the emitter type to something that suits your fixture. The most basic is Point, which will emit shadowless light in all directions. Spot is a directional cone, and will target specific directions, angles etc.			
+Emitterdirection	Set the LOCAL emitter direction. This is only relevant if you choose Cone from the Type menu above. This can be useful if you want an led panel or strip, to emit cone lighting in a specific local direction.			
+Emitterconeangle	Set the angle of the cone emitter in degrees. Only applicable if you are using the Cone type.			
+Emitterconedelta	Set the outer soft angle of the cone emitter in degrees. Only applicable if you are using the Cone type. Total cone angle is equal to Angle+Delta.			
+Emitterconefalloff	Cone falloff is the rate at which the inner sharp cone, loses brightness to 0 as it approaches the outer cone.			
+Brightnessmultiplier	A general brightness power attribute. If your fixture is a brighter one, set this higher. If you have a very dense array of leds that are not that bright, lower this as needed.			
+Attenuationdistance	The maximum distance at which the lights brightness will be 0.			
+Attenuationfalloff	The rate as which the cones brightness will fall to 0 as it approaches the Attenuation Distance above.			
+				
+Resetinstancing	Reset the instancing parameters only, to their defaults.			
+Origintranslate	Offset the entire array of instanced objects in some direction, within the object.			
+Originrotate	Rotate the entire array of instanced objects by some amount, within the object.			
+Originscale	Scale the entire array of instanced objects by some amount, within the object.			
+				
+Arraycount1	The number of instanced copies of the base object, along axis 1.			
+Relativetranslate1	The incremental distance to offset each instance along axis 1.			
+Relativerotate1	The incremental amount to rotate each instance along axis 1.			
+Relativescale1	The incremental amount to scale each instance along axis 1.			
+Relativepivot1	The incremental pivot of each instance along axis 1.			
+Posttranslate1	The overall additional amount to offset all instances along axis 1 by.			
+				
+Arraycount2	The number of instanced copies of the base object, along axis 2.			
+Relativetranslate2	The incremental distance to offset each instance along axis 2.			
+Relativerotate2	The incremental amount to rotate each instance along axis 2.			
+Relativescale2	The incremental amount to scale each instance along axis 2.			
+Relativepivot2	The incremental pivot of each instance along axis 2.			
+Posttranslate2	The overall additional amount to offset all instances along axis 2 by.			
+				
+Arraycount3	The number of instanced copies of the base object, along axis 3.			
+Relativetranslate3	The incremental distance to offset each instance along axis 3.			
+Relativerotate3	The incremental amount to rotate each instance along axis 3.			
+Relativescale3	The incremental amount to scale each instance along axis 3.			
+Relativepivot3	The incremental pivot of each instance along axis 3.			
+Posttranslate3	The overall additional amount to offset all instances along axis 3 by.			
+				
+Randomtranslate	The additional random offset applied to the translates of all instances.			
+Randomrotate	The additional random offset applied to the rotations of all instances.			
+Randomscale	The additional random scale applied to the rotations of all instances.			
+				

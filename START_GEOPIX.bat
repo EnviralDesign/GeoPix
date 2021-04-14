@@ -61,8 +61,8 @@ SET library_fetch_script_path_abs="%~dp0FETCH_LIBRARY_ASSETS.bat"
 SET td_executable_path=
 
 :: Log some stuff.
-@echo "2)--Searching for previously installed version of TouchDesigner.%td_year%.%td_version%----">>start_geopix_Log.txt
-@echo "2)--Searching for previously installed version of TouchDesigner.%td_year%.%td_version%----"
+@echo "1)--Searching for previously installed version of TouchDesigner.%td_year%.%td_version%----">>start_geopix_Log.txt
+@echo "1)--Searching for previously installed version of TouchDesigner.%td_year%.%td_version%----"
 
 :: IF registry entry exists, get path to TD executable and set to variable td_executable_path
 :: Next, trim off the last 5 characters to get the pure path. !! characters are used for DelayedExpansion

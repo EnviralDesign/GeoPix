@@ -277,6 +277,7 @@ float Contribute_Texture_To_Buffer( vec4 color , vec4 SampledTexture , Projector
 		color.r = alpha_a * SampledTexture.a + (1 - alpha_a) * color.r;
 	}
 	
+
 	return color.r;
 
 }

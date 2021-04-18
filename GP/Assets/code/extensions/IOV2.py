@@ -64,41 +64,31 @@ class IOV2:
 	
 	
 	def TriggerActiveMacros(self):
-		# target = None
-		# if optionalMacroOp == None:
-		# debug('trigger macro')
 		if parent.IO.IO_VIEWPORT().par.Isgraphroot.eval():
-			# allSel = self.GetAllObjects()
-			# allSel = [ each for each in allSel if each.par.Objtype == 10 ]
 			sel = self.GetSelectedObjects()
 			sel = [ each for each in sel if each.par.Objtype == 10 ]
-			
-			# for each in allSel:
-				# each.par.Play = False
-				# each.Stop()
 
 			for each in sel:
-				# each.par.Play = True
 				each.Start()
 		else:
 			parent.IO.IO_SCENE().parent.obj.Start()
-			# parent.IO.IO_SCENE().parent.obj.par.Play = True
 	
 	
 	def StopActiveMacros(self):
-		# target = None
-		# if optionalMacroOp == None:
-		# debug('end macro')
 		if parent.IO.IO_VIEWPORT().par.Isgraphroot.eval():
 			sel = self.GetSelectedObjects()
 			sel = [ each for each in sel if each.par.Objtype == 10 ]
 			for each in sel:
 				each.Stop()
-				# debug(each)
-				# each.par.Play = False
 		else:
 			parent.IO.IO_SCENE().parent.obj.Stop()
-			# parent.IO.IO_SCENE().parent.obj.par.Play = False
+	
+	
+	def StopAllMacros(self):
+		sel = op.IO_scene.findChildren(depth=1)
+		sel = [ each for each in sel if each.par.Objtype == 10 ]
+		for each in sel:
+			each.Stop()
 
 
 	def GetNamesByType(self,tag=None):
@@ -168,26 +158,6 @@ class IOV2:
 		allUpstreamNodes = self.GetAllUpstreamNodes(InitialNodeList)
 		
 		return [ x for x in allUpstreamNodes if len(x.inputs) == 0 ]
-		
-	
-	
-	def GetProjectorNodesOnly______________________(self):
-		
-		allProjectors = parent.IO.EDITOR_BACKEND().mod.tdUtils.getObjectList("all", myType=9)[0]
-		activeProjectors = [ x for x in allProjectors if x.par.Projectoractive == True ]
-		downstreamRootNodeNames = list(set([ x.par.Inputpreview.eval() for x in activeProjectors ]))
-		
-		ioRootNodes = parent.IO.IO_SCENE().GetObjectsFromIoNames( downstreamRootNodeNames )
-		pixFrameNodes = parent.IO.IO_SCENE().GetObjectsByObjtype( [35] )
-		
-		PixFrameInputs = self.GetAllUpstreamNodes(pixFrameNodes)
-		
-		allProjectorNodes = self.GetAllUpstreamNodes(ioRootNodes)
-		
-		allIoNodes = set(allProjectorNodes).union( pixFrameNodes )
-		allIoNodes = set(allIoNodes).union( PixFrameInputs )
-		
-		return allIoNodes
 	
 	
 	def CalculateSelectedObjectsBounds(self, optionalOps=[]):

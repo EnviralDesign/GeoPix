@@ -743,6 +743,8 @@ def SaveLoad_create_or_set_operators( rootPath , loadDict , isImport=False ):
 	wrapper function that takes care of the branching between setting/creating objects.
 	'''
 
+	# print('--::--',rootPath)
+
 	# init this, we will need to fill it out as we load things.
 	translationDict = {}
 

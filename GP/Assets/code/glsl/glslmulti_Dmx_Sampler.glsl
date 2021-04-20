@@ -57,6 +57,8 @@ void main()
 	float 	CoordsIndex 	= texelFetch(COORDS, PixelCoords2D , 0).w;
 	vec4 	Coords_MISC 	= texelFetch(MISC, PixelCoords2D , 0).rgba;
 
+	// float DEBUG_VAR = 0;
+
 	// assemble and sample the 4 coordinate sets into an array. based on what the projector needs, we will pull from the apropriate one.
 	vec4 CoordinateSets[4];
 	CoordinateSets[0] = texelFetch(COORDSETS, ivec3(PixelCoords2D,0) , 0).xyzw;
@@ -82,8 +84,6 @@ void main()
 	
 	for( int i=0; i<NumPasses; i++ )
 	{
-
-	 	// i = 1;
 
 	 	// this will be set in the eventual for loop.
 	 	vec4	realtimeDataFetch 	= texelFetch(realtimeData, i);
@@ -145,11 +145,13 @@ void main()
 	// this function modifies the color buffer, to overwrite pure green where the fixture is selected, or the fixture's Pix is selected while in Pix mode.
 	finalColor.r = Contribute_SelectionHighlight_To_Buffer( finalColor, Selected , currentChanIndex );
 
-
+	// clamp upper limit to 1. there is no dmx value above 255.
+	finalColor.r = min( finalColor.r , 1.0 );
 	
 
 	//////////////////////////// DEBUG //////////////////////////////////
-	// finalColor.r += float(Selected);
+	// finalColor.r = 0;
+	// finalColor.r = DEBUG_VAR;
 	// finalColor.r = NumPasses;
 
 	// ProjectorObject pObj = GetProjector(1);

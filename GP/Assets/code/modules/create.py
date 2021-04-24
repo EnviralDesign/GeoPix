@@ -24,9 +24,7 @@ def Object(varName = "Item", doInit=True, argStr='CREATE'):
 	
 	ObjNamePrefix = varName.replace("Create", "") + "_template"
 	ObjNameLabel = varName.replace("Create", "") + "1"
-	# print(ObjNamePrefix)
 	objTemplate = op.sceneOutliner.op("objectTypes/%s"%(ObjNamePrefix))
-	# '''
 	newObject = geoHolder.copy(objTemplate, name=ObjNameLabel)
 	
 	init_uniqueName(newObject, ObjNameLabel)

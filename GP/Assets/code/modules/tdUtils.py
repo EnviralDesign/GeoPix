@@ -120,12 +120,13 @@ def multiParentToLast():
 
 ### unparents all selected items. (they will return to root.)
 def multiUnParent():
-	for x in multiSel.rows():
-		xOP = op(x[0].val)
+	
+	directSelected = getObjectList("directSelected")[0]
+
+	for xOP in directSelected:
 		
 		if sceneVars.op("null_parentInPlace")[0] == 1:
 			myOpParent = geoHolder
-			# r = matrixUtils.neutralize_Parent_Transform(xOP, myOpParent)
 			r = matrixUtils.Calculate_Difference_Matrix(xOP, myOpParent)
 			xOP.par.Tx = r[0]
 			xOP.par.Ty = r[1]
@@ -141,8 +142,6 @@ def multiUnParent():
 				xOP.par.Uniformscale = 1.0 # our matrix calculation assumes we're applying all scale through sx/sy/sz. this must be neutralized.
 		
 		xOP.inputCOMPConnectors[0].disconnect()
-		# xOP.cook(force=1,recurse=1) # this causes problems with forcing class to reinit
-		xOP.cook(force=1)
 	return
 
 ### unparents all selected items. (they will return to root.)
@@ -166,8 +165,8 @@ def UnParentProvidedObjects(objList):
 				xOP.par.Uniformscale = 1.0 # our matrix calculation assumes we're applying all scale through sx/sy/sz. this must be neutralized.
 		
 		xOP.inputCOMPConnectors[0].disconnect()
-		# xOP.cook(force=1,recurse=1) # this causes problems with forcing class to reinit
 		xOP.cook(force=1)
+
 	return
 
 ### parent a list of objects to a single target.
@@ -203,10 +202,6 @@ def parentObjectFlat(opsToParent, target):
 			
 			xOP.inputCOMPConnectors[0].disconnect()
 			target_.outputCOMPConnectors[0].connect(xOP)
-			# xOP.cook(force=1,recurse=1) # this causes problems with forcing class to reinit
-			# target_.cook(force=1,recurse=1) # this causes problems with forcing class to reinit
-			# xOP.cook(force=1)
-		# target_.cook(force=1)
 
 	else:
 		op.NOTIFV2.Notify('You cannot parent an object, to a child object within its own hierarchy.')
@@ -223,9 +218,7 @@ def parentObjectFlat_BLIND(opsToParent, target):
 		xOP = op(x)
 		xOP.inputCOMPConnectors[0].disconnect()
 		target_.outputCOMPConnectors[0].connect(xOP)
-		# xOP.cook(force=1,recurse=1) # this causes problems with forcing class to reinit
 		xOP.cook(force=1)
-	# target_.cook(force=1,recurse=1) # this causes problems with forcing class to reinit
 	target_.cook(force=1)
 	
 	
@@ -235,29 +228,17 @@ def parentObjectFlat_BLIND(opsToParent, target):
 ### supply an array of OP paths to objects that have a custom Select param.
 ### to allow this function to mark them as selected.
 def selectItems(itemArray):
-	# debug('selecting stuff.')
 	for x in itemArray:
-		# try:
 		thisOp = op(str(x))
 		if thisOp == None:
 			thisOp = geoHolder.op(str(x))
 		assert thisOp != None, 'Something went wrong, please check this out.'
-		# except:
-			# thisOp = op(str(x))
-		# print(thisOp, thisOp2)
 		thisOp.par.Selected = 1
 		thisOp.current = 1
 		
-		# debug('selected dammit')
-		
 		ls = op(treeInfo_V3[thisOp.name,'dataPath'])
-		# ls = op.HullPixGather.op(thisOp.name)
 		if ls != None:
 			ls.current  = 1
-		# worldMatrix = thisOp.worldTransform
-		# s, r, t = worldMatrix.decompose()		
-		# op.Viewport.MoveGizmo( t[0], t[1] , t[2] )
-	# print(itemArray)
 	op.treeInfo_V2.par.Lastselected = geoHolder.op(itemArray[-1]) if len(itemArray) else ''
 
 	return
@@ -305,7 +286,6 @@ def invertSelectItems(itemArray=[]):
 			lastSel = thisOp
 		
 	if lastSel != None:
-		# op.treeInfo_V2.par.Lastselected = geoHolder.op(itemArray[-1])
 		op.treeInfo_V2.par.Lastselected = lastSel
 	else:
 		op.treeInfo_V2.par.Lastselected = ''
@@ -371,17 +351,6 @@ def deleteAllItems():
 	# get list of all items.
 	combinedList = getObjectList("all")[0]
 	
-	# we used to need to do this for an earlier version of TD, but no longer in the spring build.
-	'''
-	# first we delete the custom pars so we don't get a lot of noisy warnings in script editor.
-	for x in combinedList:
-		thisOp = x
-		try:
-			thisOp.destroyCustomPars()
-		except Exception as e: 
-			debug("trying to delete custom parms before deleting all objects...", e)
-	'''
-	
 	# then we delete all the actual OPS
 	for x in combinedList:
 		thisOp = x
@@ -396,14 +365,14 @@ def deleteAllItems():
 
 
 def duplicateSelectedItems_withOffset(tx=0, ty=0, tz=0 , rx=0 , ry=0 , rz=0):
-	# newItems = duplicateSelectedItems()
+	
 	newItems = duplicateSelectedItems_V2()
 	m = tdu.Matrix()
 	m.rotate(rx,ry,rz)
 	
 	for item in newItems:
 		pos = m * tdu.Position(item.par.Tx.eval(), item.par.Ty.eval(), item.par.Tz.eval())
-		# print(pos)
+		
 		item.par.Tx = pos.x + tx
 		item.par.Ty = pos.y + ty
 		item.par.Tz = pos.z + tz
@@ -535,7 +504,6 @@ def add( t, path ):
 
 def pruneIDs():
 	found = geoHolder.findChildren(tags=["ObjectType"], maxDepth=1)
-	# print( len(found) )
 	for i, Op in enumerate(found):
 		i += 1
 		
@@ -556,7 +524,7 @@ def duplicateSelectedItems_V2():
 	directSelected = getObjectList("directSelected")[0]
 	
 	combinedList = op.sceneOutliner.mod.tdUtils.outlinerSort(combinedList)
-	# print(combinedList)
+	
 	# if we have anything selected at all.
 	if(len(combinedList) > 0):
 		
@@ -584,26 +552,8 @@ def duplicateSelectedItems_V2():
 		# now we can do our duplications and build the translation dict.
 		for item in combinedList:
 			
-			# if object type is Fixture, save the most current buffers from the copy Source
-			# if item.par.Objtype in [2]:
-				# item.op('hull').SaveToBuffer()
-				# item.op('pix').SaveToBuffer()
-			
 			# first make an actual TD copy of the node.
 			newItem = geoHolder.copy(item)
-			
-			''' # dont think we need this anymore since our save/load stuff saves dict storage directly...
-			# then if the newly made item is also a fixture object, copy the pix buffers from old to new.
-			if newItem.par.Objtype in [2]:
-				newItem.par.Hullbuffer = item.par.Hullbuffer
-				newItem.par.Pixbuffer = item.par.Pixbuffer
-			'''
-			
-			# if true, we're working with a device object. lets turn off it's active flag.
-			# if 'typeID:60' in newItem.tags:
-			if newItem.par.Objtype in [3]:
-				newItem.par.Active = 0
-			
 			
 			# make the new items custom parm name unique.
 			mod.strUtils.makeNameUnique(newItem)
@@ -634,11 +584,6 @@ def duplicateSelectedItems_V2():
 			if newParent:
 				# parent new item to new parent.
 				parentObjectFlat_BLIND( [newItem] , op(geoHolder.path + "/" + newParent) )
-				'''
-				if int(newItem.par.Objtype) == 6:
-					if newItem.par.Lightfixturelink.eval() != '..':
-						newItem.par.Lightfixturelink = op(geoHolder.path + "/" + newParent).par.Name
-				'''
 	
 		# deselect the old, and select the new.
 		deselectAllItems()
@@ -654,8 +599,8 @@ def duplicateSelectedItems_V2():
 		selectItems(newItemsToSelect)
 		deviceIDs = list(set([  int(getattr( x.par , 'Fdeviceid' , -1 ))   for x in newlyCreatedItems]))
 		# handle the address offsetting, if we have any fixtures here.
+
 		maxOffsetsDict = getFixturesHighestOffset(deviceIDs, newItemsToSelect)
-		# debug('maxOffsetsDict', maxOffsetsDict)
 		if maxOffsetsDict != None:
 		
 			# let's offset our address offsets to avoid overlap, if our devices are fixtures.
@@ -683,8 +628,6 @@ def duplicateSelectedItems_V2():
 
 					if newOp.par.Objtype.eval() == 6: # custom fixtures
 						totalNumOfPix = 1 # custom fixture has no concept of Pix, just channels. thus, we always treat them as fixture of 1 pix.
-
-					# debug('numPix is:', totalNumOfPix)
 
 					if totalNumOfPix > 0:
 					
@@ -751,10 +694,8 @@ def getLayerSortedProjectorsByIndex( indexVal ):
 
 
 def getObjectList(criteria, myType=None):
-	# debug( criteria , myType )
-	# op.sceneOutliner.mod.tdUtils.getObjectList( criteria='directSelected' )
+
 	op.sceneOutliner.LogMessage( message="getObjectList" , severity=1 )
-	# print(criteria, myType)
 	if(criteria == "all"):
 		
 		selection = geoHolder.findChildren(type=geometryCOMP, tags=['ObjectType'], maxDepth=1)
@@ -789,7 +730,7 @@ def getObjectList(criteria, myType=None):
 		# get both direct and indirect selected items.
 		directlySelected = geoHolder.findChildren(type=geometryCOMP, tags=['ObjectType'], key = lambda x: x.par.Selected == 1, maxDepth=1)
 		indirectSelected = geoHolder.findChildren(type=geometryCOMP, tags=['ObjectType'], key = lambda x: x.par.Highlighted == 1, maxDepth=1)
-		# debug(indirectSelected)
+		
 		# combine list and make unique.
 		combinedList = directlySelected + indirectSelected
 		finalSelection = list(set(combinedList))
@@ -806,7 +747,7 @@ def getObjectList(criteria, myType=None):
 	for x in finalSelection:
 		nameList += [ x.par.Name.eval() ]
 
-	# debug('nameList:', nameList)
+	
 	return [ finalSelection , nameList ]
 	
 
@@ -989,46 +930,24 @@ def loadScene(rootPath = geoHolder.path, masterText = "", templatePath = op.obje
 			paramItems = json_body[paramObj.name]
 			
 			# lets assign some vars to easy readable vars.
-			# mode = paramItems["mode"]
 			val = paramItems["val"]
-			# expr = paramItems["expr"]
-			
-			# if 'typeID:40' in paramObj.owner.tags:
-			# if paramObj.name == 'Pixbuffer':
-				# print(len(val))
+
 			# set the var and the expression.. we don't know which we're using yet.
 			paramObj.val = val
 			
 			# if we have a python param, we need to set the expression.
 			if paramObj.isPython:
 				paramObj.expr = val
-			# paramObj.expr = expr
-			
-			# if paramObj.name == 'Pixbuffer':
-				# print( paramObj.val )
-				# MEEEEE = paramObj
-			
-			# depending on the MODE, set the par mode so that we get the proper results!
-			# if mode == "EXPRESSION":
-				# paramObj.mode = ParMode.EXPRESSION
-			# elif mode == "CONSTANT":
-				# paramObj.mode = ParMode.CONSTANT
-		
 		
 		#### Now lets find out if we already have an object, by the same name and UUID.
 		foundSimilarChildren = TD_Path.findChildren(name=myName)
-		# print("sim children", foundSimilarChildren)
 		
 		
 		
 		# if we do have an op with that name already, run the UUID script, to rename uuid par and name.
 		myName2 = myName
 		if len( foundSimilarChildren ) > 0:
-			# copiedObj.op("UUID/genUUID").run()
 			myName2 = copiedObj.name
-			
-			# make name unique, if it was not already.
-			### mod.strUtils.makeNameUnique(copiedObj)
 			
 		# add the original, and the new name, to the translation table. the new name does not necessarily
 		# have to be different from the original.
@@ -1041,7 +960,6 @@ def loadScene(rootPath = geoHolder.path, masterText = "", templatePath = op.obje
 		copiedObj.name = myName2
 		
 		copiedObj.par.Selected = 0
-		# print('---', copiedObj)
 		# put our newly copied object reference into our loadedObjects list.
 		LoadedObjects += [ copiedObj ]
 		
@@ -1265,9 +1183,9 @@ def Dict_to_Scheme(schemeDict = None):
 			
 			# add that whole row to the table list.
 			schemeList += [ schemeSubList ]
-	# print(schemeList)
+	
 	tableStr = '|'.join( [':'.join( map(str,row) ) for row in schemeList] )
-	# print(tableStr)
+	
 	return tableStr
 	
 	
@@ -1308,8 +1226,6 @@ def getFixturesHighestOffset(targetDeviceIDs = [-1], opsToIgnore=[] ):
 	allFixtures = getObjectList('all', 2)[0]
 	allCustomFixtures = getObjectList('all', 6)[0]
 	allTypesOfFixtures = list(set(allFixtures+allCustomFixtures).difference(set(opsToIgnore)))
-
-	# debug( 'allTypesOfFixtures', allTypesOfFixtures )
 	
 	allFixtures = [x for x in allTypesOfFixtures if x.par.Fdeviceid.eval() in targetDeviceIDs]
 
@@ -1330,10 +1246,6 @@ def getFixturesHighestOffset(targetDeviceIDs = [-1], opsToIgnore=[] ):
 									}
 		
 		highestOffset = sorted(offsetDict)[-1]
-
-		# debug('highestOffset', highestOffset)
-		# for i,item in enumerate(sorted(offsetDict)):
-			# print('\t', item, offsetDict[item])
 
 		
 		returnDict = {}
@@ -1388,7 +1300,7 @@ def calculateAddressOffsetFromCurrent(someOp = None, offsetsDict = None):
 	
 	
 	returnDict = None
-	# print(someOp, someOp.par.Objtype.eval())
+	
 	if someOp != None:
 		if someOp.par.Objtype.eval() in [2,6]:
 			
@@ -1397,7 +1309,7 @@ def calculateAddressOffsetFromCurrent(someOp = None, offsetsDict = None):
 				someOp.op('hull').WriteCoordsToTable()
 			
 			prevOp = offsetsDict.get('Object', None)
-			# debug( 'PREV_OP', prevOp )
+			
 			
 			if prevOp == None:
 				ChanWidthInfo = getFixtureChanWidth(someOp)
@@ -1407,8 +1319,6 @@ def calculateAddressOffsetFromCurrent(someOp = None, offsetsDict = None):
 				ChanWidthInfo = getFixtureChanWidth(prevOp)
 				WIDTH = ChanWidthInfo[0]
 				uniRounding = ChanWidthInfo[1]
-			
-			# print(prevOp, WIDTH,uniRounding)
 			
 			if offsetsDict == None:
 			
@@ -1427,7 +1337,6 @@ def calculateAddressOffsetFromCurrent(someOp = None, offsetsDict = None):
 			OFFSET2 = OFFSET + WIDTH
 			
 			newOffsets = UnStackOffsets(OFFSET2 , uniRounding )
-			# print(newOffsets)
 			
 			Channel2 = newOffsets[0] + 1 # make 1 based again
 			Universe2 = newOffsets[1] + 1 # make 1 based again
@@ -1436,14 +1345,12 @@ def calculateAddressOffsetFromCurrent(someOp = None, offsetsDict = None):
 			returnDict['Channel'] = Channel2
 			returnDict['Universe'] = Universe2
 	
-	# print(returnDict)
 	return returnDict
 	
 	
 def calculateAddressOffsetFromLast(someOp = None, offsetsDict = None):
 	
 	returnVal = None
-	# print('offsetsDict',offsetsDict)
 	if someOp != None:
 		if someOp.par.Objtype.eval() == 2:
 		

@@ -294,9 +294,12 @@ class IOV2:
 		for thisOp in ops:
 			
 			# select the provided object.
-			thisOp.par.Selected = 1
-			thisOp.selected = 1
-		
+			if hasattr( thisOp.par , 'Selected' ):
+				thisOp.par.Selected = 1
+				thisOp.selected = 1
+			else:
+				debug('could not set Selected par.. probably safe to ignore unless this happens often.')
+			
 		
 		parent.IO.IO_BACKEND().par.Lastselected = ops[-1] if len(ops) else ''
 		

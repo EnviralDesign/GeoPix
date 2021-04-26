@@ -44,6 +44,7 @@ If you accidentally screw up the executable files, copy any relevant project fil
 - [Issues](https://github.com/EnviralDesign/GeoPix/issues)
 - [Roadmap](https://github.com/EnviralDesign/GeoPix/projects)
 - [Website](http://www.geopix.io/)
+- [ChangeLog](https://github.com/EnviralDesign/GeoPix/blob/main/CHANGE_LOG.txt)
 
 ### Learning & Resources
 - [Wiki / Docs](https://github.com/EnviralDesign/GeoPix/wiki)

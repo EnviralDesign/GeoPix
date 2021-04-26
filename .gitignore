@@ -37,6 +37,8 @@ GP/LIBRARY/PROJECTS/GeoPixProjectConfig.txt
 GP/Assets/patreon/getPatrons.py
 # *.gp
 
+!CHANGE_LOG.txt
+
 # Library items downloaded by the asset downloader
 
 # fixture profiles json

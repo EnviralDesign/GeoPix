@@ -1,0 +1,28 @@
+15193	added changelog developer post save window	after the project is saved, a window pops up and changes made during the last session can be documented.
+15194	fixed IO node labels being cut off.	some sort of internal change from the text TOP caused the pre determined offsets to now be incorrect
+15195	fixed ctrl+P for unparenting objects	not all selected objects were getting unparented previously.
+15196	tweak to changelog launch	Now clears fields when opened.
+15197	fixed hover labels on bottom bar 3 main app buttons	had some old messages from before when we could do split screen.
+15198	added transport mode parameter to all timing related IO nodes	before doing things like hold, or zero for time extend would last entire duration of macro's play through. needed a way to toggle between local repeat and not.
+15199	hooked up transport mode parameter in IO nodes	this allows users to specify if a time based node in a macrotreats it's time extend parameters using absolute macro timeor if they extend time within every single iteration of a macro playthrough. 
+15200	none	
+15202	fixed some formatting bugs in the splash screen	
+15203	fixed force cook refresh bug in change log tool	
+15204	more bug fixes to splash screen formatting on load	
+15205	more bug fixes to splash screen formatting	
+15206	tweaks to font color in Save/Load tool	
+15207	save/load tool select all/none and header stickied to top of scroll region	
+15208	added toggle to preferences to disable undo que	tracking undo states currently is quite heavy for large scenes, and is not recommended.so users now have the option to disable it from the preferences.
+15209	sequence editor when launched for timeline, didn't show label in header bar	
+15210	linked sequence editor extension to py file on disk	
+15211	sequence editor now homes to full work area, if no blocks are present.	before it zoomed to some really small portion to the left of the startwhich didn't make sense and left the user more confused.
+15212	fixed stray nonsense error	occuring when dragging audio into sequence editor
+15213	fixed absolute path bug in sequence editor, dragging audio in	previously dragging audio in, even a file in the local directory structurewould yield a path that was absolute.now it fixes the paths to be relative, if the file exists in the relative directory struct.
+15214	creating an ImporGeo object from scratch, it now uses newer File Tool	
+15215	fixed off by 1 error in global timeline keyframes	
+15216	fixed some selection logic issues for deleted channels, in keyframe editor	if channels were selected on the left, and then deleted with their respectivetrashcan icons then the channels would still be considered selected,and new keyframes added would double, triple, up etc when manually added.
+15217	fixed camera bounds homing bug in keyframe editor	like in the sequence editor, if the keyframer had no keys, it would home toan impossibly small region to the left of the working area, and this didn't make sense.
+15218	fixed some bugs in the MultiStrobe IO Node.	a) fixed mono color bug not allowing colors to be set. b) added seed value parameter to node, to allow explicit seed valueinstead of the random increment for active on/off that was there before.
+15219	fixed bug where duplicated macros didn't maintain internal node consistency	previously duplicating a macro would cause some of the nodes inside to getscrambled and not connected back up correctly.this was easily remedied by making sure the clone immune was on for the GRAPHcomp inside and for all it's children.
+15220	fixed NaN bug in shader where objects with no uvs were imported.	
+15221	added dynamic Change Log to splash screen.	

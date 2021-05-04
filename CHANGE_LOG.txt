@@ -26,3 +26,4 @@
 15219	fixed bug where duplicated macros didn't maintain internal node consistency	previously duplicating a macro would cause some of the nodes inside to getscrambled and not connected back up correctly.this was easily remedied by making sure the clone immune was on for the GRAPHcomp inside and for all it's children.
 15220	fixed NaN bug in shader where objects with no uvs were imported.	
 15221	added dynamic Change Log to splash screen.	
+15222	Fixed bug in Dmx In Override not applying MultiCast toggle	Multicast toggle for dmx in was not properly hooked up in the backend.

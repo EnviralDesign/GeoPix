@@ -27,3 +27,4 @@
 15220	fixed NaN bug in shader where objects with no uvs were imported.	
 15221	added dynamic Change Log to splash screen.	
 15222	Fixed bug in Dmx In Override not applying MultiCast toggle	Multicast toggle for dmx in was not properly hooked up in the backend.
+15224	bug fix for dmx in not working with out force cook to module.	

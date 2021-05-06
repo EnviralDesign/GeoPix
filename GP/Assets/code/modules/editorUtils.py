@@ -1169,7 +1169,7 @@ def ExitPrompt():
 	prompterDict = {}
 	prompterDict['label'] = 'Save changes before closing?'
 	prompterDict['options'] = {
-								"Save":"print('Save!!!')",
+								"Save":"op.SAVE_LOAD.Launch(mode='saveproject', quitAfterSave=True)",
 								"Don't Save":"project.quit(force=True)",
 								"Cancel":"parent.helper.Close()",
 								}

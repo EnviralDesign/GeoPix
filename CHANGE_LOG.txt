@@ -28,3 +28,5 @@
 15221	added dynamic Change Log to splash screen.	
 15222	Fixed bug in Dmx In Override not applying MultiCast toggle	Multicast toggle for dmx in was not properly hooked up in the backend.
 15224	bug fix for dmx in not working with out force cook to module.	
+15225	fixed save on exit prompt button	when clicking the application "X", then clicking save, nothing would happen.This now works as expected, launching the file tool, and if the user saves from there, quits the software.
+15226	more tweaks to save on exit	

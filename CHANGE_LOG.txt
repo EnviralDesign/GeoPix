@@ -30,3 +30,4 @@
 15224	bug fix for dmx in not working with out force cook to module.	
 15225	fixed save on exit prompt button	when clicking the application "X", then clicking save, nothing would happen.This now works as expected, launching the file tool, and if the user saves from there, quits the software.
 15226	more tweaks to save on exit	
+15227	fixed missing file path, updated sponsors	

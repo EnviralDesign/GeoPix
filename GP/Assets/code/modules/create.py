@@ -97,32 +97,85 @@ def init_cleanup(someOp):
 	return
 	
 	
-def DragObjToEditor(ClipPath=None, baseName=None, extension=None):
+def DragObjToEditor(FilePath=None, baseName=None, extension=None):
 		'''
 		this function facilitates importing of 3d files by dragging them from
 		windows explorer to the Editor Viewport
 		'''
-		if ClipPath != None:
-			
-			op.ViewPortUI.ClickButton( "ObjectMode" )
 
-			# print(ClipPath, baseName)
-			# ClipPath.split()
-			nameStr = tdu.legalName(baseName)
-			
+		movie_types = tdu.fileTypes['movie']
+		image_types = tdu.fileTypes['image']
+		audio_types = tdu.fileTypes['audio']
+		geometry_types = ['obj']
+
+		all_types = movie_types + image_types + audio_types + geometry_types
+
+		# handle early exits
+		if FilePath == None:
+			msg = 'FilePath cannot be equal to None... skipping'
+			op.NOTIFV2.Notify(msg)
+			debug(msg)
+			return
+
+		if extension not in all_types:
+			msg = '%s type not supported... skipping'%( extension )
+			op.NOTIFV2.Notify(msg)
+			debug(msg)
+			return
+
+		op.ViewPortUI.ClickButton( "ObjectMode" )
+		nameStr = tdu.legalName(baseName)
+
+		if extension in geometry_types: # if user drags a geometry object into the viewport.
+		
 			newObj = Object(varName='CreateImportGeo', doInit=False)
 			InitRun = newObj.op("INIT/Run")
-			
-			postLoadScript.text = ""
-			postLoadScript.text += 'op("' + InitRun.path + '").run("LOAD") \n'
-			postLoadScript.text += 'op.geoHolder.UPDATE_ALL_DATABLOCKS() \n'
-			postLoadScript.run(delayFrames=1)
-			
-			# uniqueName = init_uniqueName(newObj, nameStr)
+
 			uniqueTypeName = mod.strUtils.makeNameUnique(nameStr)
-			
-			# print('Importing GEO...', uniqueTypeName)
-			newPath = tdu.collapsePath(ClipPath)
+			newPath = tdu.collapsePath(FilePath)
 			
 			newObj.par.Loadobj = newPath
 			newObj.par.Name = uniqueTypeName
+			
+			msg = 'obj imported as an import geometry object.'
+			op.NOTIFV2.Notify(msg)
+
+		if extension in image_types: # if user drags an image into the viewport
+		
+			newObj = Object(varName='CreatePrimitive', doInit=False)
+			InitRun = newObj.op("INIT/Run")
+
+			uniqueTypeName = mod.strUtils.makeNameUnique(nameStr)
+			newPath = tdu.collapsePath(FilePath)
+
+			newObj.par.Name = uniqueTypeName
+			newObj.par.Primtype = 'Plane'
+
+			quiet = parent.project.op('QUIET')
+			n = quiet.create( moviefileinTOP )
+			n.par.file = FilePath
+			n.par.reloadpulse.pulse()
+			n.cook(force=1)
+			w = n.width
+			h = n.height
+			# minDim = max(w,h)
+			# maxDim = min(w,h)
+			aspect = w/h
+			newObj.par.Sx = aspect
+			newObj.par.Rx = 90 # face down positive Z
+			newObj.par.Uniformtexturescale = 4 # by default the texture scale is not 0-1, so scale by 4 to make it so.
+			newObj.par.Basecolorstrengthr = 0
+			newObj.par.Basecolorstrengthg = 0
+			newObj.par.Basecolorstrengthb = 0
+			newObj.par.Emitcolorstrengthr = 1
+			newObj.par.Emitcolorstrengthg = 1
+			newObj.par.Emitcolorstrengthb = 1
+			newObj.par.Emitcolortexture = FilePath
+
+			op.Viewport.par.Enablebloom = False
+			n.destroy() # destroy the quiet reference.
+
+			op.PbrPacker.DelayedRepack()
+			
+			msg = 'Image imported as a textured plane primitive object. Bloom was disabled as well from the Lighting settings. You can re enable this at any time.'
+			op.NOTIFV2.Notify(msg)

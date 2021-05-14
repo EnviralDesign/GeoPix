@@ -31,3 +31,6 @@
 15225	fixed save on exit prompt button	when clicking the application "X", then clicking save, nothing would happen.This now works as expected, launching the file tool, and if the user saves from there, quits the software.
 15226	more tweaks to save on exit	
 15227	fixed missing file path, updated sponsors	
+15228	fixed bug with error reporting and primitive uv detection.	
+15229	enhanced viewport drag n drop to support images, as image planes.	
+15237	build script now updates readme.md with latest build information	

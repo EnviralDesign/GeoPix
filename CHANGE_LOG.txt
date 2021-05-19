@@ -5,7 +5,6 @@
 15197	fixed hover labels on bottom bar 3 main app buttons	had some old messages from before when we could do split screen.
 15198	added transport mode parameter to all timing related IO nodes	before doing things like hold, or zero for time extend would last entire duration of macro's play through. needed a way to toggle between local repeat and not.
 15199	hooked up transport mode parameter in IO nodes	this allows users to specify if a time based node in a macrotreats it's time extend parameters using absolute macro timeor if they extend time within every single iteration of a macro playthrough. 
-15200	none	
 15202	fixed some formatting bugs in the splash screen	
 15203	fixed force cook refresh bug in change log tool	
 15204	more bug fixes to splash screen formatting on load	
@@ -36,3 +35,6 @@
 15237	build script now updates readme.md with latest build information	
 15238	fixed formatting bug in readme.md updater	
 15247	fixed auto patreon updating script.	this change runs the getPatrons.py script which is stored in the geopix directory.
+15249	tweaked readme header generation to include TD build.	
+15252	upgraded GeoPix to TD build 2021.13610	
+15255	updated build system, added GeoPix.exe to launch GeoPix instead of .bat	build system has a few extra steps via guis when the toe is saved.also, a GeoPix.exe is created/updated when desired to allow for a moreapplication friendly launching, pinning to task bar, etc.

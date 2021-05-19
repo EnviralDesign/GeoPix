@@ -38,3 +38,5 @@
 15249	tweaked readme header generation to include TD build.	
 15252	upgraded GeoPix to TD build 2021.13610	
 15255	updated build system, added GeoPix.exe to launch GeoPix instead of .bat	build system has a few extra steps via guis when the toe is saved.also, a GeoPix.exe is created/updated when desired to allow for a moreapplication friendly launching, pinning to task bar, etc.
+15259	disabled TD network hotkeys for saving/loading so they cannot be used in perform mode	
+15261	added ctrl.hotkey support for GeoPix save/load/import/new	

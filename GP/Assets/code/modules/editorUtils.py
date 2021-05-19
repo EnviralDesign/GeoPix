@@ -1179,6 +1179,20 @@ def ExitPrompt():
 	return 
 
 
+def NewPrompt():
+
+	prompterDict = {}
+	prompterDict['label'] = 'Create new file, are you sure?'
+	prompterDict['options'] = {
+								"New File":"op.STARTUP_SCRIPTS.op('makeVanilla').run( [ 'Fullscreen' ] ); parent.helper.Close()",
+								"Cancel":"parent.helper.Close()",
+								}
+
+	op.Prompter.Launch( prompterDict )
+	op.SplashScreen.par.display = False
+	return 
+
+
 def EditFixturePrompt():
 
 	prompterDict = {}

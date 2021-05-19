@@ -35,3 +35,4 @@
 15229	enhanced viewport drag n drop to support images, as image planes.	
 15237	build script now updates readme.md with latest build information	
 15238	fixed formatting bug in readme.md updater	
+15247	fixed auto patreon updating script.	this change runs the getPatrons.py script which is stored in the geopix directory.

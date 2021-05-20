@@ -40,3 +40,4 @@
 15255	updated build system, added GeoPix.exe to launch GeoPix instead of .bat	build system has a few extra steps via guis when the toe is saved.also, a GeoPix.exe is created/updated when desired to allow for a moreapplication friendly launching, pinning to task bar, etc.
 15259	disabled TD network hotkeys for saving/loading so they cannot be used in perform mode	
 15261	added ctrl.hotkey support for GeoPix save/load/import/new	
+15262	fixed bug where macro connectors were stuck at grid center in IO	

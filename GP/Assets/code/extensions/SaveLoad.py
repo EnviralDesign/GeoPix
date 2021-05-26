@@ -137,7 +137,7 @@ class SaveLoad:
 
 
 
-	def SaveLoad_SET(self, loadDict, exact_match, isImport):
+	def SaveLoad_SET(self, loadDict, exact_match, isImport, foundChildren ):
 		'''
 		attempts to recreate or set the operators up.. 
 		effectively this is the LOAD function.
@@ -156,9 +156,15 @@ class SaveLoad:
 			# filter out save data from other parts of the network, stricter
 			loadDict = { k:v for k,v in loadDict.items() if k == rootPath }
 
-		elif exact_match == None:
-			# if the exact match cell is None, we do no filtering at all good sir.
-			pass
+		elif exact_match == 'expr':
+			# this filter option is kind of an edge case. in the instance where find_children_expression is set to return operators
+			# that are not in the same path structure as 'rootPath' the above two if and elif's fail because of that.
+			# we instead use this third case "expr" to say that we know those operators exist, and just check the paths against
+			# the paths that the expression returns, which of course should match the same.
+			foundChildrenPaths = [ x.path for x in foundChildren ]
+			loadDict = { k:v for k,v in loadDict.items() if k in foundChildrenPaths }
+
+		# print( list(loadDict.keys()) )
 
 		# create or set the initial operaetors up, returning a translation dict for any name conflicts.
 		translationDict = SaveLoadGlobal.SaveLoad_create_or_set_operators( rootPath , loadDict , isImport=isImport )

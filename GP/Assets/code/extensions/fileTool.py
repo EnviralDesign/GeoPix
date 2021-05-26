@@ -700,13 +700,18 @@ class ext:
 
 			# get a reference to the actual operator.
 			exact_match = eval(save_load_dat[ i , 'exact_match' ].val)
+
+			if exact_match == 'expr':
+				found_children = eval(save_load_dat[ i , 'find_children_expression' ].val)
+			else:
+				found_children = []
 			
 			# only attempt to load if the target module has save/load capabilities..
 			# if it doesn't we don't want to halt the entire process, just proceed as possible and notify.
 			if hasattr( root_op , 'SaveLoad_GET' ):
 
 				# call SET the save data.
-				op_save_data = root_op.SaveLoad_SET(LOAD_DATA , exact_match , isImport=isImport )
+				op_save_data = root_op.SaveLoad_SET(LOAD_DATA , exact_match , isImport=isImport , foundChildren=found_children )
 
 			else:
 				debug( root_op, ' has no save Save/Load extension attached.. please fix.' )
@@ -728,6 +733,8 @@ class ext:
 			elif PlayButtonState == False:
 				op.Time.op('delayed_pause').run(delayFrames=100)
 
+		# handle updating group assignments in perform, after load.
+		op.PerformV2.UpdateAllGroupAssignments()
 
 		self.Close()
 

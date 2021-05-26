@@ -108,6 +108,7 @@ def getObjectFromIndexAndType(indexVal, ObjtypeInt):
 
 ### parents all but the last selected item, to the last selected item.
 def multiParentToLast():
+	lastSel = None
 	if(multiSel.numRows > 0):
 		childList = []
 		lastSel = op.treeInfo_V2.par.Lastselected.eval()
@@ -232,7 +233,11 @@ def selectItems(itemArray):
 		thisOp = op(str(x))
 		if thisOp == None:
 			thisOp = geoHolder.op(str(x))
-		assert thisOp != None, 'Something went wrong, please check this out.'
+
+		# assert thisOp != None, 'Something went wrong, please check this out.'
+		if thisOp == None: # early exit if none.
+			return
+
 		thisOp.par.Selected = 1
 		thisOp.current = 1
 		

@@ -160,6 +160,9 @@ def SaveLoad_get_general_op_data( obj_data, targetOp ):
 	obj_data['.viewer'] = targetOp.viewer
 	obj_data['.name'] = targetOp.name
 	obj_data['.color'] = targetOp.color
+	obj_data['.OPType'] = targetOp.OPType # read only, we just store it so we can reference it later for recreating certain types of operators from scratch.
+	obj_data['.tags'] = list(targetOp.tags)
+
 
 	# the following attributes, not all nodes have.
 	if hasattr(targetOp,'pickable'):
@@ -178,6 +181,10 @@ def SaveLoad_get_general_op_data( obj_data, targetOp ):
 	# add other custom python properties here as well.
 	if hasattr(targetOp,'State'):
 		obj_data['.State'] = targetOp.State
+
+	# handle getting dat's .text member, if it exists.
+	if hasattr(targetOp,'text'):
+		obj_data['.text'] = targetOp.text
 
 	
 	
@@ -438,7 +445,10 @@ def SaveLoad_uniquify_names_on_operators( translationDict ):
 		possiblyTranslatedObject = op(v)
 		if possiblyTranslatedObject != None:
 			if 'NameMustBeUnique' in possiblyTranslatedObject.tags:
-				print(k,v)
+				# print(k,v)
+				pass
+				# are we using this function at all? why was this print statement buried down here with nothing else?
+				# UPDATE oh we might be doing this locally at each object.. yeah probably but lets leave this here for another few decades X)
 
 
 
@@ -682,7 +692,8 @@ def SaveLoad_set_typical_operator_attributes( full_attribute_path , value_ ):
 			if not str(E).startswith( 'Custom parameter expected. ' ):
 				print( 'Could not set attribute <%s.%s> due to unexpected tdError:'%(attr_,value_), E )
 		except AttributeError as E:
-			if not str(E).startswith( "'td.ParCollection' object has no attribute" ):
+			if not str(E).startswith( "'td.ParCollection' object has no attribute" ) and not str(E).endswith(' is read-only'):
+				# print('==============',str(E))
 				print( 'Could not set attribute <%s.%s> due to unexpected AttributeError:'%(attr_,value_), E )
 
 
@@ -743,14 +754,13 @@ def SaveLoad_create_or_set_operators( rootPath , loadDict , isImport=False ):
 	wrapper function that takes care of the branching between setting/creating objects.
 	'''
 
-	# print('--::--',rootPath)
-
 	# init this, we will need to fill it out as we load things.
 	translationDict = {}
 
 	# iterate through the PRIMARY objects we are trying to load.
 	for savedOp,savedData in loadDict.items():
 
+		# print(savedOp,savedData)
 
 		# get some operator references.
 		rootOp = op(rootPath)
@@ -769,7 +779,6 @@ def SaveLoad_create_or_set_operators( rootPath , loadDict , isImport=False ):
 		if targetOp != None:
 
 			# do the standard initialization of an operator.
-			# translationDict = SaveLoad_init_operator_from_save_data( targetOp , savedData , translationDict )
 			SaveLoad_init_operator_from_save_data( targetOp , savedData , translationDict )
 
 			translationDict = SaveLoad_record_translation_link( translationDict , savedOp , targetOp.path )
@@ -782,7 +791,6 @@ def SaveLoad_create_or_set_operators( rootPath , loadDict , isImport=False ):
 			targetOp = rootOp.copy( cloneTemplateOp )
 
 			# do the standard initialization of an operator.
-			# translationDict = SaveLoad_init_operator_from_save_data( targetOp , savedData , translationDict )
 			SaveLoad_init_operator_from_save_data( targetOp , savedData , translationDict )
 
 			translationDict = SaveLoad_record_translation_link( translationDict , savedOp , targetOp.path )
@@ -792,8 +800,22 @@ def SaveLoad_create_or_set_operators( rootPath , loadDict , isImport=False ):
 		# placeholder logic branch, but in GeoPix we should not have anything
 		# that fits this criteria.
 		else:
-			# debug('creating from scratch...')
-			debug('No valid Target or Clone, Skipping! (this is probably fine)')
+			# for now, lets control this tightly.. and not open pandoras box.. although in theory
+			# we can let this last else clause catch all.. because realstically nothing should fall into this category
+			# except for a few extreme edge cases anyways..
+
+			OPType = savedData.get( '.OPType', None )
+
+			# make sure we aren't allowing anything out of the ordinary..
+			if rootOp != None and OPType in ['tableDAT']:
+				
+				# we create the targetOp fresh in this branch.
+				targetOp = rootOp.create( eval(OPType) )
+
+				# do the standard initialization of an operator.
+				SaveLoad_init_operator_from_save_data( targetOp , savedData , translationDict )
+
+				translationDict = SaveLoad_record_translation_link( translationDict , savedOp , targetOp.path )
 
 
 

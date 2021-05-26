@@ -41,3 +41,14 @@
 15259	disabled TD network hotkeys for saving/loading so they cannot be used in perform mode	
 15261	added ctrl.hotkey support for GeoPix save/load/import/new	
 15262	fixed bug where macro connectors were stuck at grid center in IO	
+15263	fixed IO node shuffle node, TD added luminance as first menu item	
+15264	fixed IO node label offsets bug	
+15266	fixed stray error when dragging video clips into IO Macro Graph.	
+15269	Macro Widgets that are not assigned to a valid Macro will notify user sans warning	
+15271	created Assign Macro sub tool in Perform tab for easily setting up Macro Widgets.	
+15272	macro name changes now automatically update Macro Widget names.	
+15276	fixed bug causing file->load to create duplicates of everything in the Perform Canvas.	
+15283	fixed some save/load bugs related to channel inputs, and UI mapping.	
+15284	fixed stray object parenting python bug throwing errors when typing into fields	
+15289	New "Group" Widget added to the Perform tab.	The Group widget is a more advanced widget that fascilitates the grouping of multiple Macro Widgets into logical groups, for creating things like radio groupbutton banks, or Macro "Layers". You can add Macro Widgets to a Group Widget by simply placing them next toeach other, depending on the Group Widget's grouping function.
+15290	Updated Splash Page Readme	

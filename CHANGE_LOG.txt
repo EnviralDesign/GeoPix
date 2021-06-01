@@ -52,3 +52,4 @@
 15284	fixed stray object parenting python bug throwing errors when typing into fields	
 15289	New "Group" Widget added to the Perform tab.	The Group widget is a more advanced widget that fascilitates the grouping of multiple Macro Widgets into logical groups, for creating things like radio groupbutton banks, or Macro "Layers". You can add Macro Widgets to a Group Widget by simply placing them next toeach other, depending on the Group Widget's grouping function.
 15290	Updated Splash Page Readme	
+15293	fixed some bugs with UI mapper, Perform Macro widgets	

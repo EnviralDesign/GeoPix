@@ -247,7 +247,7 @@ class Helper:
 		return [W,H]
 
 
-	def CalcBoundsFromId(self, id=1):
+	def CalcBoundsFromId_______________________(self, id=1):
 		keysTable = parent.helper.op('curveEditor/keys')
 		idCol = keysTable[ 0 , 'id' ].col
 		xCol = keysTable[ 0 , 'x' ].col
@@ -280,12 +280,58 @@ class Helper:
 
 		return returnDict
 
+	def CalcBoundsFromId(self, ids=[]):
+		keysTable = parent.helper.op('curveEditor/keys')
+		idCol = keysTable[ 0 , 'id' ].col
+		selectedCol = keysTable[ 0 , 'selected' ].col
+		xCol = keysTable[ 0 , 'x' ].col
+		yCol = keysTable[ 0 , 'y' ].col
+
+		selected = list(map(int,keysTable.col('selected')[1::]))
+		if sum(selected) < 2:  # if no keys were selected, or only one was selected, use them all.
+			selected = [ 1 for x in selected ]
+
+		if len(ids) == 0: # if user did not provide any ids, just use them all.
+			ids = list(map(int,keysTable.col('id')[1::]))
+			ids = [ x-1 for x in ids ]
+
+		# first, establish the default vals.
+		returnDict = {
+			'xMin' : float(self.StartStopChop['Timestart'][0]),
+			'xMax' : float(self.StartStopChop['Timestop'][0]),
+			'yMin' : 0,
+			'yMax' : 1
+		}
+
+		if keysTable.numRows > 1:
+			xVals = []
+			yVals = []
+			for i,row in enumerate(keysTable.rows()[1::]):
+				if int(row[idCol])-1 in ids and selected[i] == 1:
+					
+					xVals += [ float(row[xCol]) ]
+					yVals += [ float(row[yCol]) ]
+
+			xMin = min(xVals or [0,1])
+			xMax = max(xVals or [0,1])
+			yMin = min(yVals or [0,1])
+			yMax = max(yVals or [0,1])
+
+			returnDict = {
+				"xMin":xMin,
+				"xMax":xMax,
+				"yMin":yMin,
+				"yMax":yMax,
+			}
+
+		return returnDict
+
 
 	def HomeGraphCamToBounds(self):
 		
-		boundsDict = self.CalcBoundsFromId(1)
+		activeChans = self.ActiveChans()
+		boundsDict = self.CalcBoundsFromId(activeChans)
 		aspect = self.getAspect( parent.helper.op('curveEditor') )
-		# print(aspect)
 
 		cam = parent.helper.op('curveEditor').op('cam')
 		cam.par.tx = ((boundsDict['xMin'] + boundsDict['xMax']) / 2)

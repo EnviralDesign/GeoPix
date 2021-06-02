@@ -56,3 +56,5 @@
 15302	Added new CrossFader Widget to Perform Mode, fixed some sampler engine bugs	
 15303	fixed and optimized bugs in sampler engine, more improvements to group widget	
 15304	implemented group widgets layer eject button functionality	
+15305	shortened windows PID initializer delay	
+15306	fixed some camera homing bugs in the Animation Editor	

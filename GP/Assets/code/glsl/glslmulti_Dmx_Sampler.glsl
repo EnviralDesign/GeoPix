@@ -85,6 +85,8 @@ void main()
 	for( int i=0; i<NumPasses; i++ )
 	{
 
+	 	// i = 4;
+
 	 	// this will be set in the eventual for loop.
 	 	vec4	realtimeDataFetch 	= texelFetch(realtimeData, i);
 		float 	FadeScale 			= realtimeDataFetch.x;
@@ -92,43 +94,51 @@ void main()
 		int 	projectorIndex 		= int(realtimeDataFetch.z);
 		bool 	constantColor 		= bool(realtimeDataFetch.w);
 
-	 	// get the projector object by index.
-		pObj = GetProjector(projectorIndex);
+		if( FadeScale > 0 ){
 
-		if( pObj.Projectoractive == true ){
+		
+		 	// get the projector object by index.
+			pObj = GetProjector(projectorIndex);
 
-		 	// convert the world space Pix coordinates into projector space 0:1
-			// vec4 ProjectorSpaceCoordinates = WorldSpace_to_ProjectorSpace( Coords_WS , CoordsIndex , pObj );
-			vec4 ProjectorSpaceCoordinates = WorldSpace_to_ProjectorSpace( CoordinateSets[ pObj.Coordinateset ] , CoordsIndex , pObj );
+			if( pObj.Projectoractive == true ){
 
-		 	// handles the wrapping, or mirroring of uvs in glsl, so we can control this per projector.
-			ProjectorSpaceCoordinates = Apply_Extend_Modes( ProjectorSpaceCoordinates , pObj );
+			 	// convert the world space Pix coordinates into projector space 0:1
+				vec4 ProjectorSpaceCoordinates = WorldSpace_to_ProjectorSpace( CoordinateSets[ pObj.Coordinateset ] , CoordsIndex , pObj );
 
-		 	// this function returns a mask, 0 or 1, that represents where the projector is hitting, where it isnt(behind), etc.
-			float ProjectorCullMask = Cull_Pix_Against_Projector( ProjectorSpaceCoordinates , pObj , UtilizationMask );
+			 	// handles the wrapping, or mirroring of uvs in glsl, so we can control this per projector.
+				ProjectorSpaceCoordinates = Apply_Extend_Modes( ProjectorSpaceCoordinates , pObj );
 
-			// generates the projector mask. Will be 1 if the fixture has no masks, otherwise will try to bool equate as a mask.
-			float projectorMaskV2 = Generate_Projector_Masks_V2( PixelCoords2D , pObj , currentChanIndex );
+			 	// this function returns a mask, 0 or 1, that represents where the projector is hitting, where it isnt(behind), etc.
+				float ProjectorCullMask = Cull_Pix_Against_Projector( ProjectorSpaceCoordinates , pObj , UtilizationMask );
 
-			vec4 ProjectorSampledTexture = vec4(0);
-			vec4 constColor = vec4(0);
-			if( constantColor == true ){
+				// generates the projector mask. Will be 1 if the fixture has no masks, otherwise will try to bool equate as a mask.
+				float projectorMaskV2 = Generate_Projector_Masks_V2( PixelCoords2D , pObj , currentChanIndex );
 
-			 	// this function contributes the constant color, previously known as color override to the appropriate channels.
-				constColor = Contribute_ConstantColor_To_Buffer( pObj , currentChanIndex , ProjectorCullMask );
+				vec4 ProjectorSampledTexture = vec4(0);
+				vec4 constColor = vec4(0);
+				if( constantColor == true ){
+
+				 	// this function contributes the constant color, previously known as color override to the appropriate channels.
+					constColor = Contribute_ConstantColor_To_Buffer( pObj , currentChanIndex , ProjectorCullMask );
+
+				}
+
+				else{
+
+				 	// sample the correct projector texture based on index, and then apply the mask.
+					// ProjectorSampledTexture = Sample_Projector_Texture( ProjectorSpaceCoordinates , ProjectorCullMask , TextureIndex , FadeScale ); // DELETE ME LATER
+					ProjectorSampledTexture = Sample_Projector_Texture( ProjectorSpaceCoordinates , ProjectorCullMask , TextureIndex );
+
+				}
+
+			 	// this function contributes the sampled texture, to the buffer, while masking it to only the pixels who contain that channel index.
+				// color.r = Contribute_Texture_To_Buffer( color , ProjectorSampledTexture , pObj , currentChanIndex , constColor , projectorMaskV2 ); // DELETE ME LATER
+				float newVal = Contribute_Texture_To_Buffer( color , ProjectorSampledTexture , pObj , currentChanIndex , constColor , projectorMaskV2 );
+				color.r = mix( color.r , newVal , FadeScale );
 
 			}
 
-			else{
-
-			 	// sample the correct projector texture based on index, and then apply the mask.
-				ProjectorSampledTexture = Sample_Projector_Texture( ProjectorSpaceCoordinates , ProjectorCullMask , TextureIndex , FadeScale );
-
-			}
-
-		 	// this function contributes the sampled texture, to the buffer, while masking it to only the pixels who contain that channel index.
-			color.r = Contribute_Texture_To_Buffer( color , ProjectorSampledTexture , pObj , currentChanIndex , constColor , projectorMaskV2 );
-
+		// break;
 		}
 
 	}

@@ -736,6 +736,8 @@ class ext:
 		# handle updating group assignments in perform, after load.
 		op.PerformV2.UpdateAllGroupAssignments()
 
+		op.SamplerV2.op('Build_Fixture_Params_Buffer').cook(force=True, recurse=True)
+
 		self.Close()
 
 		return

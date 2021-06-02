@@ -1,4 +1,5 @@
 #define NUMMASKS 10
+#define NUM_NORMAL_INPUTS 2
 
 uniform sampler2D SurfaceMaskSampler; // only for surfaces.
 uniform sampler2D SurfacePixframeSampler; // only for surfaces.
@@ -19,6 +20,10 @@ vec3 map(vec3 value, float inMin, float inMax, float outMin, float outMax) {
 		outMin + (outMax - outMin) * (value.b - inMin) / (inMax - inMin)
 		);
 	return returnVec;
+}
+
+float saturate(float v){
+	return max( min( v , 1. ) , 0. );
 }
 
 struct ProjectorObject
@@ -187,12 +192,13 @@ float Cull_Pix_Against_Projector( vec4 ProjectorSpaceCoords , ProjectorObject pO
 	// return ProjectorSpaceCoords.w;
 }
 
-vec4 Sample_Projector_Texture( vec4 ProjectorSpaceCoords , float ProjectorMask , int TextureID , float FadeScale ){
+// vec4 Sample_Projector_Texture( vec4 ProjectorSpaceCoords , float ProjectorMask , int TextureID , float FadeScale ){ // DELETE ME LATER
+vec4 Sample_Projector_Texture( vec4 ProjectorSpaceCoords , float ProjectorMask , int TextureID ){
 
 	
 	if( TextureID >= 0 ){
 		// sample the actual texture now that are coords are in the right place.
-		int inputID = TextureID+2;
+		int inputID = TextureID+NUM_NORMAL_INPUTS;
 		vec4 ProjectedTexture = vec4(0);
 
 		if(inputID == 2){ ProjectedTexture = texture(ProjTex0, ProjectorSpaceCoords.st); }
@@ -216,7 +222,8 @@ vec4 Sample_Projector_Texture( vec4 ProjectorSpaceCoords , float ProjectorMask ,
 		ProjectedTexture = clamp( ProjectedTexture , 0 , 1 );
 
 		// mask it
-		ProjectedTexture *= ProjectorMask * FadeScale;
+		ProjectedTexture *= ProjectorMask;
+		// ProjectedTexture *= ProjectorMask * FadeScale; // DELETE ME LATER
 		return ProjectedTexture;
 	}
 	else{
@@ -244,17 +251,17 @@ float Contribute_Texture_To_Buffer( vec4 color , vec4 SampledTexture , Projector
 	}
 
 	else if (pObj.Projectorblendmode == 1){ // MAX
-		color.r = max( color.r , SampledTexture.r * float(currentChanIndex == pObj.Routingr) );
-		color.r = max( color.r , SampledTexture.g * float(currentChanIndex == pObj.Routingg) );
-		color.r = max( color.r , SampledTexture.b * float(currentChanIndex == pObj.Routingb) );
-		color.r = max( color.r , SampledTexture.a * float(currentChanIndex == pObj.Routinga) );
+		color.r = mix( color.r , max( color.r , SampledTexture.r ) , float(currentChanIndex == pObj.Routingr) );
+		color.r = mix( color.r , max( color.r , SampledTexture.g ) , float(currentChanIndex == pObj.Routingg) );
+		color.r = mix( color.r , max( color.r , SampledTexture.b ) , float(currentChanIndex == pObj.Routingb) );
+		color.r = mix( color.r , max( color.r , SampledTexture.a ) , float(currentChanIndex == pObj.Routinga) );
 	}
 	
 	else if (pObj.Projectorblendmode == 2){ // MIN
-		color.r = min( color.r , SampledTexture.r * float(currentChanIndex == pObj.Routingr) );
-		color.r = min( color.r , SampledTexture.g * float(currentChanIndex == pObj.Routingg) );
-		color.r = min( color.r , SampledTexture.b * float(currentChanIndex == pObj.Routingb) );
-		color.r = min( color.r , SampledTexture.a * float(currentChanIndex == pObj.Routinga) );
+		color.r = mix( color.r , min( color.r , SampledTexture.r ) , float(currentChanIndex == pObj.Routingr) );
+		color.r = mix( color.r , min( color.r , SampledTexture.g ) , float(currentChanIndex == pObj.Routingg) );
+		color.r = mix( color.r , min( color.r , SampledTexture.b ) , float(currentChanIndex == pObj.Routingb) );
+		color.r = mix( color.r , min( color.r , SampledTexture.a ) , float(currentChanIndex == pObj.Routinga) );
 	}
 
 	else if (pObj.Projectorblendmode == 3){ // MULTIPLY
@@ -274,7 +281,8 @@ float Contribute_Texture_To_Buffer( vec4 color , vec4 SampledTexture , Projector
 		color.r = alpha_r * SampledTexture.r + (1 - alpha_r) * color.r;
 		color.r = alpha_g * SampledTexture.g + (1 - alpha_g) * color.r;
 		color.r = alpha_b * SampledTexture.b + (1 - alpha_b) * color.r;
-		color.r = alpha_a * SampledTexture.a + (1 - alpha_a) * color.r;
+		// color.r = alpha_a * SampledTexture.a + (1 - alpha_a) * color.r; // guess we don't need to blend the alpha?
+		// color.r = alpha_a;
 	}
 	
 

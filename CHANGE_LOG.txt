@@ -53,3 +53,6 @@
 15289	New "Group" Widget added to the Perform tab.	The Group widget is a more advanced widget that fascilitates the grouping of multiple Macro Widgets into logical groups, for creating things like radio groupbutton banks, or Macro "Layers". You can add Macro Widgets to a Group Widget by simply placing them next toeach other, depending on the Group Widget's grouping function.
 15290	Updated Splash Page Readme	
 15293	fixed some bugs with UI mapper, Perform Macro widgets	
+15302	Added new CrossFader Widget to Perform Mode, fixed some sampler engine bugs	
+15303	fixed and optimized bugs in sampler engine, more improvements to group widget	
+15304	implemented group widgets layer eject button functionality	

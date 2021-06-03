@@ -58,3 +58,10 @@
 15304	implemented group widgets layer eject button functionality	
 15305	shortened windows PID initializer delay	
 15306	fixed some camera homing bugs in the Animation Editor	
+15310	added glsl MATs to glsl error and diagnostics source list	
+15311	fixed bugs with surface sampler glsl errors.	
+15312	runtime optimization ~ .7 ms	
+15313	added frame time graph to Performance counter in bottom left	
+15314	added visibility toggle to Perform Viz widget (for fps performance when needed)	
+15315	fixed some bugs in Perform related to creating System Widgets	
+15316	added "Alpha as Transparency" toggle to Surface Objects	this feature is meant to be used as a hack to simulate glowing signage, or otherartistic elements in a scene. useful for doing music videos, etc.

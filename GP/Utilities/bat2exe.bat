@@ -3,6 +3,6 @@
 /exe "C:\Users\envir\Documents\GitHub\GeoPix\GeoPix.exe" ^
 /icon "C:\Users\envir\Documents\GitHub\GeoPix\GP\Assets\customIcons\geopix_icon.ico" ^
 /overwrite ^
-/fileversion 2.0.15306.0 ^
+/fileversion 2.0.15316.0 ^
 /productname "GeoPix" ^
 /company "Enviral Design"

@@ -66,27 +66,26 @@ silver_sponsor_tier = [ pledge['full_name'] for pledge in sorted_pledges if pled
 # this is the base path for Lucas's primary desktop work station.
 basePath = 'C:\\Users\\envir\\Documents\\GitHub\\GeoPix\\GP\\Assets\\patreon'
 
-f = open("%s\\Supporters.txt"%(basePath), "w")
+f = open("%s\\Supporter_Patrons.txt"%(basePath), "w")
 f.write( '\n'.join(supporter_tier) )
 f.close()
 
-
-f = open("%s\\Official_Patron.txt"%(basePath), "w")
+f = open("%s\\Official_Patrons.txt"%(basePath), "w")
 f.write( '\n'.join(official_patron_tier) )
 f.close()
 
-f = open("%s\\Super_Patron.txt"%(basePath), "w")
+f = open("%s\\Super_Patrons.txt"%(basePath), "w")
 f.write( '\n'.join(super_patron_tier) )
 f.close()
 
-f = open("%s\\VIP_Patron.txt"%(basePath), "w")
+f = open("%s\\Vip_Patrons.txt"%(basePath), "w")
 f.write( '\n'.join(vip_patron_tier) )
 f.close()
 
-f = open("%s\\Bronze_Sponsor.txt"%(basePath), "w")
+f = open("%s\\Bronze_Patrons.txt"%(basePath), "w")
 f.write( '\n'.join(bronze_sponsor_tier) )
 f.close()
 
-f = open("%s\\Silver_Sponsor.txt"%(basePath), "w")
+f = open("%s\\Silver_Patrons.txt"%(basePath), "w")
 f.write( '\n'.join(silver_sponsor_tier) )
 f.close()

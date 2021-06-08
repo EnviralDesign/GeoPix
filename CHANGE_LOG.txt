@@ -67,3 +67,5 @@
 15316	added "Alpha as Transparency" toggle to Surface Objects	this feature is meant to be used as a hack to simulate glowing signage, or otherartistic elements in a scene. useful for doing music videos, etc.
 15317	added resolution control to the texture packing system	
 15320	patched some GLSL bugs manifesting on on certain AMD cards	
+15321	refactored patron/sponsor files and naming	
+15322	patreon bug fixes	

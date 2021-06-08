@@ -40,6 +40,7 @@ uniform float selectionPulse;
 uniform int maskPreviewIndex;
 uniform int NumPixFrameContribs;
 
+
 #include <GLSL_SamplerFunctions>
 
 

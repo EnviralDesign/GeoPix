@@ -74,3 +74,4 @@
 15325	fixed bug with updates available button	
 15326	refactoring some code	
 15327	fixed bug in downloads available button	
+15328	more refactoring	

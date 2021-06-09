@@ -75,3 +75,4 @@
 15326	refactoring some code	
 15327	fixed bug in downloads available button	
 15328	more refactoring	
+15329	added a tap tempo button to the BPM widget	

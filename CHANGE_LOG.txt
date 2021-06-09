@@ -72,3 +72,4 @@
 15323	began work on updates notification	
 15324	created updates available button	
 15325	fixed bug with updates available button	
+15326	refactoring some code	

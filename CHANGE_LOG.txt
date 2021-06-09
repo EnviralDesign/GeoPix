@@ -76,3 +76,6 @@
 15327	fixed bug in downloads available button	
 15328	more refactoring	
 15329	added a tap tempo button to the BPM widget	
+15330	improved fixture raw data edit SET function to accept more flexible pasted text	
+15331	fixed stray error in animation editor trashcan button	
+15332	added some smart logic to animation editor vertical homing when keyframes are flat	

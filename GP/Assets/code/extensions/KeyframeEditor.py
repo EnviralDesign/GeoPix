@@ -317,6 +317,15 @@ class Helper:
 			yMin = min(yVals or [0,1])
 			yMax = max(yVals or [0,1])
 
+			# if the user has two keyframes set to 0 on Y, then 
+			# homing will skew the vertical very far and require a ton of
+			# vertical zooming out.. which is annoying. this is trying to smartly
+			# see that the user has two or more 0Y keyframes and to just normalize
+			# to 0-1 unless there is a slight difference, which we then assume is intentional.
+			tooFlatTreshold = 0.001
+			if yMax-yMin < tooFlatTreshold:
+				yMax = 1.0
+
 			returnDict = {
 				"xMin":xMin,
 				"xMax":xMax,
@@ -852,6 +861,10 @@ class Helper:
 		sel = self.get_selection()
 
 		ActiveKeyIndicies = sorted([ i for i,key in enumerate(KeysList) if self.isKeyActive(key['id']) ])
+
+		if len(ActiveKeyIndicies) == 0:
+			return # early exit if no active key indicies.
+
 		keysToNotDelete = list(set([ActiveKeyIndicies[0]]).union(set([0])))
 
 		# filter out 0 from key list, user is not allowed to delete the first key.

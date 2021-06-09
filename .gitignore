@@ -104,6 +104,8 @@ GP/LIBRARY/**/*.wmv
 TDImportCache
 Backup
 GeoPix_2.0.[0-9]*.toe
+CrashAutoSave.*.toe
+TouchDesignerCrash.*.dmp
 
 # Windows shortcuts
 *.lnk

@@ -69,3 +69,6 @@
 15320	patched some GLSL bugs manifesting on on certain AMD cards	
 15321	refactored patron/sponsor files and naming	
 15322	patreon bug fixes	
+15323	began work on updates notification	
+15324	created updates available button	
+15325	fixed bug with updates available button	

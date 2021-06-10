@@ -84,3 +84,4 @@
 15336	fixed some missing paths for HDR lighting in Custom Fixture Editor	
 15337	fixed some compile script bugs in custom fixtures	
 15338	fixed some compositing layering issues in the Viewport for emissive pixels	
+15339	fixed recently created bug causing selection to not work for Hulls and Pix	

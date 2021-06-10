@@ -1080,8 +1080,10 @@ class Pix:
 
 				# build up 2d list we will write to table DAT.
 				fullList = [ 
-								[ v['chans'][name]['min'] for name in chansList ] +
-								[ v['chans'][name]['max'] for name in chansList ]
+								# [ v['chans'][name]['min'] for name in chansList ] +
+								# [ v['chans'][name]['max'] for name in chansList ]
+								[ v['chans'].get( name , {"max": 255,"min": 0} )['min'] for name in chansList ] +
+								[ v['chans'].get( name , {"max": 255,"min": 0} )['max'] for name in chansList ]
 									for k,v in self.coordList.items() 
 							]
 				

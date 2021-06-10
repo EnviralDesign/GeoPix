@@ -87,3 +87,6 @@
 15339	fixed recently created bug causing selection to not work for Hulls and Pix	
 15340	fixed critical bug related to loading projects with generators and custom data	
 15341	fixed bug related to mask tool not creating masks on sub selection of Pix	
+15343	minor bug fixes	
+15344	disabled custom searcher dev tool that was causing slowdowns in some cases	
+15345	fixed an uncommon loading error that broke loading for fixtures with malformed save data	

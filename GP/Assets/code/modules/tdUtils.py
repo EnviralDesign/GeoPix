@@ -553,59 +553,19 @@ def duplicateSelectedItems_V2():
 				parentTargets[item.name] = None
 		
 		newlyCreatedItems = []
-		
-		# now we can do our duplications and build the translation dict.
-		for item in combinedList:
-			
-			# first make an actual TD copy of the node.
-			newItem = geoHolder.copy(item)
-			
-			# make the new items custom parm name unique.
-			mod.strUtils.makeNameUnique(newItem)
-			
-			# add our new item to the translation dict after it's been renamed.
-			TranslationTargets[item.name] = newItem.name
-			newlyCreatedItems += [ newItem ]
-		
-		# now we can repair our parenting of our new objects by
-		# referencing our parenting dict and translation dict together.
-		for newItem in newlyCreatedItems:
-			
-			# get the ORIGINAL name of the op that was duplicated..
-			oldOp = [k for k,v in TranslationTargets.items() if v == newItem.name]
-			
-			# now find the ORIGINAL parent of that op, from above.
-			oldParent = parentTargets[oldOp[0]]
-			
-			try:
-				# now we get our NEW objects parent, via the translation dict again.
-				newParent = TranslationTargets[oldParent]
-			except:
-				# if that fails, it likely means that the parent was outside of the initial selection.
-				newParent = oldParent
-			
-			
-			# if newParent is nont None...
-			if newParent:
-				# parent new item to new parent.
-				parentObjectFlat_BLIND( [newItem] , op(geoHolder.path + "/" + newParent) )
 	
-		# deselect the old, and select the new.
-		deselectAllItems()
-		
-		# we duplicated based on prim/secondary selection, but we want to select
-		# only the items the user had selected so as to remain constant.
-		newItemsToSelect  = []
-		for item in directSelected:
-			newItemsToSelect += [ op(geoHolder.path + "/" + TranslationTargets[ item.name]) ]
-		
-		
-		# select the new items.
-		selectItems(newItemsToSelect)
+		newlyCreatedItems = geoHolder.copyOPs(combinedList)
+		for i,each in enumerate(newlyCreatedItems):
+			mod.strUtils.makeNameUnique(each)
+			TranslationTargets[combinedList[i].name] = each.name
+
+		for each in combinedList:
+			each.par.Selected = False
+
 		deviceIDs = list(set([  int(getattr( x.par , 'Fdeviceid' , -1 ))   for x in newlyCreatedItems]))
 		# handle the address offsetting, if we have any fixtures here.
 
-		maxOffsetsDict = getFixturesHighestOffset(deviceIDs, newItemsToSelect)
+		maxOffsetsDict = getFixturesHighestOffset(deviceIDs, newlyCreatedItems)
 		if maxOffsetsDict != None:
 		
 			# let's offset our address offsets to avoid overlap, if our devices are fixtures.
@@ -637,7 +597,7 @@ def duplicateSelectedItems_V2():
 					if totalNumOfPix > 0:
 					
 						newAddresOffsets = calculateAddressOffsetFromCurrent( newOp, maxOffsetsDict )
-						# debug('maxOffsetsDict', maxOffsetsDict)
+						
 						newOp.par.Channel = newAddresOffsets['Channel'] # no need to +1 to 1 based, the function above does this for us.
 						newOp.par.Universe = newAddresOffsets['Universe'] # no need to +1 to 1 based, the function above does this for us.
 					
@@ -661,7 +621,7 @@ def duplicateSelectedItems_V2():
 		
 		op.treeInfo_V2.par.Forcerefresh.pulse()
 		
-		return newItemsToSelect
+		return newlyCreatedItems
 	else:
 		op.treeInfo_V2.par.Lastselected = ''
 		return []

@@ -79,3 +79,4 @@
 15330	improved fixture raw data edit SET function to accept more flexible pasted text	
 15331	fixed stray error in animation editor trashcan button	
 15332	added some smart logic to animation editor vertical homing when keyframes are flat	
+15334	fixed critical bug in object duplication of parented objects causing insta-crashes.	

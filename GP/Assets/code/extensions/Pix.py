@@ -1101,7 +1101,10 @@ class Pix:
 				namesList = self.generateHeader('masks')
 
 				# build up 2d list we will write to table DAT.
-				fullList = [ [ v['masks'][name]['val'] for name in namesList ] for k,v in self.coordList.items() ]
+				# this is wrong, didn't acomodate situations where the mask was not there.
+				# fullList = [ [ v['masks'][name]['val'] for name in namesList ] for k,v in self.coordList.items() ]
+				
+				fullList = [ [ v['masks'].get(name,{'val':0})['val'] for name in namesList ] for k,v in self.coordList.items() ]
 
 
 				
@@ -1443,7 +1446,7 @@ class Pix:
 			for k,v in self.coordList.items():
 
 				setMask = v["selected"] == 1 or int(VpModeChop['ObjectEditMode']) == 1
-				
+
 				if setMask:
 				
 					# try and retrieve the masks dict. if it's not there, we get None.
@@ -1451,9 +1454,13 @@ class Pix:
 					
 					# if there was a mask dict.
 					if MaskDict != None:
+
+						MaskDict[maskName] = {'val':maskValue}
 			
 						# add the new mask item to the masks dict if it existed already, set mask value to 1.
-						self.coordList[k]['masks'][maskName] = {'val':maskValue}
+						# self.coordList[k]['masks'][maskName] = {'val':maskValue}
+						self.coordList[k]['masks'] = MaskDict
+				
 				# else:
 					# self.coordList[k]['masks'][maskName] = {'val':0}
 		return

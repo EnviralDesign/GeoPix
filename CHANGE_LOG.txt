@@ -86,3 +86,4 @@
 15338	fixed some compositing layering issues in the Viewport for emissive pixels	
 15339	fixed recently created bug causing selection to not work for Hulls and Pix	
 15340	fixed critical bug related to loading projects with generators and custom data	
+15341	fixed bug related to mask tool not creating masks on sub selection of Pix	

@@ -31,8 +31,8 @@ class Generator:
 	def Cook(self):
 		# '''
 		parentObj = parent.obj
-		# print('cooking')
-
+		# debug('Generator cooking')
+		# mod.globalFuncs.TraceFunctionCall()
 		
 		hullOp = parent.obj.op("hull")
 		pixOp = parent.obj.op("pix")
@@ -68,10 +68,6 @@ class Generator:
 			if parentObj.par.Genblock == True:
 				op.NOTIFV2.Notify(parentObj.par.Name + ' has custom user data, Please click "Regen" in any of its generators to force regenerate.')
 				return
-
-			# elif len(connections) == 0:
-				# op.NOTIFV2.Notify(parentObj.par.Name + ' has no associated Generators.. thus we cannot regenerate.. you probably shouldnt be seeing this message.')
-				# return
 
 			elif len( set(bucketSums) ) > 1:
 				op.NOTIFV2.Notify(parentObj.par.Name + ' has generators associated with it that are producing inconsistent numbers of coordinates across different coordinate sets. Some unintended clipping or extending will occur.')

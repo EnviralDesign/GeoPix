@@ -153,12 +153,14 @@ class Pix:
 	def ReplacePixDict(self, PixDict):
 		self.coordList = PixDict
 		self.WriteCoordsToTable()
+		# mod.globalFuncs.TraceFunctionCall()
 		
 		return
 		
 	def SlicePixDict(self, start=0, end=-1):
 		end = len(d) if end == -1 else end
 		self.coordList = {k:v for (k,v) in self.coordList.items() if k in range(start,end)}
+		# mod.globalFuncs.TraceFunctionCall()
 		return len(self.coordList)
 		
 	def CoordSetFetch(self , pixIndex , var , coordSetIndex):
@@ -364,6 +366,7 @@ class Pix:
 		for k in self.coordList.keys():
 			newDict[ k ] = self.coordList[myLen-1-k]
 		self.coordList = newDict
+		# mod.globalFuncs.TraceFunctionCall()
 		return
 		
 		
@@ -658,6 +661,7 @@ class Pix:
 		indexesToDelete = [ lastIndex ]
 
 		self.coordList = { k:v for k,v in self.coordList.items() if k not in indexesToDelete }
+		# mod.globalFuncs.TraceFunctionCall()
 		lastIndex = len(self.coordList) - 1
 		if lastIndex >= 0:
 			self.coordList[lastIndex]["selected"] = 1
@@ -670,6 +674,7 @@ class Pix:
 	def DeleteSelectedCoords(self):
 
 		self.coordList = { k:v for k,v in self.coordList.items() if v["selected"] == 0 }
+		# mod.globalFuncs.TraceFunctionCall()
 		self.fixNumbering()
 
 		self.ArcLength = self.ArcLen() # assume default coordinate set.
@@ -687,6 +692,7 @@ class Pix:
 			newDict[i] = value
 			i += 1
 		self.coordList = newDict
+		# mod.globalFuncs.TraceFunctionCall()
 		
 		
 		self.ArcLength = self.ArcLen() # assume default coordinate set.
@@ -697,6 +703,7 @@ class Pix:
 		'''
 		all manner of selecting and deselecting coordinates.
 		'''
+		# mod.globalFuncs.TraceFunctionCall()
 		self.coordList.clear()
 		self.ArcLength = self.ArcLen() # assume default coordinate set.
 		return	
@@ -1004,6 +1011,8 @@ class Pix:
 		# debug('Has not had coordinate sets properly implemented...')
 		# NOTE: this MAY not need the coordinateSetIndex argument since we likely want to write out whatever we have all the time,
 		# when the mode is set to something that includes coordinates.....
+
+		# debug('Writing Coords to Table')
 
 		if len( self.coordList.items() ) > 0:
 			

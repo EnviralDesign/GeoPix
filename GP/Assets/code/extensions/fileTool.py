@@ -663,6 +663,8 @@ class ext:
 		Wrapper for entire system wide load command
 		'''
 
+		# debug('Begin Loading')
+
 		if op('null_mode')['ObjectEditMode'] == 0:
 			MsgStr = 'You are not in Object Mode. Please leave Hull or Pix mode, and try again.'
 			op.NOTIFV2.Notify(MsgStr)
@@ -739,6 +741,8 @@ class ext:
 		op.SamplerV2.op('Build_Fixture_Params_Buffer').cook(force=True, recurse=True)
 
 		self.Close()
+
+		# debug('End Loading')
 
 		return
 

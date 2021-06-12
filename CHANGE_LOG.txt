@@ -90,3 +90,4 @@
 15343	minor bug fixes	
 15344	disabled custom searcher dev tool that was causing slowdowns in some cases	
 15345	fixed an uncommon loading error that broke loading for fixtures with malformed save data	
+15346	fixed video target scaling bug that happened under certain resolutions	

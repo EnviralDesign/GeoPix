@@ -91,3 +91,9 @@
 15344	disabled custom searcher dev tool that was causing slowdowns in some cases	
 15345	fixed an uncommon loading error that broke loading for fixtures with malformed save data	
 15346	fixed video target scaling bug that happened under certain resolutions	
+15347	light network optimization for perform tab performance	
+15349	fixed some string parsing bugs in mask editor tool	
+15350	fixed some clamping bugs when mixing Pixframes with Macro nodes	
+15351	fixed bug preventing pixframe data from being loaded from GP projects	
+15352	added global data lists view, that can be enabled from preferences	
+15353	removed arbitrary X and Y padding from projector fit function. now fits exactly.	

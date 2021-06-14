@@ -244,7 +244,11 @@ def ProjectionBoundsFromFixtures_v2(projOp, fixtureList=[], custFixtureList=[], 
 	to the bounds of the pix in the provided fixtures.
 	'''
 
-	
+	# define the x/y/z buffers. this is basically padding for the projector fit.
+	# we're taking away x and y padding, but z we still want so after a fit, the projector
+	# is immediately lighting up the stuff it's fit to.
+	buffers = [ 0 , 0 , buffer ]
+
 	# dict to return data in.
 	_r_ = {
 		't':{'x':0,'y':0,'z':0},
@@ -340,9 +344,9 @@ def ProjectionBoundsFromFixtures_v2(projOp, fixtureList=[], custFixtureList=[], 
 	maxs = np.amax(pointsInProjSpaceNp, axis=0)
 	
 	# store the sizes.
-	sizeX = (maxs[0] - mins[0]) + (buffer*2)
-	sizeY = (maxs[1] - mins[1]) + (buffer*2)
-	sizeZ = (maxs[2] - mins[2]) + (buffer*2)
+	sizeX = (maxs[0] - mins[0]) + (buffers[0]*2)
+	sizeY = (maxs[1] - mins[1]) + (buffers[1]*2)
+	sizeZ = (maxs[2] - mins[2]) + (buffers[2]*2)
 	
 	projPosPreRot = tdu.Position( 0 , 0 , (sizeZ/2) + buffer )
 	

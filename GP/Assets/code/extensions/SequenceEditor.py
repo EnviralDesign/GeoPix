@@ -243,8 +243,8 @@ class Helper:
 
 		# if no items are avail to calc, we just overwrite our min/max with size of timeline graph.
 		if len( sel ) == 0:
-			returnDict['xMin'] = float(self.StartStopChop['Timestart'][0])
-			returnDict['xMax'] = float(self.StartStopChop['Timestop'][0])
+			returnDict['xMin'] = float(self.StartStopChop['Timestart'][0] if self.StartStopChop['Timestart'] != None else 0)
+			returnDict['xMax'] = float(self.StartStopChop['Timestop'][0] if self.StartStopChop['Timestop'] != None else 1)
 			returnDict['yMin'] = 0
 			returnDict['yMax'] = 5
 

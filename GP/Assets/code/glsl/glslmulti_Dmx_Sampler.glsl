@@ -127,13 +127,11 @@ void main()
 				else{
 
 				 	// sample the correct projector texture based on index, and then apply the mask.
-					// ProjectorSampledTexture = Sample_Projector_Texture( ProjectorSpaceCoordinates , ProjectorCullMask , TextureIndex , FadeScale ); // DELETE ME LATER
 					ProjectorSampledTexture = Sample_Projector_Texture( ProjectorSpaceCoordinates , ProjectorCullMask , TextureIndex );
 
 				}
 
 			 	// this function contributes the sampled texture, to the buffer, while masking it to only the pixels who contain that channel index.
-				// color.r = Contribute_Texture_To_Buffer( color , ProjectorSampledTexture , pObj , currentChanIndex , constColor , projectorMaskV2 ); // DELETE ME LATER
 				float newVal = Contribute_Texture_To_Buffer( color , ProjectorSampledTexture , pObj , currentChanIndex , constColor , projectorMaskV2 );
 				color.r = mix( color.r , newVal , FadeScale );
 
@@ -156,8 +154,9 @@ void main()
 	// this function modifies the color buffer, to overwrite pure green where the fixture is selected, or the fixture's Pix is selected while in Pix mode.
 	finalColor.r = Contribute_SelectionHighlight_To_Buffer( finalColor, Selected , currentChanIndex );
 
-	// clamp upper limit to 1. there is no dmx value above 255.
+	// clamp 
 	finalColor.r = min( finalColor.r , 1.0 );
+	finalColor.r = max( finalColor.r , 0.0 );
 	
 
 	//////////////////////////// DEBUG //////////////////////////////////

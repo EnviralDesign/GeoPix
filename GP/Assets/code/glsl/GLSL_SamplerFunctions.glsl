@@ -219,11 +219,10 @@ vec4 Sample_Projector_Texture( vec4 ProjectorSpaceCoords , float ProjectorMask ,
 		if(inputID == 17){ ProjectedTexture = texture(ProjTex15, ProjectorSpaceCoords.st); }
 		
 		// clamp to 0-1 range
-		ProjectedTexture = clamp( ProjectedTexture , 0 , 1 );
+		// ProjectedTexture = clamp( ProjectedTexture , 0 , 1 );
 
 		// mask it
 		ProjectedTexture *= ProjectorMask;
-		// ProjectedTexture *= ProjectorMask * FadeScale; // DELETE ME LATER
 		return ProjectedTexture;
 	}
 	else{
@@ -237,9 +236,13 @@ float Contribute_Texture_To_Buffer( vec4 color , vec4 SampledTexture , Projector
 	/////////////// for FIXTURES
 	ivec4 Routing = ivec4( pObj.Routingr , pObj.Routingg , pObj.Routingb , pObj.Routinga );
 
-	SampledTexture = clamp(SampledTexture + constColor,0,1) * projectorMask;
+	 // had this before, but things like moverMagic which relies on negative values get clamped, and that's no good.
+	 // why did I clamp here? clamping should happen at the very end.
+	// SampledTexture = clamp(SampledTexture + constColor,0,1) * projectorMask;
+	SampledTexture = (SampledTexture + constColor) * projectorMask;
 
-	SampledTexture = pow(SampledTexture, vec4(1.0/pObj.Gamma)); // GAMMA
+	vec4 signMask = vec4( SampledTexture.r>=0 , SampledTexture.g>=0 , SampledTexture.b>=0 , SampledTexture.a>=0 )*2-1;
+	SampledTexture = pow(SampledTexture*signMask, vec4(1.0/pObj.Gamma))*signMask; // GAMMA
 	SampledTexture *= pObj.Gain; // GAIN
 	
 
@@ -295,11 +298,15 @@ vec4 Contribute_Texture_To_Buffer( vec4 color , vec4 SampledTexture , ProjectorO
 	/////////////// for SURFACES
 	ivec4 Routing = ivec4( pObj.Routingr , pObj.Routingg , pObj.Routingb , pObj.Routinga );
 
-
-	SampledTexture = clamp(SampledTexture + constColor,0,1);
+	 // had this before, but things like moverMagic which relies on negative values get clamped, and that's no good.
+	 // why did I clamp here? clamping should happen at the very end.
+	// SampledTexture = clamp(SampledTexture + constColor,0,1) * projectorMask;
+	// SampledTexture = clamp(SampledTexture + constColor,0,1);
+	SampledTexture = SampledTexture + constColor;
 	SampledTexture.rgb *= projectorMask;
 
-	SampledTexture = pow(SampledTexture, vec4(1.0/pObj.Gamma)); // GAMMA
+	vec4 signMask = vec4( SampledTexture.r>=0 , SampledTexture.g>=0 , SampledTexture.b>=0 , SampledTexture.a>=0 )*2-1;
+	SampledTexture = pow(SampledTexture*signMask, vec4(1.0/pObj.Gamma))*signMask; // GAMMA
 	SampledTexture *= pObj.Gain; // GAIN
 
 

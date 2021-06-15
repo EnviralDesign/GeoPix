@@ -61,6 +61,7 @@ in Vertex
 	vec4 coords[16];
 	flat int surfIndex;
 	flat bool Selected;
+	// float DEBUG;
 } iVert;
 
 out vec4 fragColor;
@@ -164,6 +165,7 @@ void main()
 
 	// this function modifies the color buffer, to overwrite pure green where the fixture is selected, or the fixture's Pix is selected while in Pix mode.
 	finalColor = Contribute_SelectionHighlight_To_Buffer( finalColor, Selected );
+	// finalColor.rgb = vec3( iVert.Selected , 0 , 0 );
 
 	// DEBUG
 	// finalColor = vec4(1,0,0,1);

@@ -185,6 +185,7 @@ vec4 WorldSpace_to_ProjectorSpace( vec4 WorldSpaceCoords , float CoordIndex , Pr
 */
 
 in int PointIndex;
+in int index;
 
 out Vertex
 {
@@ -193,6 +194,7 @@ out Vertex
 	vec4 coords[16];
 	flat int surfIndex;
 	flat bool Selected;
+	// float DEBUG;
 } oVert;
 
 void main() 

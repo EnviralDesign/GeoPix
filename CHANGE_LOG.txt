@@ -99,3 +99,6 @@
 15353	removed arbitrary X and Y padding from projector fit function. now fits exactly.	
 15354	reduced video target resolution to 1x1 from 256x256	
 15356	fixed some critical bugs related to surface objects and selection/sampling	
+15357	fixed critical bug that left out the 16th sampler out of every set of 16	
+15358	optimizations for heavy scenes	
+15359	scaling optimizations	

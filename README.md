@@ -6,12 +6,17 @@ The primary goal of GeoPix is to unify the process of working with different typ
 
 Lastly, GeoPix also aims to bridge the gap between lighting control, and lighting pre-visualization - two tasks that generally require multiple, potentially expensive software & hardware elements.
 
+![GeoPix Image 3](http://www.enviral-design.com/downloads/website_images/GeoPix_GitHub_ReadMe_3.jpg)
+
 ![GeoPix Image 1](http://www.enviral-design.com/downloads/website_images/GeoPix_GitHub_ReadMe_1.jpg)
 
 ![GeoPix Image 2](http://www.enviral-design.com/downloads/website_images/GeoPix_GitHub_ReadMe_2.jpg)
 
 ## Post launch gameplan
-As the next few months progress, my focus will go from post launch bug fixes and rfe's to working on the Perform tab and other UI/UX related tasks. User feedback will play a big role in what I prioritize, so if you have any real world input start a thread on the Discussions forum here or open an issue if it's something specific.
+
+*06/18/2021* A lot of progress has been made since launch, the Perform tab has it's crucial missing features from launch implemented, many bugs have been fixed, and I keep rolling out new tutorials when I can or on request. The next big push will be to do an optimization pass, another round of bug fixes [discovered recently](https://www.youtube.com/watch?v=KdTKNHLYUJ0), along with more supporting tutorials for big features implemented but not yet documented. 
+
+You'll know we've reached this point when I bump the GeoPix version number to 2.1, and with that will come a fresh new sample project in two variants, a timecoded variant like what you can see in the link above and also a freeplay variant, which is entirely ready to jam on.
 
 ## Getting Started
 The recommended way of using GeoPix is to download or checkout the entire repository, unzip it if needed, then run the windows batch file called **START_GEOPIX.bat**.

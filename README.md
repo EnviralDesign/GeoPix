@@ -6,11 +6,11 @@ The primary goal of GeoPix is to unify the process of working with different typ
 
 Lastly, GeoPix also aims to bridge the gap between lighting control, and lighting pre-visualization - two tasks that generally require multiple, potentially expensive software & hardware elements.
 
-![GeoPix Image 3](http://www.enviral-design.com/downloads/website_images/GeoPix_GitHub_ReadMe_3.jpg)
+![GeoPix Image 1](http://www.enviral-design.com/downloads/website_images/GeoPix_GitHub_ReadMe_4.jpg)
 
-![GeoPix Image 1](http://www.enviral-design.com/downloads/website_images/GeoPix_GitHub_ReadMe_1.jpg)
+![GeoPix Image 2](http://www.enviral-design.com/downloads/website_images/GeoPix_GitHub_ReadMe_5.png)
 
-![GeoPix Image 2](http://www.enviral-design.com/downloads/website_images/GeoPix_GitHub_ReadMe_2.jpg)
+![GeoPix Image 2](http://www.enviral-design.com/downloads/website_images/GeoPix_GitHub_ReadMe_6.png)
 
 ## Post launch gameplan
 

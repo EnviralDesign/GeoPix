@@ -102,3 +102,7 @@
 15357	fixed critical bug that left out the 16th sampler out of every set of 16	
 15358	optimizations for heavy scenes	
 15359	scaling optimizations	
+15360	balanced some visual aesthetics between custom fixture editor and viewport	
+15361	fixed naming convention bug breaking custom fixture editor updates	
+15365	re introduced the auto loader tool, for setting up autonomous project loading at boot	
+15367	Autoloader fully integrated	

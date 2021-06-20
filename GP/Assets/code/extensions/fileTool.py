@@ -31,6 +31,7 @@ class ext:
 		self.targetOperators = []
 		self.parameterName = ''
 		self.exitAfterSave = False
+		self.parameterMode = True
 
 		# reset some internal UI.
 		self.ownerComp.op('Body/leftBar').par.w = 200
@@ -77,7 +78,7 @@ class ext:
 		return
 
 
-	def Launch(self, mode, targetOperators=[], parameterName='', extension='', startingPath='', quitAfterSave=False):
+	def Launch(self, mode, targetOperators=[], parameterName='', extension='', startingPath='', quitAfterSave=False, parameterMode=True):
 		'''
 		attempt to launch the window comp.
 		valid modes:
@@ -87,8 +88,14 @@ class ext:
 		choosefile
 		choosefolder
 
+		parameterMode: this is false by default, which tells the functions to interpret targetOperators and parameterName as the names implies.
+		however, if set to False, parameterMode will make it to where targetOperators are the python objects more generally, and parameterName is the member name generally.
+
 		ie
 		op.SAVE_LOAD.Launch(mode='saveproject')
+
+		for launching a file chooser for specific op/par
+		op.SAVE_LOAD.Launch( mode='choosefile' , targetOperators=[op('someOp')] , parameterName='SomeFilePar' , extension='gp' )
 		'''
 
 		self.ownerComp.par.Extension = extension
@@ -124,6 +131,7 @@ class ext:
 			self.ownerComp.par.Geopixfiles = True
 
 		self.ownerComp.par.Mode = mode
+		self.parameterMode = parameterMode
 
 		if self.fileSysDat.numRows > 1:
 			firstNameItem = self.fileSysDat[1,'name'].val
@@ -636,6 +644,8 @@ class ext:
 		return
 
 	def LOAD_FROM_PROJECTS(self, projectName):
+		debug('LOAD_FROM_PROJECTS')
+		parent.masterParent.par.Mode = 'loadproject'
 
 		fullPath = os.path.join( project.folder ,  'LIBRARY/PROJECTS' ).replace('\\','/')
 		fullPathInfo = tdu.PathInfo( fullPath )
@@ -657,6 +667,26 @@ class ext:
 
 		return
 
+	def LOAD_FROM_PATH(self, projectFilePath):
+
+		parent.masterParent.par.Mode = 'loadproject'
+
+		fullPath = projectFilePath.replace('\\','/')
+		fullPathInfo = tdu.PathInfo( fullPath )
+		projectName = fullPath.split('/')[-1]
+
+
+		if not fullPathInfo.exists: # early exit if path is invalid
+			MsgStr = fullPath + ' does not exist in the filesystem.. cannot load project.'
+			op.NOTIFV2.Notify(MsgStr)
+			return
+
+		self.ownerComp.par.Loadpath = fullPathInfo.dir
+		self.ownerComp.par.Filename = projectName
+		self.LOAD()
+
+		return
+
 	def LOAD(self, resetFirst=True ):
 
 		'''
@@ -671,6 +701,7 @@ class ext:
 			return
 
 		retrievedPar = self.get_current_path_param()
+		# debug(retrievedPar.name)
 		fullLoadPath = os.path.join(retrievedPar.eval(), self.ownerComp.par.Filename.eval() )
 		PathInfo = tdu.PathInfo( fullLoadPath )
 
@@ -790,12 +821,23 @@ class ext:
 				op.NOTIFV2.Notify(MsgStr)
 				return
 
-		targetOperators = [ op(x) for x in targetOperators if op(x) != None ]
-		targetOperators = [ x for x in targetOperators if hasattr( x.par , parameterName ) ]
+		if self.parameterMode == True:
 
-		for each in targetOperators:
-			p = getattr( each.par , parameterName )
-			p.val = tdu.collapsePath( fullLoadPath ).replace('\\','/')
+			targetOperators = [ op(x) for x in targetOperators if op(x) != None ]
+			targetOperators = [ x for x in targetOperators if hasattr( x.par , parameterName ) ]
+
+			for each in targetOperators:
+				p = getattr( each.par , parameterName )
+				p.val = tdu.collapsePath( fullLoadPath ).replace('\\','/')
+
+		else:
+
+			targetOperators = [ x for x in targetOperators if hasattr( x , parameterName ) ]
+
+			for each in targetOperators:
+				relPath = tdu.collapsePath( fullLoadPath ).replace('\\','/')
+				p = setattr( each , parameterName , relPath )
+
 
 		self.Close()
 

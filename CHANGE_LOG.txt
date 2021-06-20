@@ -106,3 +106,5 @@
 15361	fixed naming convention bug breaking custom fixture editor updates	
 15365	re introduced the auto loader tool, for setting up autonomous project loading at boot	
 15367	Autoloader fully integrated	
+15368	reordered some menu items under Tools	
+15369	fixed critical bug causing sampler to not process anything until a projector and macro was added	

@@ -111,3 +111,5 @@
 15371	fixed some issues with multiple midi controllers	
 15372	fixed divide by 0 error with custom fixtures that have no channels	
 15373	tweaks to custom fixture editor	
+15374	significant optimizations to timeline macro sequencing	
+15375	increased sampler engine dynamic load to 8 banks	

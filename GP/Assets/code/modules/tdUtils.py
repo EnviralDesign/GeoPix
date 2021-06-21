@@ -1167,10 +1167,12 @@ def StackOffsets(Channel,Universe , uniRound=510 ):
 	
 	
 def UnStackOffsets( OFFSET , uniRound=510  ):
-	
-	Universe2 = int(OFFSET / uniRound)
-	Channel2 = (int(OFFSET) % uniRound)
-	
+	if OFFSET > 0:
+		Universe2 = int(OFFSET / uniRound)
+		Channel2 = (int(OFFSET) % uniRound)
+	else:
+		Universe2 = 0
+		Channel2 = 0
 	return [Channel2, Universe2]
 	
 	

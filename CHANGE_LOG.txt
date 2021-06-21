@@ -108,3 +108,6 @@
 15367	Autoloader fully integrated	
 15368	reordered some menu items under Tools	
 15369	fixed critical bug causing sampler to not process anything until a projector and macro was added	
+15371	fixed some issues with multiple midi controllers	
+15372	fixed divide by 0 error with custom fixtures that have no channels	
+15373	tweaks to custom fixture editor	

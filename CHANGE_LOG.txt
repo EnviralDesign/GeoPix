@@ -113,3 +113,8 @@
 15373	tweaks to custom fixture editor	
 15374	significant optimizations to timeline macro sequencing	
 15375	increased sampler engine dynamic load to 8 banks	
+15383	added a reset macro block to default length button to the Sequence Editor.	
+15384	fixed some issues with homing in keyframe editor	
+15385	fixed some looping issues with Macros when set to non whole numbers of seconds.	
+15386	improved Movie trimming controls in IO tab. Can now set Macro to Clip, or vice versa.	
+15389	fixed some timing related issues with IO movie clips.	

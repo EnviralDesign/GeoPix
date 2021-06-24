@@ -221,13 +221,26 @@ class Helper:
 		BlockLength = self.get_attribute('BlockLength')
 		BlockOrder = self.get_attribute('BlockOrder')
 
-		if len(sel) > 0: # filter down to selected IF there is any selected.
+		 # filter down to selected IF there is any selected.
+		if len( BlockStart ) > 0 and len(sel) > 0:
 			BlockStart = [ each for i,each in enumerate(BlockStart) if i in sel ]
 			BlockLength = [ each for i,each in enumerate(BlockLength) if i in sel ]
 			BlockOrder = [ each for i,each in enumerate(BlockOrder) if i in sel ]
 
+		elif len( BlockStart ) > 0 and len(sel) == 0:
+			BlockStart = BlockStart
+			BlockLength = BlockLength
+			BlockOrder = BlockOrder
+
+		elif len( BlockStart ) == 0:
+			
+			BlockStart = [self.StartStopChop['Timestart'][0]]
+			BlockLength =[ self.StartStopChop['Timestop'][0]]
+			BlockOrder = [-1,2]
+
 		xVals = BlockStart + [ each[0]+each[1] for each in zip( BlockStart , BlockLength ) ]
 		yVals = BlockOrder + [ each+1 for each in BlockOrder ]
+
 
 		xMin = min(xVals or [0,1])
 		xMax = max(xVals or [0,1])
@@ -242,11 +255,11 @@ class Helper:
 		}
 
 		# if no items are avail to calc, we just overwrite our min/max with size of timeline graph.
-		if len( sel ) == 0:
-			returnDict['xMin'] = float(self.StartStopChop['Timestart'][0] if self.StartStopChop['Timestart'] != None else 0)
-			returnDict['xMax'] = float(self.StartStopChop['Timestop'][0] if self.StartStopChop['Timestop'] != None else 1)
-			returnDict['yMin'] = 0
-			returnDict['yMax'] = 5
+		# if len( sel ) == 0:
+		# 	returnDict['xMin'] = float(self.StartStopChop['Timestart'][0] if self.StartStopChop['Timestart'] != None else 0)
+		# 	returnDict['xMax'] = float(self.StartStopChop['Timestop'][0] if self.StartStopChop['Timestop'] != None else 1)
+		# 	returnDict['yMin'] = 0
+		# 	returnDict['yMax'] = 5
 
 		return returnDict
 
@@ -504,6 +517,21 @@ class Helper:
 		self.RefreshThumbnails()
 		
 		return
+
+
+	def ResetSelectedBlockToDefaultLength(self):
+		blockList = parent.helper.Get_Selected_Blocks()
+		
+		if len(blockList) == 1:
+			SelectedBlockPath = blockList[0]['BlockPath']
+			# print(SelectedBlockPath)
+			
+			templateDat = parent.helper.op('null_templates')
+			templateDict = eval(templateDat[SelectedBlockPath,'dict'].val)
+			
+			BlockLength = int( templateDict['BlockLength'] )
+			
+			parent.helper.AttribEditor_SET( {'BlockLength':BlockLength} )
 
 
 

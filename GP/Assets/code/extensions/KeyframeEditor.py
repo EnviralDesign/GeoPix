@@ -287,14 +287,6 @@ class Helper:
 		xCol = keysTable[ 0 , 'x' ].col
 		yCol = keysTable[ 0 , 'y' ].col
 
-		selected = list(map(int,keysTable.col('selected')[1::]))
-		if sum(selected) < 2:  # if no keys were selected, or only one was selected, use them all.
-			selected = [ 1 for x in selected ]
-
-		if len(ids) == 0: # if user did not provide any ids, just use them all.
-			ids = list(map(int,keysTable.col('id')[1::]))
-			ids = [ x-1 for x in ids ]
-
 		# first, establish the default vals.
 		returnDict = {
 			'xMin' : float(self.StartStopChop['Timestart'][0]),
@@ -302,6 +294,16 @@ class Helper:
 			'yMin' : 0,
 			'yMax' : 1
 		}
+
+		# if keysTable.numRows > 1: # if there are any keys at all.
+
+		selected = list(map(int,keysTable.col('selected')[1::]))
+		if sum(selected) < 2:  # if no keys were selected, or only one was selected, use them all.
+			selected = [ 1 for x in selected ]
+
+		if len(ids) == 0: # if user did not provide any ids, just use them all.
+			ids = list(map(int,keysTable.col('id')[1::]))
+			ids = [ x-1 for x in ids ]
 
 		if keysTable.numRows > 1:
 			xVals = []
@@ -312,10 +314,16 @@ class Helper:
 					xVals += [ float(row[xCol]) ]
 					yVals += [ float(row[yCol]) ]
 
+			# xMin = min(xVals)
+			# xMax = max(xVals)
+			# yMin = min(yVals)
+			# yMax = max(yVals)
+
 			xMin = min(xVals or [0,1])
 			xMax = max(xVals or [0,1])
 			yMin = min(yVals or [0,1])
 			yMax = max(yVals or [0,1])
+
 
 			# if the user has two keyframes set to 0 on Y, then 
 			# homing will skew the vertical very far and require a ton of
@@ -325,6 +333,12 @@ class Helper:
 			tooFlatTreshold = 0.001
 			if yMax-yMin < tooFlatTreshold:
 				yMax = 1.0
+				yMin = 0.0
+
+			tooNarrowTreshold = 0.01
+			if xMax-xMin < tooNarrowTreshold:
+				xMax = float(self.StartStopChop['Timestop'][0])
+				xMin = float(self.StartStopChop['Timestart'][0])
 
 			returnDict = {
 				"xMin":xMin,

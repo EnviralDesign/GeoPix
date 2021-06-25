@@ -120,3 +120,4 @@
 15389	fixed some timing related issues with IO movie clips.	
 15391	fixed bug with autoloading and geopix preferences.	
 15394	added support for 3 extra configurable custom color channels for regular fixtures. ie. RGBW	
+15395	critical bug fix - geopixPreferences.txt load from disk loop	

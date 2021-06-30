@@ -123,3 +123,4 @@
 15395	critical bug fix - geopixPreferences.txt load from disk loop	
 15396	optimized some running processes that could be turned off when light emission is not needed	
 15397	removed depreciated Macro Inputs from IO Tab	
+15398	fixed some issues with create panel coming up when typing into fields	

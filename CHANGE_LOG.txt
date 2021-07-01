@@ -127,3 +127,6 @@
 15399	fixed attribute editor scroll bar adjusting last changed value bug	
 15400	added the Locked parameter to objects in the Viewport	
 15401	restricted certain functionality for Locked objects in editor	
+15403	updated serial python library for startup scripts	
+15405	fixed stray error from autolearn toggle in widget capture IO node	
+15410	added auxilary UI for choosing an autolearn detected source, when more than one change on same frame	

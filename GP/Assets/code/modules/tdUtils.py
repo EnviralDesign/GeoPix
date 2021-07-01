@@ -319,26 +319,40 @@ def deleteSelectedItems():
 	
 	mod.tdUtils_V2.killAllRuns()
 	disableActivePik()
+
+	LockedNodesThatWeTriedToAdjust = []
 	
 	# get list of allSelected items.
 	combinedList = getObjectList("allSelected")[0]
 	
 	for x in combinedList:
-		try:
-			x.destroyCustomPars()
-		except Exception as e: 
-			debug(e)
+		if x.par['Locked'] != True:
+			try:
+				x.destroyCustomPars()
+			except Exception as e: 
+				debug(e)
+		else:
+			LockedNodesThatWeTriedToAdjust += [ x ]
 	
 	for x in combinedList:
-		try:
-			DEL_Run = x.op('DEL/Run')
-			if DEL_Run != None:
-				DEL_Run.run()
-			else:
-				debug('no delete script found, moving on.')
-			x.destroy()
-		except Exception as e: 
-			debug(e)
+		if x.par['Locked'] != True:
+			try:
+				DEL_Run = x.op('DEL/Run')
+				if DEL_Run != None:
+					DEL_Run.run()
+				else:
+					debug('no delete script found, moving on.')
+				x.destroy()
+			except Exception as e: 
+				debug(e)
+
+		else:
+			LockedNodesThatWeTriedToAdjust += [ x ]
+
+	if len( LockedNodesThatWeTriedToAdjust ) > 0:
+		LockedNodesThatWeTriedToAdjust = list(set(LockedNodesThatWeTriedToAdjust))
+		NamesOfLocked = [ x.par.Name.eval() for x in LockedNodesThatWeTriedToAdjust ]
+		op.NOTIFV2.Notify('[ %s ] are locked, and were not modified...'%( ','.join(NamesOfLocked) ))
 			
 	op.treeInfo_V2.par.Lastselected = ''
 

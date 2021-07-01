@@ -125,3 +125,5 @@
 15397	removed depreciated Macro Inputs from IO Tab	
 15398	fixed some issues with create panel coming up when typing into fields	
 15399	fixed attribute editor scroll bar adjusting last changed value bug	
+15400	added the Locked parameter to objects in the Viewport	
+15401	restricted certain functionality for Locked objects in editor	

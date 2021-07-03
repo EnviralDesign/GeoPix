@@ -54,7 +54,7 @@ def homeCamera(reset=False):
 			# print(justOpPaths)
 		if len(justOpPaths) == 0:
 			justOpPaths = [ zoomNull ]
-			
+	
 	op.Viewport.mod.vpUtils.HomeCamera(justOpPaths[0])
 	
 	

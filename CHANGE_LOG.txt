@@ -130,3 +130,7 @@
 15403	updated serial python library for startup scripts	
 15405	fixed stray error from autolearn toggle in widget capture IO node	
 15410	added auxilary UI for choosing an autolearn detected source, when more than one change on same frame	
+15412	Fixed drag to reparent bug in the Custom Fixture Editor	
+15413	fixed viewport homing function	
+15415	fixed some issues in Outliner causing it to scroll to top on selection, toggle, etc.	
+15416	more improvements to outliner component	

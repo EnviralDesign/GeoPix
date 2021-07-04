@@ -136,3 +136,4 @@
 15416	more improvements to outliner component	
 15418	small bug fixes	
 15419	fixed some broken viewport hotkey functionality, ctrl+up, ctrl+down, etc	
+15420	added displace node to IO tab	

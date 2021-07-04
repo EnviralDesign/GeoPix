@@ -107,7 +107,7 @@
 15365	re introduced the auto loader tool, for setting up autonomous project loading at boot	
 15367	Autoloader fully integrated	
 15368	reordered some menu items under Tools	
-15369	fixed critical bug causing sampler to not process anything until a projector and macro was added	
+15369	fixed critical bug causing sampler to skip Macros until a projector and macro was added	
 15371	fixed some issues with multiple midi controllers	
 15372	fixed divide by 0 error with custom fixtures that have no channels	
 15373	tweaks to custom fixture editor	
@@ -129,7 +129,7 @@
 15401	restricted certain functionality for Locked objects in editor	
 15403	updated serial python library for startup scripts	
 15405	fixed stray error from autolearn toggle in widget capture IO node	
-15410	added auxilary UI for choosing an autolearn detected source, when more than one change on same frame	
+15410	added auxilary UI for choosing an autolearn source, when more than one is detected	
 15412	Fixed drag to reparent bug in the Custom Fixture Editor	
 15413	fixed viewport homing function	
 15415	fixed some issues in Outliner causing it to scroll to top on selection, toggle, etc.	
@@ -137,3 +137,5 @@
 15418	small bug fixes	
 15419	fixed some broken viewport hotkey functionality, ctrl+up, ctrl+down, etc	
 15420	added displace node to IO tab	
+15421	fixed some internal save/load backend bugs	
+15422	Updated splash screen text	

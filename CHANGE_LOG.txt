@@ -134,3 +134,4 @@
 15413	fixed viewport homing function	
 15415	fixed some issues in Outliner causing it to scroll to top on selection, toggle, etc.	
 15416	more improvements to outliner component	
+15418	small bug fixes	

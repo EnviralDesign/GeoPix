@@ -139,3 +139,11 @@
 15420	added displace node to IO tab	
 15421	fixed some internal save/load backend bugs	
 15422	Updated splash screen text	
+15428	optimized the forward shading pipeline for heavier instanced geometry scenes.	
+15429	timeline slider will now resume the play status that was previous engaged after drag (play/pause)	
+15431	gpu memory consumption optimizations in volumetric buffers	
+15432	changed surface object sampling mode to mipmap (smoother, better looking)	
+15433	optimization in bloom pass	
+15434	tonemapping pass optimizations	
+15435	fixed issue related to surface objects not emitting light and volumetrics	
+15436	upgraded to TouchDesigner 2021.14360	

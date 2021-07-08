@@ -148,3 +148,4 @@
 15435	fixed issue related to surface objects not emitting light and volumetrics	
 15436	upgraded to TouchDesigner 2021.14360	
 15437	created simple backend script for importing certain types of GP v1 data	
+15439	optimizations related to very pixel heavy projects	

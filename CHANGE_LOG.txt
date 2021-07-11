@@ -149,3 +149,9 @@
 15436	upgraded to TouchDesigner 2021.14360	
 15437	created simple backend script for importing certain types of GP v1 data	
 15439	optimizations related to very pixel heavy projects	
+15440	fixed some reparenting bugs in Custom Fixture Editor	
+15441	fixed some minor time scrubbing bugs with timebar, when changing start/end time	
+15443	cleaned up some stray messages in the Perform tab, while in Perform mode.	
+15444	fixed Coordinate Set icon sizes being too large in orthographic mode	
+15445	optimized some redundant backend processes running when not needed	
+15446	fixed some UI dependancy issues in Video Out preferences	

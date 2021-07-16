@@ -156,3 +156,4 @@
 15445	optimized some redundant backend processes running when not needed	
 15446	fixed some UI dependancy issues in Video Out preferences	
 15447	removed some unneccesarily duplicated files from backend	
+15449	fixed bug preventing more than 1 universe from reacting to content/macros	

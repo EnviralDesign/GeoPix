@@ -158,3 +158,4 @@
 15447	removed some unneccesarily duplicated files from backend	
 15449	fixed bug preventing more than 1 universe from reacting to content/macros	
 15450	fixed some bugs with multi emitter custom fixtures not showing additional emitters	
+15451	added hue shift IO node	

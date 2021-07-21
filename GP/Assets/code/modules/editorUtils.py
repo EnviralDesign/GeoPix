@@ -1233,3 +1233,71 @@ def EditSurfacePrompt():
 	op.Prompter.Launch( prompterDict )
 
 	return 
+
+
+def ExportDmxOutputModule():
+
+	dmxBufferPath = ui.chooseFile(load=True, fileTypes=tdu.fileTypes['movie'], title='Choose the DMX buffer video from disk...')
+	if dmxBufferPath == None:
+		debug('dmxBufferPath was None, operation was cancelled.. doing nothing.')
+		return
+
+
+	toxPath = ui.chooseFile(load=False, fileTypes=['tox'], title='Save DMX Output Module as...')
+	if toxPath == None:
+		debug('toxPath was None, operation was cancelled.. doing nothing.')
+		return
+
+	outputModule = op.OUTPUT_MODULE
+
+	ExportOutputModule = outputModule.parent().copy( outputModule, name='OUTPUT_MODULE_1' )
+
+	ExportOutputModule.nodeX += 1000
+	ExportOutputModule.par.opshortcut = ''
+	ExportOutputModule.par.extension1 = ''
+	f = ExportOutputModule.findChildren( tags=['EXPORT_DELETE'])
+	for each in f:
+		try:
+			each.destroy()
+		except:
+			pass
+
+	f = ExportOutputModule.findChildren(depth=1, tags=['OUT_DEVICE'])
+	for each in f:
+		if each.par.Active == False:
+			each.destroy()
+		else:
+			protocol = each.par.Protocol.eval()
+			f2 = each.findChildren(depth=1, tags=['PROTOCOLS'])
+			for item in f2:
+				if item.name != protocol:
+					item.destroy()
+
+	ExportOutputModule.op('base_convert_to_chops_and_rename/in_outputsCompressed').outputConnectors[0].connect(
+		ExportOutputModule.op('base_convert_to_chops_and_rename/null_output')
+		)
+
+	nodeWidth = int(ExportOutputModule.op('select_fixture_buffer').nodeWidth)
+	nodeHeight = int(ExportOutputModule.op('select_fixture_buffer').nodeHeight)
+	nodeX = int(ExportOutputModule.op('select_fixture_buffer').nodeX)
+	nodeY = int(ExportOutputModule.op('select_fixture_buffer').nodeY)
+	ExportOutputModule.op('select_fixture_buffer').destroy()
+
+	vfsFile = ExportOutputModule.vfs.addFile(dmxBufferPath)
+	virtPath = vfsFile.virtualPath
+
+	top = ExportOutputModule.create(moviefileinTOP)
+	top.nodeWidth = nodeWidth
+	top.nodeHeight = nodeHeight
+	top.nodeX = nodeX
+	top.nodeY = nodeY
+	top.name = "DMX_BUFFER_VIDEO"
+	top.par.file = virtPath
+
+	top.outputConnectors[0].connect(ExportOutputModule.op('base_convert_to_chops_and_rename').inputConnectors[0])
+	ExportOutputModule.op('select_bofferLookupTable').lock = True
+
+	ExportOutputModule.save( toxPath )
+	# ExportOutputModule.destroy()
+
+	return

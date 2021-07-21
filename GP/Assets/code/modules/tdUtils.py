@@ -1244,9 +1244,11 @@ def getFixtureChanWidth(someFixture=None):
 	if someFixture != None:
 		
 		Pixsplit = getattr( someFixture.par , "Pixsplit" , False ) 
-		
+
+		# Chansize cooks when moving fixtures.
 		NumChans = max( someFixture.par.Chansize.eval() , 0 )
 		NumPix = max( someFixture.par.Numpix.eval() , 0 )
+
 		Chan_Size = NumPix * NumChans
 		
 		Chan_Size_With_Splits = Chan_Size

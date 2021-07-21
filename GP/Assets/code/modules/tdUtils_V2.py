@@ -394,6 +394,8 @@ def generateBufferLookupTable():
 	out of GP into artnet devices and serial devices etc.
 	'''
 	# get all fixtures
+
+
 	
 	allFixtureObjects = mod.tdUtils.getObjectList('all', 2)[0] + mod.tdUtils.getObjectList('all', 6)[0]
 	
@@ -401,25 +403,19 @@ def generateBufferLookupTable():
 	DeviceId = [x.par.Fdeviceid.eval() for x in allFixtureObjects]
 	startingChan = [x.par.Channel.eval()-1 for x in allFixtureObjects]
 
-	# chanSizes2 = [x.op('INSTANCE').par.Chansize.eval() for x in allFixtureObjects]
-	# pixSizes2 = [x.op('INSTANCE').par.Numpix.eval() for x in allFixtureObjects]
 	chanSizes2 = [0 for x in allFixtureObjects]
 	pixSizes2 = [0 for x in allFixtureObjects]
 	
-	# print(allFixtureObjects)
-	
 	# empty list to deposite absolute universes into.
-	# ConsumedAbsUnis = []
 	ConsumedAbsUnis = {}
-	
 	
 	
 	# this for loop iterates through all fixtures.
 	for x in range(len(allFixtureObjects)):
 		
 		
-		
 		chanWidth,uniRound = mod.tdUtils.getFixtureChanWidth( allFixtureObjects[x] )
+
 		uniRound = max(uniRound,1)
 		
 		sizeInUnis = math.ceil((startingChan[x] + chanWidth ) / uniRound)
@@ -438,12 +434,11 @@ def generateBufferLookupTable():
 			deviceID = DeviceId[x]
 			stackedDecFlt = deviceID + (uni / 100000)
 			stackedDecstr = '%f' % (deviceID + (uni / 100000))
-			# print(allFixtureObjects[x], startingUni[x]+y,startingSub[x],startingNet[x])
 			
 			ConsumedAbsUnis[stackedDecFlt] = stackedDecstr
 	
+
 	ROWS = []
-	# print(ConsumedAbsUnis)
 	
 	# next we iterate through the sorted absUnis list.
 	for x,addressEncoded in enumerate( sorted(ConsumedAbsUnis.keys()) ):

@@ -160,3 +160,5 @@
 15450	fixed some bugs with multi emitter custom fixtures not showing additional emitters	
 15451	added hue shift IO node	
 15452	fixed bug related to crossfader and macros getting scrambled	
+15457	added ability to render out raw DMX buffer to video using timeline or realtime	
+15459	added file menu function to export DMX module for external playback	

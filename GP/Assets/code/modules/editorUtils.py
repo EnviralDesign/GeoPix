@@ -1283,6 +1283,14 @@ def ExportDmxOutputModule():
 	nodeY = int(ExportOutputModule.op('select_fixture_buffer').nodeY)
 	ExportOutputModule.op('select_fixture_buffer').destroy()
 
+	evalDAT = ExportOutputModule.create(evaluateDAT)
+	evalDAT.viewer = True
+	evalDAT.nodeX = nodeX - 150
+	evalDAT.nodeY = nodeY
+	evalDAT.name = 'VFS_PATH'
+	evalDAT.par.expr = "parent.OUTPUT_MODULE.vfs.find(pattern='*')"
+
+
 	vfsFile = ExportOutputModule.vfs.addFile(dmxBufferPath)
 	virtPath = vfsFile.virtualPath
 
@@ -1292,12 +1300,14 @@ def ExportDmxOutputModule():
 	top.nodeX = nodeX
 	top.nodeY = nodeY
 	top.name = "DMX_BUFFER_VIDEO"
-	top.par.file = virtPath
+	top.par.file.expr = f'op("{evalDAT.name}")[0,0]'
 
 	top.outputConnectors[0].connect(ExportOutputModule.op('base_convert_to_chops_and_rename').inputConnectors[0])
 	ExportOutputModule.op('select_bofferLookupTable').lock = True
 
+	# ExportOutputModule.op('DELAYED_EXPORT').run(toxPath, delayFrames=30)
+	# ExportOutputModule.op('DELAYED_DESTROY').run(toxPath, delayFrames=60)
 	ExportOutputModule.save( toxPath )
-	# ExportOutputModule.destroy()
+	ExportOutputModule.destroy()
 
 	return

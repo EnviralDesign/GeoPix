@@ -162,3 +162,5 @@
 15452	fixed bug related to crossfader and macros getting scrambled	
 15457	added ability to render out raw DMX buffer to video using timeline or realtime	
 15459	added file menu function to export DMX module for external playback	
+15460	bug fixes	
+15461	fixed some bug with the VFS file storage of the dmx buffer video	

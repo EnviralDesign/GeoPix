@@ -164,3 +164,5 @@
 15459	added file menu function to export DMX module for external playback	
 15460	bug fixes	
 15461	fixed some bug with the VFS file storage of the dmx buffer video	
+15462	fixed sorting bug causing disconnected Macros to incorrectly offset connected ones	
+15463	minor bugs	

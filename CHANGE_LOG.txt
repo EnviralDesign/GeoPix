@@ -166,3 +166,5 @@
 15461	fixed some bug with the VFS file storage of the dmx buffer video	
 15462	fixed sorting bug causing disconnected Macros to incorrectly offset connected ones	
 15463	minor bugs	
+15464	small bug fixes	
+15465	startup glitch	

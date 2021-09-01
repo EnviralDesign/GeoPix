@@ -169,3 +169,5 @@
 15464	small bug fixes	
 15465	startup glitch	
 15466	fixed NoneType bug in sequencer when creating a new project	
+15467	Fixed bug preventing Macro Audio from working	
+15468	bug fixes	

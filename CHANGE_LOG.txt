@@ -168,3 +168,4 @@
 15463	minor bugs	
 15464	small bug fixes	
 15465	startup glitch	
+15466	fixed NoneType bug in sequencer when creating a new project	

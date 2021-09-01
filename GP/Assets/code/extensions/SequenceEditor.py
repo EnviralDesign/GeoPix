@@ -234,8 +234,8 @@ class Helper:
 
 		elif len( BlockStart ) == 0:
 			
-			BlockStart = [self.StartStopChop['Timestart'][0]]
-			BlockLength =[ self.StartStopChop['Timestop'][0]]
+			BlockStart = [self.StartStopChop['Timestart'][0] if self.StartStopChop['Timestart'] != None else 0]
+			BlockLength =[self.StartStopChop['Timestop'][0] if self.StartStopChop['Timestop'] != None else 1]
 			BlockOrder = [-1,2]
 
 		xVals = BlockStart + [ each[0]+each[1] for each in zip( BlockStart , BlockLength ) ]

@@ -173,3 +173,4 @@
 15468	bug fixes	
 15469	hid some obsolete projector buttons in viewport	
 15470	updated to latest TouchDesigner stable build	
+15471	updated github readme TD version	

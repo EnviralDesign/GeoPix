@@ -88,7 +88,7 @@ void main()
 
 	 	// i = 4;
 
-	 	// this will be set in the eventual for loop.
+	 	
 	 	vec4	realtimeDataFetch 	= texelFetch(realtimeData, i);
 		float 	FadeScale 			= realtimeDataFetch.x;
 		int 	TextureIndex 		= int(realtimeDataFetch.y);

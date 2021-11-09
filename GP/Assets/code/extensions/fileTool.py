@@ -5,6 +5,7 @@ SAVE LOAD V3
 import json
 import os
 import ctypes
+from pathlib import Path
 
 class ext:
 	"""
@@ -281,11 +282,17 @@ class ext:
 		directories = list(range(256))
 		validDirectories = []
 
+		# for whatever reason downloads doesn't show up in the above for loop method, so we retrieve this one differently. Might be wrong
+		# if the user customized their downloads location to somethin not in their home path.
+		downloads_path = str(Path.home() / "Downloads")
+		validDirectories += [ downloads_path ]
+
 		# iterate through a large chunk of potential user folders, and filter them down using the above lists.
 		for suffix in suffixsOfInterest:
 			for CSIDL_PERSONAL in directories:
 				buf= ctypes.create_unicode_buffer(ctypes.wintypes.MAX_PATH)
 				ctypes.windll.shell32.SHGetFolderPathW(None, CSIDL_PERSONAL, None, SHGFP_TYPE_CURRENT, buf)
+				# print(buf.value)
 				if buf.value.endswith( suffix ) and len([ e for e in ignoreIfContains if e in buf.value ]) == 0 and buf.value not in validDirectories:
 					validDirectories.append( buf.value )
 
@@ -293,6 +300,7 @@ class ext:
 			self.DefaultUserSavePath.replace('/','\\'),
 			self.DefaultUserPrefabPath.replace('/','\\'),
 		]
+
 		return GeoPixPaths+validDirectories
 
 

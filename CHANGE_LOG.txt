@@ -174,3 +174,4 @@
 15469	hid some obsolete projector buttons in viewport	
 15470	updated to latest TouchDesigner stable build	
 15471	updated github readme TD version	
+15472	updated file tool to include user downloads folder on leftbar	

@@ -177,3 +177,4 @@
 15472	updated file tool to include user downloads folder on leftbar	
 15474	patched a bug causing projectors to not always show content	
 15475	autoloader now closes splash screen if a GeoPix file is set to autoload.	
+15476	network cleanup	

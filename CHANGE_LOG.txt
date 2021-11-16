@@ -178,3 +178,5 @@
 15474	patched a bug causing projectors to not always show content	
 15475	autoloader now closes splash screen if a GeoPix file is set to autoload.	
 15476	network cleanup	
+15477	updated GeoPix to td build 2021.15800	
+15479	updated build scripts	

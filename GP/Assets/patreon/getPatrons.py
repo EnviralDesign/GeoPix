@@ -64,7 +64,7 @@ bronze_sponsor_tier = [ pledge['full_name'] for pledge in sorted_pledges if pled
 silver_sponsor_tier = [ pledge['full_name'] for pledge in sorted_pledges if pledge['amount_cents'] >= silver_sponsor_range[0] and pledge['amount_cents'] <= silver_sponsor_range[1] ]
 
 # this is the base path for Lucas's primary desktop work station.
-basePath = 'C:\\Users\\envir\\Documents\\GitHub\\GeoPix\\GP\\Assets\\patreon'
+basePath = 'C:\\repos\\GeoPix\\GP\\Assets\\patreon'
 
 f = open("%s\\Supporter_Patrons.txt"%(basePath), "w")
 f.write( '\n'.join(supporter_tier) )
@@ -89,3 +89,6 @@ f.close()
 f = open("%s\\Silver_Patrons.txt"%(basePath), "w")
 f.write( '\n'.join(silver_sponsor_tier) )
 f.close()
+
+print('Successfully Completed..')
+time.sleep(1)

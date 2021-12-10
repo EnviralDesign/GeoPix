@@ -3,6 +3,6 @@
 /exe "C:\repos\GeoPix\GeoPix.exe" ^
 /icon "C:\repos\GeoPix\GP\Assets\customIcons\geopix_icon.ico" ^
 /overwrite ^
-/fileversion 2.0.15479.0 ^
+/fileversion 2.0.15480.0 ^
 /productname "GeoPix" ^
 /company "Enviral Design"

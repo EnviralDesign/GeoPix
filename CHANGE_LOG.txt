@@ -181,3 +181,4 @@
 15477	updated GeoPix to td build 2021.15800	
 15479	updated build scripts	
 15480	fixed a bug preventing macros connected to multiple projectors from working.	
+15481	fixed trims/macro timing buttons for audio file in IO node.	

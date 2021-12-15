@@ -183,3 +183,4 @@
 15480	fixed a bug preventing macros connected to multiple projectors from working.	
 15481	fixed trims/macro timing buttons for audio file in IO node.	
 15482	fixed ramp scaling bug with DOM frequency IO node	
+15483	update to welcome screen, and patreon donar update	

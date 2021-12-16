@@ -185,3 +185,4 @@
 15482	fixed ramp scaling bug with DOM frequency IO node	
 15483	update to welcome screen, and patreon donar update	
 15484	fixed bug with sampler engine multi buffers being disconnected	
+15485	fixed combine bug with multiple audio streams present	

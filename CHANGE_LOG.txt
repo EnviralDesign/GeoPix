@@ -187,3 +187,4 @@
 15484	fixed bug with sampler engine multi buffers being disconnected	
 15485	fixed combine bug with multiple audio streams present	
 15486	floating windows no longer force being on top	
+15487	fixed some dmx output addressing bugs in the custom fixture editor	

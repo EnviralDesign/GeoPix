@@ -192,3 +192,4 @@
 15491	fixed startup vals for macro's ramp	
 15492	fixed more ramp startup issues	
 15496	added channel selection parameters to audio in preferences	
+15497	small fix to refreshing audio device channels	

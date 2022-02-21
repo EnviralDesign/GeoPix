@@ -68,12 +68,14 @@ def outlinerSort(objects=[], strings=False):
 
 	if strings == False:
 		# sortedObjects = sorted(objects, key=lambda obj: (  -obj.par.Namepath.eval().count(os.path.sep)  , obj.par.Namepath.eval()  )  ) # faster, but doesnt natsort
-		natsort_key2 = natsort.natsort_keygen(key=lambda y: y.par.Namepath.eval())
+		# natsort_key2 = natsort.natsort_keygen(key=lambda y: y.par.Namepath.eval())
+		natsort_key2 = natsort.natsort_keygen(key=lambda y: y.par.Namepath.eval(), alg=natsort.PATH)
 		sortedObjects = sorted( objects , key=natsort_key2 ) # VERY robust, but slower.
 		
 	else:
 		# sortedObjects = sorted(objects, key=lambda p: (-p.count(os.path.sep), p)) # roughly 4 times faster than below, but doesn't handle nat sort.
-		sortedObjects = natsort.natsorted(objects) # slower, but super robust and handles ALL kind of shit.
+		# sortedObjects = natsort.natsorted(objects) # slower, but super robust and handles ALL kind of stuff. EDIT: there are some edge cases this can't handle.
+		sortedObjects = natsort.os_sorted(objects) # slower, but super robust, treats items to sort like file system paths.
 
 	return sortedObjects
 

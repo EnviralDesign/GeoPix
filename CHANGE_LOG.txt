@@ -193,3 +193,6 @@
 15492	fixed more ramp startup issues	
 15496	added channel selection parameters to audio in preferences	
 15497	small fix to refreshing audio device channels	
+15498	updated TD version, fixed outliner sorting bug for some naming patterns.	
+15499	td version bump	
+15500	version typo	

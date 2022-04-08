@@ -197,3 +197,5 @@
 15499	td version bump	
 15500	version typo	
 15501	patreon update	
+15505	greatly optimized several key points related to realtime perform control	
+15506	small performance tweaks to sliders in perform tab	

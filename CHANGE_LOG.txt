@@ -200,3 +200,5 @@
 15505	greatly optimized several key points related to realtime perform control	
 15506	small performance tweaks to sliders in perform tab	
 15507	updated GP prefs to use visual studio code	
+15508	fixed typo	
+15509	refactored some future shader issues (Vulcan)	

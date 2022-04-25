@@ -1,4 +1,4 @@
-# GeoPix v2.0.15506 (2022-04-08) TD v2021.16410
+# GeoPix v2.0.15507 (2022-04-25) TD v2021.16410
 
 GeoPix is a free and open source real-time lighting control and previz software. It's built in TouchDesigner, with a workflow and UI/UX inspired by 3d animation software.
 

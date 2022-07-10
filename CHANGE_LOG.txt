@@ -202,3 +202,5 @@
 15507	updated GP prefs to use visual studio code	
 15508	fixed typo	
 15509	refactored some future shader issues (Vulcan)	
+15510	updated patrons	
+15511	updated gp license text	

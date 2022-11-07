@@ -25,8 +25,8 @@ break>start_geopix_Log.txt
 
 
 :: Define some TD version specific variables. TODO: pull these from files on disk?
-SET td_year=2021
-SET td_version=16410
+SET td_year=2022
+SET td_version=29850
 SET geopix_executable=GeoPix_2.0.toe
 
 :: Define the absolute path to the wget executable, bundled with GeoPix.

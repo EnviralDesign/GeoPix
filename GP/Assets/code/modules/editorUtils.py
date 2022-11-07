@@ -919,8 +919,8 @@ def ObjectSelect_Down():
 	
 def MergeSelectedFixtures():
 	
-	debug("MergeSelectedFixtures() is currently broken, and needs to be fixed.")
-	return
+	# debug("MergeSelectedFixtures() is currently broken, and needs to be fixed.")
+	# return
 
 	lastSelObj = op.treeInfo_V2.par.Lastselected.eval()
 	directSelected = mod.tdUtils.getObjectList("directSelected")[0]

@@ -113,3 +113,4 @@ TouchDesignerCrash.*.dmp
 # End of https://www.toptal.com/developers/gitignore/api/windows
 
 
+GP/Utilities/.wget-hsts

@@ -205,3 +205,5 @@
 15510	updated patrons	
 15511	updated gp license text	
 15516	DOM frequency IO node can use global macro timing now	
+15530	ironed out some more major bugs with vulcan port, now functional-ish	
+15531	minor updates	

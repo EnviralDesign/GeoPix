@@ -1,1 +1,209 @@
-15515	locked chop in render picker as per 2022 requirements	
+15193	added changelog developer post save window	after the project is saved, a window pops up and changes made during the last session can be documented.
+15194	fixed IO node labels being cut off.	some sort of internal change from the text TOP caused the pre determined offsets to now be incorrect
+15195	fixed ctrl+P for unparenting objects	not all selected objects were getting unparented previously.
+15196	tweak to changelog launch	Now clears fields when opened.
+15197	fixed hover labels on bottom bar 3 main app buttons	had some old messages from before when we could do split screen.
+15198	added transport mode parameter to all timing related IO nodes	before doing things like hold, or zero for time extend would last entire duration of macro's play through. needed a way to toggle between local repeat and not.
+15199	hooked up transport mode parameter in IO nodes	this allows users to specify if a time based node in a macrotreats it's time extend parameters using absolute macro timeor if they extend time within every single iteration of a macro playthrough. 
+15202	fixed some formatting bugs in the splash screen	
+15203	fixed force cook refresh bug in change log tool	
+15204	more bug fixes to splash screen formatting on load	
+15205	more bug fixes to splash screen formatting	
+15206	tweaks to font color in Save/Load tool	
+15207	save/load tool select all/none and header stickied to top of scroll region	
+15208	added toggle to preferences to disable undo que	tracking undo states currently is quite heavy for large scenes, and is not recommended.so users now have the option to disable it from the preferences.
+15209	sequence editor when launched for timeline, didn't show label in header bar	
+15210	linked sequence editor extension to py file on disk	
+15211	sequence editor now homes to full work area, if no blocks are present.	before it zoomed to some really small portion to the left of the startwhich didn't make sense and left the user more confused.
+15212	fixed stray nonsense error	occuring when dragging audio into sequence editor
+15213	fixed absolute path bug in sequence editor, dragging audio in	previously dragging audio in, even a file in the local directory structurewould yield a path that was absolute.now it fixes the paths to be relative, if the file exists in the relative directory struct.
+15214	creating an ImporGeo object from scratch, it now uses newer File Tool	
+15215	fixed off by 1 error in global timeline keyframes	
+15216	fixed some selection logic issues for deleted channels, in keyframe editor	if channels were selected on the left, and then deleted with their respectivetrashcan icons then the channels would still be considered selected,and new keyframes added would double, triple, up etc when manually added.
+15217	fixed camera bounds homing bug in keyframe editor	like in the sequence editor, if the keyframer had no keys, it would home toan impossibly small region to the left of the working area, and this didn't make sense.
+15218	fixed some bugs in the MultiStrobe IO Node.	a) fixed mono color bug not allowing colors to be set. b) added seed value parameter to node, to allow explicit seed valueinstead of the random increment for active on/off that was there before.
+15219	fixed bug where duplicated macros didn't maintain internal node consistency	previously duplicating a macro would cause some of the nodes inside to getscrambled and not connected back up correctly.this was easily remedied by making sure the clone immune was on for the GRAPHcomp inside and for all it's children.
+15220	fixed NaN bug in shader where objects with no uvs were imported.	
+15221	added dynamic Change Log to splash screen.	
+15222	Fixed bug in Dmx In Override not applying MultiCast toggle	Multicast toggle for dmx in was not properly hooked up in the backend.
+15224	bug fix for dmx in not working with out force cook to module.	
+15225	fixed save on exit prompt button	when clicking the application "X", then clicking save, nothing would happen.This now works as expected, launching the file tool, and if the user saves from there, quits the software.
+15226	more tweaks to save on exit	
+15227	fixed missing file path, updated sponsors	
+15228	fixed bug with error reporting and primitive uv detection.	
+15229	enhanced viewport drag n drop to support images, as image planes.	
+15237	build script now updates readme.md with latest build information	
+15238	fixed formatting bug in readme.md updater	
+15247	fixed auto patreon updating script.	this change runs the getPatrons.py script which is stored in the geopix directory.
+15249	tweaked readme header generation to include TD build.	
+15252	upgraded GeoPix to TD build 2021.13610	
+15255	updated build system, added GeoPix.exe to launch GeoPix instead of .bat	build system has a few extra steps via guis when the toe is saved.also, a GeoPix.exe is created/updated when desired to allow for a moreapplication friendly launching, pinning to task bar, etc.
+15259	disabled TD network hotkeys for saving/loading so they cannot be used in perform mode	
+15261	added ctrl.hotkey support for GeoPix save/load/import/new	
+15262	fixed bug where macro connectors were stuck at grid center in IO	
+15263	fixed IO node shuffle node, TD added luminance as first menu item	
+15264	fixed IO node label offsets bug	
+15266	fixed stray error when dragging video clips into IO Macro Graph.	
+15269	Macro Widgets that are not assigned to a valid Macro will notify user sans warning	
+15271	created Assign Macro sub tool in Perform tab for easily setting up Macro Widgets.	
+15272	macro name changes now automatically update Macro Widget names.	
+15276	fixed bug causing file->load to create duplicates of everything in the Perform Canvas.	
+15283	fixed some save/load bugs related to channel inputs, and UI mapping.	
+15284	fixed stray object parenting python bug throwing errors when typing into fields	
+15289	New "Group" Widget added to the Perform tab.	The Group widget is a more advanced widget that fascilitates the grouping of multiple Macro Widgets into logical groups, for creating things like radio groupbutton banks, or Macro "Layers". You can add Macro Widgets to a Group Widget by simply placing them next toeach other, depending on the Group Widget's grouping function.
+15290	Updated Splash Page Readme	
+15293	fixed some bugs with UI mapper, Perform Macro widgets	
+15302	Added new CrossFader Widget to Perform Mode, fixed some sampler engine bugs	
+15303	fixed and optimized bugs in sampler engine, more improvements to group widget	
+15304	implemented group widgets layer eject button functionality	
+15305	shortened windows PID initializer delay	
+15306	fixed some camera homing bugs in the Animation Editor	
+15310	added glsl MATs to glsl error and diagnostics source list	
+15311	fixed bugs with surface sampler glsl errors.	
+15312	runtime optimization ~ .7 ms	
+15313	added frame time graph to Performance counter in bottom left	
+15314	added visibility toggle to Perform Viz widget (for fps performance when needed)	
+15315	fixed some bugs in Perform related to creating System Widgets	
+15316	added "Alpha as Transparency" toggle to Surface Objects	this feature is meant to be used as a hack to simulate glowing signage, or otherartistic elements in a scene. useful for doing music videos, etc.
+15317	added resolution control to the texture packing system	
+15320	patched some GLSL bugs manifesting on on certain AMD cards	
+15321	refactored patron/sponsor files and naming	
+15322	patreon bug fixes	
+15323	began work on updates notification	
+15324	created updates available button	
+15325	fixed bug with updates available button	
+15326	refactoring some code	
+15327	fixed bug in downloads available button	
+15328	more refactoring	
+15329	added a tap tempo button to the BPM widget	
+15330	improved fixture raw data edit SET function to accept more flexible pasted text	
+15331	fixed stray error in animation editor trashcan button	
+15332	added some smart logic to animation editor vertical homing when keyframes are flat	
+15334	fixed critical bug in object duplication of parented objects causing insta-crashes.	
+15335	optimized some datastreams on heavy geometry scenes.	
+15336	fixed some missing paths for HDR lighting in Custom Fixture Editor	
+15337	fixed some compile script bugs in custom fixtures	
+15338	fixed some compositing layering issues in the Viewport for emissive pixels	
+15339	fixed recently created bug causing selection to not work for Hulls and Pix	
+15340	fixed critical bug related to loading projects with generators and custom data	
+15341	fixed bug related to mask tool not creating masks on sub selection of Pix	
+15343	minor bug fixes	
+15344	disabled custom searcher dev tool that was causing slowdowns in some cases	
+15345	fixed an uncommon loading error that broke loading for fixtures with malformed save data	
+15346	fixed video target scaling bug that happened under certain resolutions	
+15347	light network optimization for perform tab performance	
+15349	fixed some string parsing bugs in mask editor tool	
+15350	fixed some clamping bugs when mixing Pixframes with Macro nodes	
+15351	fixed bug preventing pixframe data from being loaded from GP projects	
+15352	added global data lists view, that can be enabled from preferences	
+15353	removed arbitrary X and Y padding from projector fit function. now fits exactly.	
+15354	reduced video target resolution to 1x1 from 256x256	
+15356	fixed some critical bugs related to surface objects and selection/sampling	
+15357	fixed critical bug that left out the 16th sampler out of every set of 16	
+15358	optimizations for heavy scenes	
+15359	scaling optimizations	
+15360	balanced some visual aesthetics between custom fixture editor and viewport	
+15361	fixed naming convention bug breaking custom fixture editor updates	
+15365	re introduced the auto loader tool, for setting up autonomous project loading at boot	
+15367	Autoloader fully integrated	
+15368	reordered some menu items under Tools	
+15369	fixed critical bug causing sampler to skip Macros until a projector and macro was added	
+15371	fixed some issues with multiple midi controllers	
+15372	fixed divide by 0 error with custom fixtures that have no channels	
+15373	tweaks to custom fixture editor	
+15374	significant optimizations to timeline macro sequencing	
+15375	increased sampler engine dynamic load to 8 banks	
+15383	added a reset macro block to default length button to the Sequence Editor.	
+15384	fixed some issues with homing in keyframe editor	
+15385	fixed some looping issues with Macros when set to non whole numbers of seconds.	
+15386	improved Movie trimming controls in IO tab. Can now set Macro to Clip, or vice versa.	
+15389	fixed some timing related issues with IO movie clips.	
+15391	fixed bug with autoloading and geopix preferences.	
+15394	added support for 3 extra configurable custom color channels for regular fixtures. ie. RGBW	
+15395	critical bug fix - geopixPreferences.txt load from disk loop	
+15396	optimized some running processes that could be turned off when light emission is not needed	
+15397	removed depreciated Macro Inputs from IO Tab	
+15398	fixed some issues with create panel coming up when typing into fields	
+15399	fixed attribute editor scroll bar adjusting last changed value bug	
+15400	added the Locked parameter to objects in the Viewport	
+15401	restricted certain functionality for Locked objects in editor	
+15403	updated serial python library for startup scripts	
+15405	fixed stray error from autolearn toggle in widget capture IO node	
+15410	added auxilary UI for choosing an autolearn source, when more than one is detected	
+15412	Fixed drag to reparent bug in the Custom Fixture Editor	
+15413	fixed viewport homing function	
+15415	fixed some issues in Outliner causing it to scroll to top on selection, toggle, etc.	
+15416	more improvements to outliner component	
+15418	small bug fixes	
+15419	fixed some broken viewport hotkey functionality, ctrl+up, ctrl+down, etc	
+15420	added displace node to IO tab	
+15421	fixed some internal save/load backend bugs	
+15422	Updated splash screen text	
+15428	optimized the forward shading pipeline for heavier instanced geometry scenes.	
+15429	timeline slider will now resume the play status that was previous engaged after drag (play/pause)	
+15431	gpu memory consumption optimizations in volumetric buffers	
+15432	changed surface object sampling mode to mipmap (smoother, better looking)	
+15433	optimization in bloom pass	
+15434	tonemapping pass optimizations	
+15435	fixed issue related to surface objects not emitting light and volumetrics	
+15436	upgraded to TouchDesigner 2021.14360	
+15437	created simple backend script for importing certain types of GP v1 data	
+15439	optimizations related to very pixel heavy projects	
+15440	fixed some reparenting bugs in Custom Fixture Editor	
+15441	fixed some minor time scrubbing bugs with timebar, when changing start/end time	
+15443	cleaned up some stray messages in the Perform tab, while in Perform mode.	
+15444	fixed Coordinate Set icon sizes being too large in orthographic mode	
+15445	optimized some redundant backend processes running when not needed	
+15446	fixed some UI dependancy issues in Video Out preferences	
+15447	removed some unneccesarily duplicated files from backend	
+15449	fixed bug preventing more than 1 universe from reacting to content/macros	
+15450	fixed some bugs with multi emitter custom fixtures not showing additional emitters	
+15451	added hue shift IO node	
+15452	fixed bug related to crossfader and macros getting scrambled	
+15457	added ability to render out raw DMX buffer to video using timeline or realtime	
+15459	added file menu function to export DMX module for external playback	
+15460	bug fixes	
+15461	fixed some bug with the VFS file storage of the dmx buffer video	
+15462	fixed sorting bug causing disconnected Macros to incorrectly offset connected ones	
+15463	minor bugs	
+15464	small bug fixes	
+15465	startup glitch	
+15466	fixed NoneType bug in sequencer when creating a new project	
+15467	Fixed bug preventing Macro Audio from working	
+15468	bug fixes	
+15469	hid some obsolete projector buttons in viewport	
+15470	updated to latest TouchDesigner stable build	
+15471	updated github readme TD version	
+15472	updated file tool to include user downloads folder on leftbar	
+15474	patched a bug causing projectors to not always show content	
+15475	autoloader now closes splash screen if a GeoPix file is set to autoload.	
+15476	network cleanup	
+15477	updated GeoPix to td build 2021.15800	
+15479	updated build scripts	
+15480	fixed a bug preventing macros connected to multiple projectors from working.	
+15481	fixed trims/macro timing buttons for audio file in IO node.	
+15482	fixed ramp scaling bug with DOM frequency IO node	
+15483	update to welcome screen, and patreon donar update	
+15484	fixed bug with sampler engine multi buffers being disconnected	
+15485	fixed combine bug with multiple audio streams present	
+15486	floating windows no longer force being on top	
+15487	fixed some dmx output addressing bugs in the custom fixture editor	
+15490	introduced pixel format option for IO generator nodes	
+15491	fixed startup vals for macro's ramp	
+15492	fixed more ramp startup issues	
+15496	added channel selection parameters to audio in preferences	
+15497	small fix to refreshing audio device channels	
+15498	updated TD version, fixed outliner sorting bug for some naming patterns.	
+15499	td version bump	
+15500	version typo	
+15501	patreon update	
+15505	greatly optimized several key points related to realtime perform control	
+15506	small performance tweaks to sliders in perform tab	
+15507	updated GP prefs to use visual studio code	
+15508	fixed typo	
+15509	refactored some future shader issues (Vulcan)	
+15510	updated patrons	
+15511	updated gp license text	
+15516	DOM frequency IO node can use global macro timing now	
+15530	ironed out some more major bugs with vulcan port, now functional-ish	
+15531	minor updates	

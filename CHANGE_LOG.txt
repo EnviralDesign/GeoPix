@@ -208,3 +208,4 @@
 15530	ironed out some more major bugs with vulcan port, now functional-ish	
 15531	minor updates	
 15532	td version bump to 2022.33910	
+15533	crop res scale and layout IO node update	

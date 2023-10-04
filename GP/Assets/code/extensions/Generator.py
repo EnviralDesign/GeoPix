@@ -171,7 +171,7 @@ class Generator:
 							
 							# debug('pixOffs', parent.obj.par.Pixfillamount.eval(), pixOffsetCounter)
 							if parent.obj.par.Pixfill.eval() == True:
-								self.Dummy_Fill(cutoff=parent.obj.par.Pixfillamount.eval(), indexOffset=pixOffsetCounter)
+								self.Dummy_Fill(cutoff=parent.obj.par.Pixfillamount.eval(), indexOffset=pixOffsetCounter, coordSet=coordSet)
 							
 							parentObj.par.Chanorder = gchans
 							pixOp.WriteCoordsToTable()
@@ -312,7 +312,7 @@ class Generator:
 		
 		
 	###################	  START ACTUAL GENERATION FUNCTIONS	  ###########################
-	def Dummy_Fill(self, cutoff=100, indexOffset=0):
+	def Dummy_Fill(self, cutoff=100, indexOffset=0, coordSet=0):
 		
 		
 		pixOp = parent.obj.op("pix")

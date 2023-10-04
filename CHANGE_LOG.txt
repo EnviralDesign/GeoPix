@@ -207,3 +207,5 @@
 15516	DOM frequency IO node can use global macro timing now	
 15517	fixed bug with audio device #1 input being music	
 15518	update patrons	
+15522	updates to cropping IO, added new layout IO node.	
+15523	updated welcome spash screen	

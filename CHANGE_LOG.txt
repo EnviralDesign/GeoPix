@@ -209,3 +209,4 @@
 15518	update patrons	
 15522	updates to cropping IO, added new layout IO node.	
 15523	updated welcome spash screen	
+15524	fixed bug with pix fill	

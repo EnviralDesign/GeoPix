@@ -210,3 +210,4 @@
 15532	td version bump to 2022.33910	
 15533	crop res scale and layout IO node update	
 15534	aded switch audio node	
+15535	ported IO audio node changes from main to vulcan branch	

@@ -211,3 +211,7 @@
 15523	updated welcome spash screen	
 15524	fixed bug with pix fill	
 15525	added audio IO switch node	
+15526	fixed timing bug with audio file in node in IO tab	
+15527	audio switch IO node handles 4 inputs now	
+15528	fixed error in IO generator node that was slightly affecting performance.	
+15529	new IO node : audio combine	

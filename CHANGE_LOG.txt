@@ -216,3 +216,4 @@
 15528	fixed error in IO generator node that was slightly affecting performance.	
 15529	new IO node : audio combine	
 15531	updated default osc in local address to blank, instead of wild card	this is more likely to work with out user intervention.
+15533	added blur IO node effect	

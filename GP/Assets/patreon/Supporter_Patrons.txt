@@ -5,3 +5,6 @@ Bileam Tschepe
 Joli Badman
 Lewis N
 Jesse van Aalderen
+Raphael Gutierrez
+Josh Vishnu
+Function Store

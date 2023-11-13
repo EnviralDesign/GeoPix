@@ -212,3 +212,4 @@
 15534	aded switch audio node	
 15535	ported IO audio node changes from main to vulcan branch	
 15536	bumped td version	
+15537	fixed osc bug	

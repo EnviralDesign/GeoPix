@@ -114,3 +114,5 @@ TouchDesignerCrash.*.dmp
 
 
 GP/Utilities/.wget-hsts
+GP/Assets/patreon/poetry.lock
+GP/Assets/patreon/pyproject.toml

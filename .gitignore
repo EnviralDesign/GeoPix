@@ -40,6 +40,8 @@ GP/LIBRARY/PROJECTS/GeoPixProjectConfig.txt
 
 # Library items downloaded by the asset downloader
 
+GP/LIBRARY/file_list
+
 # fixture profiles json
 GP/LIBRARY/**/*.json
 
